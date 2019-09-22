@@ -54,12 +54,25 @@ has_one:payment
 |size_id|referencs|foreign_key:ture|
 |brand_id|referencs|foreign_key:ture|
 |comment_id|referencs|foreign_key:ture|
-----取引IDどうするか
+|users_items_id|referencs|foreign_key:ture|
+|result|integer||
+
+
+#Association
+belongs_to:user
+belongs_to:size
+belongs_to:brand
+belongs_to:category
+has_many:images
+has_many:comments
+??has_one??has_many:comment
 
 
 
 
-##sizeテーブル
+
+
+##sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|referencs|null:false,foreign_key:ture|
@@ -68,29 +81,45 @@ has_one:payment
 |child_shoes_size|string||
 |child_clothes|string||
 
+#Association
+has_many:items
 
 
-##brandテーブル
+
+
+##brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |itam_id|referencs|null:false,foreign_key:ture|
 |name|string||
 
+#Association
+has_many:items
 
 
 
-##categoryテーブル
+
+
+##categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|referencs|null:false,foreign_key:ture|
 |ancestry|string|index:true|
 
+#Association
+has_many:items
+has_ancestry
 
-##imageテーブル
+
+
+##imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|referencs|null:false,foreign_key:ture|
 |image|string||
+
+#Association
+belongs_to:item
 
 
 
@@ -100,6 +129,24 @@ has_one:payment
  |item_id|integer|null: false, foreign_key:true|
  |user_id|integer|null: false, foreign_key: true|
  |text|text||
+
+#Association
+
+belongs_to :user 
+belongs_to :item
+
+##paymentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|card_number|integer||
+|valid_year|integer||
+|valid_month|integer||
+|cvc|integer||
+|user_id|reference|null:false,foreign_key:ture|
+
+#Association
+belongs_to:user
 
 
 
