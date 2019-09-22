@@ -13,19 +13,17 @@
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
-|addres_id|reference|foreign_key: true|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
 |profile|text||
-|payment_id|reference|foreign_key: true|
 
 #Association
 has_many:items
 has_many:comments
-has_one:payment
 has_many:buys
 has_one:address
+has_one:payment
 
 
 
@@ -122,6 +120,7 @@ belongs_to :item
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|referencs|null:false,foreign_key:ture|
 |card_number|integer||
 |valid_year|integer||
 |valid_month|integer||
@@ -162,7 +161,7 @@ belongs_to:user
 
 |Column|Type|Options|
 |------|----|-------|
-
+|item_id|integer|null: false, foreign_key:true|
 |prefecuture|string|null:false|
 |delibery_price|intger||null:false|
 |delibery_date|string|null:false|
@@ -176,6 +175,7 @@ belongs_to:item
 
 |Column|Type|Options|
 |------|----|-------|
+|item_id|integer|null: false, foreign_key:true|
 |state|integer|default: 0, null: false, limit: 1|
 
 #Association
