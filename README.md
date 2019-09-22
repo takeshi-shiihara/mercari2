@@ -25,7 +25,7 @@ has_many:items
 has_many:comments
 has_one:payment
 has_many:buys
-has_one:addres
+has_one:address
 
 
 
@@ -41,7 +41,8 @@ has_one:addres
 |size_id|referencs|foreign_key:ture|
 |brand_id|referencs|foreign_key:ture|
 |buy_id|referencs|foreign_key:ture|
-|result|integer||
+|state_id|reference|foreign_key:ture|
+
 
 
 #Association
@@ -53,6 +54,7 @@ belongs_to:category
 has_many:images
 has_many:comments
 has_one:delibery
+has_one:status
 
 
 
@@ -124,7 +126,6 @@ belongs_to :item
 |valid_year|integer||
 |valid_month|integer||
 |cvc|integer||
-|user_id|reference|null:false,foreign_key:ture|
 
 #Association
 belongs_to:user
@@ -141,7 +142,7 @@ belongs_to:item
 belongs_to:user
 
 
-##addresesテーブル
+##addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -166,6 +167,16 @@ belongs_to:user
 |delibery_price|intger||null:false|
 |delibery_date|string|null:false|
 |delibery_burden|string|null:false|
+
+#Association
+belongs_to:item
+
+
+##statusテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|state|integer|default: 0, null: false, limit: 1|
 
 #Association
 belongs_to:item
