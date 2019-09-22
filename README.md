@@ -8,16 +8,12 @@
 |nickname|string|null: false, unique:true|
 |e-mail|string|null: false|
 |password|string|nul: false|
-|telephone|string|null: false, unique:true|
+|phone_number|string|null: false, unique:true|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
-|post_number|string|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|address|string|null: false|
-|building|string||
+|addres_id|reference|foreign_key: true|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
@@ -29,6 +25,7 @@ has_many:items
 has_many:comments
 has_one:payment
 has_many:buys
+has_one:addres
 
 
 
@@ -40,15 +37,9 @@ has_many:buys
 |price|integer|null:false|
 |description|text|null:false|
 |condition|string|null:false|
-|delibery_price|intger||null:false|
-|prefecuture|string|null:false|
-|delibery_date|string|null:false|
-|delibery_burden|string|null:false|
-|image_id|referencs|null:false,foreign_key:ture|
 |category_id|referencs|null:false,foreign_key:ture|
 |size_id|referencs|foreign_key:ture|
 |brand_id|referencs|foreign_key:ture|
-|comment_id|referencs|foreign_key:ture|
 |buy_id|referencs|foreign_key:ture|
 |result|integer||
 
@@ -61,13 +52,13 @@ belongs_to:brand
 belongs_to:category
 has_many:images
 has_many:comments
+has_one:delibery
 
 
 
 ##sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|referencs|null:false,foreign_key:ture|
 |shoes_size|string||
 |clothes|string||
 |child_shoes_size|string||
@@ -82,7 +73,6 @@ has_many:items
 ##brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|itam_id|referencs|null:false,foreign_key:ture|
 |name|string||
 
 #Association
@@ -93,7 +83,6 @@ has_many:items
 ##categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|referencs|null:false,foreign_key:ture|
 |name|string||
 |ancestry|string|index:true|
 
@@ -106,7 +95,7 @@ has_ancestry
 ##imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|referencs|null:false,foreign_key:ture|
+|item_id|referencs|null:false|
 |main_image|string|null:false|
 |sub_image|string||
 
@@ -120,7 +109,7 @@ belongs_to:item
  |------|----|-------|
  |item_id|integer|null: false, foreign_key:true|
  |user_id|integer|null: false, foreign_key: true|
- |text|text||
+ |text|text|null: false|
 
 #Association
 
@@ -150,6 +139,36 @@ belongs_to:user
 #Association
 belongs_to:item
 belongs_to:user
+
+
+##addresesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|referencs|null:false,foreign_key:ture|
+|post_number|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building|string||
+
+#Association
+belongs_to:user
+
+
+
+##delideriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+
+|prefecuture|string|null:false|
+|delibery_price|intger||null:false|
+|delibery_date|string|null:false|
+|delibery_burden|string|null:false|
+
+#Association
+belongs_to:item
 
 
 
