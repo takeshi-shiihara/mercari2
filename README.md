@@ -28,12 +28,7 @@
 has_many:items
 has_many:comments
 has_one:payment
-???has_many??has_one??:取引
-??has_many??has_one:SNS
-
-
-
-
+has_many:buys
 
 
 
@@ -54,21 +49,18 @@ has_one:payment
 |size_id|referencs|foreign_key:ture|
 |brand_id|referencs|foreign_key:ture|
 |comment_id|referencs|foreign_key:ture|
-|users_items_id|referencs|foreign_key:ture|
+|buy_id|referencs|foreign_key:ture|
 |result|integer||
 
 
 #Association
+belongs_to:buy
 belongs_to:user
 belongs_to:size
 belongs_to:brand
 belongs_to:category
 has_many:images
 has_many:comments
-??has_one??has_many:comment
-
-
-
 
 
 
@@ -98,12 +90,11 @@ has_many:items
 
 
 
-
-
 ##categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|referencs|null:false,foreign_key:ture|
+|name|string||
 |ancestry|string|index:true|
 
 #Association
@@ -116,7 +107,8 @@ has_ancestry
 |Column|Type|Options|
 |------|----|-------|
 |item_id|referencs|null:false,foreign_key:ture|
-|image|string||
+|main_image|string|null:false|
+|sub_image|string||
 
 #Association
 belongs_to:item
@@ -146,6 +138,17 @@ belongs_to :item
 |user_id|reference|null:false,foreign_key:ture|
 
 #Association
+belongs_to:user
+
+##buysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|referencs|null:false,foreign_key:ture|
+|item_id|referencs|null:false,foreign_key:ture|
+
+
+#Association
+belongs_to:item
 belongs_to:user
 
 
