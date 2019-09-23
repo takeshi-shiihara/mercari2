@@ -29,6 +29,7 @@
 
 .user__main__container__form{
   margin: 0 auto;
+  padding-bottom:50px;
 }
 
 .user__main__container__form__container{
@@ -37,7 +38,7 @@
 }
 
 .user__field{
-  margin-top: 32px auto;
+  margin-top: 20px;
 }
 
 .user__field__label{
@@ -49,7 +50,7 @@
 
 .user__field__span{
   margin: 0 0 0 8px;
-  padding: 3px 4px;
+  padding: 2px 4px;
   border-radius: 2px;
   color: #fff;
   font-size: 12px;
@@ -64,9 +65,76 @@
   border: 1px solid #ccc;
   width:300px;
 }
-.user-name-field{
-  margin: 8px 0 0;
+.user__field__container{
+  width:334px;
+  display:flex;
+}
+
+.user__name__field{
+  width: calc(50% - 25px);
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  margin-right:5px;
+}
+
+.user__field__confirmation h3{
+  margin-top:15px;
+  font-weight: 600;
+  font-size:16px;
+}
+
+.user__field__confirmation p{
+  margin-top:8px;
+  font-size:14px;
+  color: rgb(51, 51, 51);
+}
+
+.user__field__xplanation{
+  margin-top:8px;
+  font-size:14px;
+  color: #888;
+}
+
+.user__field__next{
+  margin-top:10px;
+  text-align:center;
+  font-size:14px;
+}
+.user__name__aa{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  margin-top:20px;
+}
+
+.single-footer{
+  padding-top:30px;
+  width: 100%;
+  height: 200px;
+  background: rgb(245, 245, 245);
+  text-align: center;
+  color: #000;
+}
+
+.login-footer-list {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0 0;
+  a{
+    margin: 0 15px 0 15px;
+    font-size: 12px;
+    color: #333333;
+  }
+}
+.root__link__fooder{
+  margin-top:30px;
+  width:85px;
+}
+.login-footer-list-text{
+  font-size: 5px;
 }

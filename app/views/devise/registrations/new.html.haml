@@ -31,25 +31,33 @@
                 %span.user__field__span 必須
                 %br/
                 = f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: '6文字以上', class: 'user__text__field'
-              .user__field
-                = f.label :お名前（全角）, class:'user__field__label'
-                %span.user__field__span 必須
-                %br/
-                = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: '例）山田', class: 'user-name-field'
-              .user__field
-                = f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: '例）彩', class: 'user-name-field'
-              .user__field
-                = f.label :お名前（カナ）, class:'user__field__label'
-                %span.user__field__span 必須
-                %br/
-                = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: '例）ヤマダ', class: 'user-name-field'
-              .user__field
-                = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: '例）アヤ', class: 'user-name-field'
 
-              .user-form-group
+              .user__field__confirmation
                 %h3 本人確認
                 %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-              %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-              %p 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-              .actions
-                = f.submit "Sign up"
+
+                .user__field
+                  = f.label :お名前（全角）, class:'user__field__label'
+                  %span.user__field__span 必須
+                  %br/
+                  .user__field__container                  
+                    = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: '例）山田', class: 'user__name__field'
+                    = f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: '例）彩', class: 'user__name__field'
+
+                .user__field
+                  = f.label :お名前カナ（全角）, class:'user__field__label'
+                  %span.user__field__span 必須
+                  %br/
+                  .user__field__container                  
+                    = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: '例）ヤマダ', class: 'user__name__field'
+                    = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: '例）アヤ', class: 'user__name__field'
+
+              .user__field__xplanation
+                %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+              .user__field__next
+                %p 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+
+              .user__field__actions
+                = f.submit "次へ進む", class: 'user__name__aa'
+
+= render partial: 'footter'
