@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_035120) do
+ActiveRecord::Schema.define(version: 2019_09_23_043314) do
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_number", default: "", null: false
@@ -36,9 +36,6 @@ ActiveRecord::Schema.define(version: 2019_09_23_035120) do
     t.string "last_name"
     t.string "first_name_kana"
     t.string "last_name_kana"
-    t.integer "birth_year"
-    t.integer "birth_month"
-    t.integer "birth_day"
     t.text "profile"
     t.integer "payment_id"
     t.index ["email"], name: "index_users_on_email", unique: true
