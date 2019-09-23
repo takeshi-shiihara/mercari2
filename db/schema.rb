@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_22_094858) do
+ActiveRecord::Schema.define(version: 2019_09_23_035120) do
+
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "post_number", default: "", null: false
+    t.string "prefecture", default: "", null: false
+    t.string "city", default: "", null: false
+    t.string "address"
+    t.string "building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,16 +31,11 @@ ActiveRecord::Schema.define(version: 2019_09_22_094858) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nickname"
-    t.string "telephone"
+    t.string "phone_number"
     t.string "first_name"
     t.string "last_name"
     t.string "first_name_kana"
     t.string "last_name_kana"
-    t.string "post_number"
-    t.string "prefecture"
-    t.string "city"
-    t.string "address"
-    t.string "building"
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_day"
