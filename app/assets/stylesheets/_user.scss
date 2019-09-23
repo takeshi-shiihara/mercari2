@@ -1,0 +1,72 @@
+/*--全体--*/
+.user__container{
+  background-color: rgb(245, 245, 245);
+}
+
+/*--ヘッダー--*/
+.user__container__header{
+  height: 128px;
+  text-align: center;
+  line-height: 177px;
+}
+.user__container__header img{
+  width: 185px;
+  height: 49px;
+}
+
+/*--会員情報入力--*/
+.user__container__main{
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.user__main__container__registration{
+  text-align:center;
+  font-size: 22px;
+  padding: 32px;
+  border-bottom:1px solid rgb(245, 245, 245);
+}
+
+.user__main__container__form{
+  margin: 0 auto;
+}
+
+.user__main__container__form__container{
+  width:334px;
+  margin: 0 auto;
+}
+
+.user__field{
+  margin-top: 32px auto;
+}
+
+.user__field__label{
+  font-weight: 600;
+  text-align:left;
+  font-size:14px;
+  float:left;
+}
+
+.user__field__span{
+  margin: 0 0 0 8px;
+  padding: 3px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  background-color: #ea352d;
+  float:left;
+}
+.user__text__field{
+  margin: 3px 0 0;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width:300px;
+}
+.user-name-field{
+  margin: 8px 0 0;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
