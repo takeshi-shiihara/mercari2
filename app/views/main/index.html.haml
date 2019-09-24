@@ -1,13 +1,156 @@
-%h1 Main#index
-
 %body
-%header.header
-  .header__bar.row
-    - if user_signed_in?
-      .user_nav.grid-6
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-        %a.post{:href => "/tweets/new"} 投稿する
-    - else
-      .grid-6
-        = link_to "ログイン", new_user_session_path, class: 'post'
-        = link_to "新規登録", new_user_registration_path, class: 'post'
+-# %header.header
+-#   .header__bar.row
+-#     - if user_signed_in?
+-#       .user_nav.grid-6
+-#         = link_to "ログアウト", destroy_user_session_path, method: :delete
+-#         %a.post{:href => "/tweets/new"} 投稿する
+-#     - else
+-#       .grid-6
+-#         = link_to "ログイン", new_user_session_path, class: 'post'
+-#         = link_to "新規登録", new_user_registration_path, class: 'post'
+
+.main
+  .main__header-images
+    -# %a= image_tag 'main_image1.png' ,class: "image1"
+    %a= image_tag 'topimage2.jpg' ,class: "image2"
+
+  .main__popular-category
+    .main__popular-category__upbox
+      %h2 人気のカテゴリー
+    .main__popular-category__downbox
+      %ul
+        %li レディース
+        %li メンズ
+        %li 家電・スマホ・カメラ
+        %li おもちゃ・ホビー・グッズ
+  .main__contents
+    .main__contents__itemlist
+      .main__contents__itemlist__titlebar
+        %h2 レディース新着アイテム
+        %a.morelink{:href => "/jp/category/1/"} もっと見る ＞
+      
+      .main__contents__itemlist__items
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg/540px-David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg"}
+          .downbox
+            ナポレオン・ボナパルト
+
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg/400px-Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg"}
+          .downbox
+            マリー・アントワネット
+
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://www.sjnk-museum.org/wp/wp-content/uploads/2014/07/himawari.png"}
+          .downbox
+            ひまわり
+
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/VanGogh_1887_Selbstbildnis.jpg/500px-VanGogh_1887_Selbstbildnis.jpg"}
+          .downbox
+            ゴッホ
+
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://cdn-ak.f.st-hatena.com/images/fotolife/n/naichilab/20190114/20190114010820.png"}
+          .downbox
+            ギットハブ
+
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/460px-Pablo_picasso_1.jpg"}
+          .downbox
+            パブロ・ピカソ
+
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "http://blog-imgs-49.fc2.com/k/u/w/kuw0703/20141112202331759.jpg"}
+          .downbox
+            泣く女
+
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://pbs.twimg.com/profile_images/519367942866104320/PB96rDH_.png"}
+          .downbox
+            ギットハブ
+        .onebox
+          .upbox
+            %span.price ¥800
+            %img.image{:src => "https://i.pinimg.com/originals/52/ea/be/52eabecf424b217807d0e557b9a0c38e.jpg"}
+          .downbox
+            ギットハブ
+        .onebox
+          .upbox
+            %span.price ¥10,000
+            %img.image{:src => "https://bacchi.me/wp-content/uploads/2014/06/github_img4.jpg"}
+          .downbox
+            ギットハブ
+
+
+  
+
+  .main__exhibit-btn
+    %p
+    %a.e-btn{:href => "/"} 出品
+    %i.fas.fa-camera.fa-3x
+
+.footer
+  .footer__upbox
+    %a= image_tag 'footer.jpg' ,class: "footer-image"
+  .footer__downbox
+    .footer__downbox__menu
+      .group
+        %h3 メルカリについて
+        %ul
+          %li 会社概要（運営会社）
+          %li 採用情報
+          %li プレスリリース
+          %li 公式ブログ
+          %li メルカリロゴ利用ガイドライン
+      .group
+        %h3 ヘルプ＆ガイド
+        %ul
+          %li メルカリガイド
+          %li らくらくメルカリ便
+          %li ゆうゆうメルカリ便
+          %li 大型メルカリ便
+          %li 車体取引ガイド
+          %li メルカリあんしん・あんぜん宣言！
+          %li 偽ブランド品撲滅への取り組み
+          %li メルカリボックス
+      .group
+        %h3 プライバシーと利用規約
+        .group__list2
+          %ul.leftlist
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li あんしんスマホサポート制度に関する利用規約
+            %li コンプライアンスポリシー
+          %ul.rightlist
+            %li 個人データの安全管理に係る基本方針
+            %li 特定商取引に関わる表記
+            %li 資金決済法に基づく表示
+            %li 法令順守と犯罪抑止のために
+      .group
+        %h3 国
+        %ul
+          %li 日本
+          %li United States
+
+    .footer__downbox__logobar
+      %a.logo{:href => "/"}= image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg' ,class: "m-logo"
+      %p.name ©️2019 Mercari
+

@@ -7,5 +7,30 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}
+  
   %body
+  %header
+    .top
+      .top__contents
+        .top__contents__upbox
+          .top__contents__upbox__logo
+            %a{:href => "/"}= image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg' ,class: "m-logo"
+          .top__contents__upbox__search
+            %input{:name => "keyword", :placeholder => "何かお探しですか？", :type => "search", :class => "s-form" }
+
+        .top__contents__downbox
+          .top__contents__downbox__leftbox
+            %li.category-btn
+              %a カテゴリーから探す
+              %ul
+            %li.bland-btn
+              %a ブランドから探す
+
+          .top__contents__downbox__rightbox
+            .reft-btn
+              = link_to '新規会員登録', 'https://www.mercari.com/jp/signup/' ,class: "signup-btn"
+            .right-btn
+              = link_to 'ログイン', 'https://www.mercari.com/jp/signup/' ,class: "login-btn"
+
     = yield
