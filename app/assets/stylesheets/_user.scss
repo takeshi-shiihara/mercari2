@@ -1,3 +1,30 @@
+@mixin submit__button{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  margin-top:20px;
+}
+@mixin user__text__field{
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+@mixin user__field__span{
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  background-color: #ea352d;
+  float:left;
+}
+
 /*--全体--*/
 .user__container{
   background-color: rgb(245, 245, 245);
@@ -6,12 +33,25 @@
 /*--ヘッダー--*/
 .user__container__header{
   height: 128px;
-  text-align: center;
   line-height: 177px;
+  width:750px;
+  margin:0 auto;
+  display: flex;
 }
 .user__container__header img{
   width: 185px;
   height: 49px;
+}
+.fix{
+  margin-left:100px;
+  height:128px;
+  line-height: 140px;
+}
+.user__ul__container li{
+  display:inline-block;
+  font-size:14px;
+  margin:0 10px 0;
+  height: 128px;
 }
 
 /*--会員情報入力--*/
@@ -49,35 +89,24 @@
 }
 
 .user__field__span{
-  margin: 0 0 0 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  vertical-align: top;
-  background-color: #ea352d;
-  float:left;
+@include user__field__span();
 }
-.user__text__field{
-  margin: 3px 0 0;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width:300px;
-}
+
 .user__field__container{
   width:334px;
   display:flex;
 }
 
+.user__text__field{
+  @include user__text__field();
+  margin: 3px 0 0;
+  width:300px;
+}
 .user__name__field{
+  @include user__text__field();
   width: calc(50% - 25px);
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
   margin-right:5px;
 }
-
 .user__field__confirmation h3{
   margin-top:15px;
   font-weight: 600;
@@ -101,26 +130,12 @@
   text-align:center;
   font-size:14px;
 }
-.user__name__aa{
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  margin-top:20px;
+
+.user__submit__button{
+@include submit__button();
 }
 
-.single-footer{
-  padding-top:30px;
-  width: 100%;
-  height: 200px;
-  background: rgb(245, 245, 245);
-  text-align: center;
-  color: #000;
-}
-
+<<<<<<< Updated upstream
 .login-footter-list {
   display: flex;
   justify-content: center;
@@ -138,3 +153,6 @@
 .login__footter__list__text{
   font-size: 5px;
 }
+=======
+
+>>>>>>> Stashed changes
