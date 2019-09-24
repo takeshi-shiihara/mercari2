@@ -30,6 +30,10 @@ h3{
   font-weight:bold;
 }
 
+.redicon {
+  color:rgb(234, 53, 45)
+}
+
 //////ヘッダー//////// 
 
 .top{
@@ -52,12 +56,12 @@ background-color: rgb(255, 255, 255);
         height: 40px;
         margin-right: 45px;
         .m-logo{
-          height: 36px;
+          height: 38px;
           width: 134px;
           }
       }
       &__search {
-        // position: relative;
+        position: relative;
         width: 100%;
         .s-form{
           background-color: rgb(245, 245, 245);
@@ -74,6 +78,14 @@ background-color: rgb(255, 255, 255);
           outline: none;
           padding: 0px 50px 0px 10px;
           transition: all 0.3s ease-out 0s;
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        }
+        .icon-search{
+          position: absolute;
+          right: 13px;
+          top: 13px;
+          font-size: 14px;
+          color: #333333;
         }
       }
     }
@@ -88,11 +100,21 @@ background-color: rgb(255, 255, 255);
         display: flex;
         list-style: none;
         font-weight:bold; 
+        font-size: 14px;
+        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        color: #333333;
+        line-height: 36px;
         .category-btn{
          padding-right: 10px;
         }
+        .category-btn:hover {
+          color: rgb(0, 149, 238);
+        }
         .bland-btn{
         padding-left: 10px;
+        }
+        .bland-btn:hover {
+          color: rgb(0, 149, 238);
         }
       }
 
@@ -111,13 +133,18 @@ background-color: rgb(255, 255, 255);
           border-radius: 4px;
           padding: 0 10px;
           line-height: 31px; 
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
           .signup-btn{
           color: rgb(255, 255, 255);
           text-decoration: none; 
-          font-size: 13px;
+          font-size: 14px;
           }
         }
         .right-btn{
+          .login-btn{
+          color: rgb(0, 149, 238);
+          font-size: 14px;
+          text-decoration: none; 
           margin-left: 11px;
           height: 32px;
           background-color: rgb(255, 255, 255);
@@ -129,11 +156,12 @@ background-color: rgb(255, 255, 255);
           border-radius: 4px;
           padding: 0 10px;
           line-height: 31px; 
-          transition: all 0.3s ease-out 0s;
-          .login-btn{
-          color: rgb(0, 149, 238);
-          font-size: 13px;
-          text-decoration: none; 
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          transition: all 0.3s ease-out 0s; /* ホバーのスピード調整 */
+          }
+          .login-btn:hover {
+            background-color: rgb(0, 149, 238);/* メニュー項目にマウスが載ったときの背景色 */
+            color: white;            /* メニュー項目にマウスが載ったときの文字色 */
           }
         }
       } 
@@ -150,15 +178,6 @@ background-color: rgb(255, 255, 255);
 
   &__header-images {
     width: 100vw;
-    // background-size: auto;
-    // background-image: url("main_image1.png");
-
-    // .image1{
-    //   padding-top: 28px;
-    //   max-width: 680px;
-    //   display: block;  
-    //   margin: 0 auto;          
-    // }
 
     .image2{
       max-width: 100vw;
@@ -185,12 +204,14 @@ background-color: rgb(255, 255, 255);
         font-weight: 600;
         border-radius: 15px;
         padding: 8px 16px;
+        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        color: #333333;
       }
       }
   }
 
   &__contents {
-    height: 1000px;
+    
     margin: 0px auto;
     padding: 42px 0px 100px;
     max-width: 1020px;
@@ -222,7 +243,6 @@ background-color: rgb(255, 255, 255);
           margin-right: 20px;
           margin-bottom: 20px;
           box-shadow: 0 2px 4px rgba(0,0,0,.18);
-
           .upbox{
             width: 100%;
             height: 75%;
@@ -237,8 +257,7 @@ background-color: rgb(255, 255, 255);
               color: #fff;
               display: inline-flex;
               font-size: 17px;
-              height: 32px;
-              height: 28px;
+              height: 29px;
               letter-spacing: .02em;
               margin: 0;
               padding: 0 12px;
@@ -255,6 +274,7 @@ background-color: rgb(255, 255, 255);
             box-sizing: border-box;
             color: #222;
             font-size: 14px;
+            width: 100%;
             height: 25%;
             line-height: 1.4em;
             padding: 12px 12px;
@@ -262,6 +282,13 @@ background-color: rgb(255, 255, 255);
             word-break: break-word;
             background-color: white;
           }
+        }
+
+        .onebox:hover {
+          outline-width: 1px;
+          outline-style: solid;
+          outline-color: rgb(0, 149, 238);
+          z-index: 1;
         }
       }
       
@@ -271,7 +298,7 @@ background-color: rgb(255, 255, 255);
     &__exhibit-btn {
     width: 160px;
     height: 160px;
-    padding-top: 29px;
+    padding-top: 26px;
     background-color: rgb(234, 53, 45);
     border-radius: 50%;
     position: fixed;
@@ -285,6 +312,9 @@ background-color: rgb(255, 255, 255);
       color: white;            
       text-decoration: none;    
       display: block; 
+      position: absolute;
+      height:100%;
+      width: 100%;
       }
     }
 
@@ -335,6 +365,7 @@ background-color: rgb(255, 255, 255);
     &__logobar{
       max-width: 1020px;
       margin: 30px auto 19px;
+      
       .logo{
         float: left;
       }
@@ -342,6 +373,9 @@ background-color: rgb(255, 255, 255);
         text-align: center;
         font-size: 12px;
         padding-top: 10px;
+      }
+      .logo:hover {
+        opacity: 0.7;
       }
     }
   }//downbox//

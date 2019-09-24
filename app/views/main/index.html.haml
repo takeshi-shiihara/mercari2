@@ -1,18 +1,7 @@
 %body
--# %header.header
--#   .header__bar.row
--#     - if user_signed_in?
--#       .user_nav.grid-6
--#         = link_to "ログアウト", destroy_user_session_path, method: :delete
--#         %a.post{:href => "/tweets/new"} 投稿する
--#     - else
--#       .grid-6
--#         = link_to "ログイン", new_user_session_path, class: 'post'
--#         = link_to "新規登録", new_user_registration_path, class: 'post'
 
 .main
   .main__header-images
-    -# %a= image_tag 'main_image1.png' ,class: "image1"
     %a= image_tag 'topimage2.jpg' ,class: "image2"
 
   .main__popular-category
@@ -28,74 +17,74 @@
     .main__contents__itemlist
       .main__contents__itemlist__titlebar
         %h2 レディース新着アイテム
-        %a.morelink{:href => "/jp/category/1/"} もっと見る ＞
+        = link_to 'もっと見る ＞', 'https://www.mercari.com/jp/signup/' ,class: "morelink"
       
       .main__contents__itemlist__items
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg/540px-David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg"}
+            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg/540px-David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg", class: "image")
           .downbox
             ナポレオン・ボナパルト
 
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg/400px-Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg"}
+            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg/400px-Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg", class: "image")
           .downbox
             マリー・アントワネット
 
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://www.sjnk-museum.org/wp/wp-content/uploads/2014/07/himawari.png"}
+            = image_tag("https://iroiro.co/media/images/culture/2017/liberty-guiding-the-people.jpg", class: "image")
           .downbox
-            ひまわり
+            フランス革命
 
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/VanGogh_1887_Selbstbildnis.jpg/500px-VanGogh_1887_Selbstbildnis.jpg"}
+            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/VanGogh_1887_Selbstbildnis.jpg/500px-VanGogh_1887_Selbstbildnis.jpg", class: "image")
           .downbox
             ゴッホ
 
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://cdn-ak.f.st-hatena.com/images/fotolife/n/naichilab/20190114/20190114010820.png"}
+            = image_tag("https://cdn-ak.f.st-hatena.com/images/fotolife/n/naichilab/20190114/20190114010820.png", class: "image")
           .downbox
             ギットハブ
 
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/460px-Pablo_picasso_1.jpg"}
+            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/460px-Pablo_picasso_1.jpg", class: "image")
           .downbox
             パブロ・ピカソ
 
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "http://blog-imgs-49.fc2.com/k/u/w/kuw0703/20141112202331759.jpg"}
+            = image_tag("http://blog-imgs-49.fc2.com/k/u/w/kuw0703/20141112202331759.jpg", class: "image")
           .downbox
             泣く女
 
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://pbs.twimg.com/profile_images/519367942866104320/PB96rDH_.png"}
+            = image_tag("https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg", class: "image")
           .downbox
             ギットハブ
         .onebox
           .upbox
             %span.price ¥800
-            %img.image{:src => "https://i.pinimg.com/originals/52/ea/be/52eabecf424b217807d0e557b9a0c38e.jpg"}
+            = image_tag("https://i.pinimg.com/originals/52/ea/be/52eabecf424b217807d0e557b9a0c38e.jpg", class: "image")
           .downbox
             ギットハブ
         .onebox
           .upbox
             %span.price ¥10,000
-            %img.image{:src => "https://bacchi.me/wp-content/uploads/2014/06/github_img4.jpg"}
+            = image_tag("https://bacchi.me/wp-content/uploads/2014/06/github_img4.jpg", class: "image")
           .downbox
             ギットハブ
 
@@ -104,12 +93,13 @@
 
   .main__exhibit-btn
     %p
-    %a.e-btn{:href => "/"} 出品
+    = link_to '出品', '/' ,class: "e-btn"
+    %br
     %i.fas.fa-camera.fa-3x
 
 .footer
   .footer__upbox
-    %a= image_tag 'footer.jpg' ,class: "footer-image"
+    = image_tag "footer.jpg", class: "footer-image"
   .footer__downbox
     .footer__downbox__menu
       .group
@@ -151,6 +141,6 @@
           %li United States
 
     .footer__downbox__logobar
-      %a.logo{:href => "/"}= image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg' ,class: "m-logo"
+      = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "logo"), root_path
       %p.name ©️2019 Mercari
 
