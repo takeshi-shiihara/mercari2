@@ -1,0 +1,275 @@
+@mixin precautions{
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.item__content{
+  
+  .item__form__require{
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    color: white;
+    background-size: 14px;
+    background-color: red;
+    border-radius:2px;
+    vertical-align: top;
+
+
+  }
+  .item__select__list{
+    width: 400px;
+    padding: 0 16px;
+    height: 48px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+  }
+
+  .item__form__message{
+    color: #888;
+    font-size: 14px;
+    height: 13px;
+    float: left;
+  
+  }
+
+  .item__group__margin{
+    margin-top: 40px;
+    width: 400px;
+  }
+
+  .sell__content__item__form{
+    float: right;
+    width: 400px;
+    
+  }
+
+
+  
+  .fas.fa-chevron-down{
+    position: absolute;
+    z-index: 2;
+    left: 370px;
+    top: 17px;
+    color: #888;
+
+  }
+
+  .select__btn{
+    position: relative;
+  
+  }
+
+  .fa-question-circle{
+    color: deepskyblue;
+    text-decoration: none;
+  }
+
+
+  .item__header{
+    background: #f5f5f5;
+    height: 128px;
+    width: 100%;
+   
+
+      .item__main__image{
+        margin: 0 auto;
+        
+        height: 49px;
+        width: 185px;
+
+        .item__mercari{
+          margin-top: 40px;
+        }
+
+      }
+
+  }
+
+  .item__main{
+    width: 100%;
+    background: #f5f5f5;
+    height: 100%;  
+
+
+    .item__main__content{
+      background: white;
+      width: 700px;
+      margin:  0 auto;
+        
+        .head__message{  
+          padding: 32px 16px;
+          font-size: 22px;
+          text-align: center;
+          line-height: 1.5;
+          border-bottom:solid thin;
+          border-color:  #f5f5f5;
+
+        }
+
+          .sell__image__box{
+            border-bottom:solid thin;
+            border-color:  #f5f5f5;
+            padding: 40px;
+
+            .sell__image__box__upper{
+              font-size: 16px;
+            }
+            .item__upload__comments{
+              font-size: 12px;
+              margin: 8px 0 16px 0 ;
+
+            }
+            
+              .item__upload__box{
+                width: 97%;
+                padding: 10px;
+              }
+            
+          }
+
+               
+          .sell__content__item__name{
+            padding: 40px;
+            border-bottom:solid thin;
+            border-color:  #f5f5f5;
+            
+              
+                .input-default{
+                  padding: 10px 16px 8px;
+                  margin-top:8px;
+                  width: 95%;
+                  border-radius:2px;
+                }
+
+                #item__descriptioon{
+                  margin-top:40px;
+
+                .textarea-default{
+                  padding: 10px;
+                  margin-top:8px;
+                  width: 97%;
+
+                }
+
+              }
+
+            }
+
+          
+          .sell__content__items__detail{
+            padding: 40px;
+            height: 220px;
+            border-bottom:solid thin;
+            border-color:  #f5f5f5;
+
+          }
+
+          .sell__content__items__delibery{
+            padding: 40px;
+            height: 300px;
+            border-bottom:solid thin;
+            border-color:  #f5f5f5;
+
+          }
+
+
+          .sell__content__item__price{
+            padding: 40px;
+            height: 300px;
+            border-bottom:solid thin;
+            border-color:  #f5f5f5;
+
+            .sell__content__item__price__form{
+              float: right;
+              width: 400px;
+              list-style: none;
+
+
+              .comission{
+                height: 72px;
+                margin-top: 40px;
+                
+              }
+
+              .profit{
+                height: 72px;
+                margin-top: 40px;
+
+              }
+            }
+
+          }
+
+          .sell__content__item__submit{
+            padding: 40px;
+            height: 300px;
+
+            
+
+              .btn-default.btn-red{
+                color: #fff;
+                font-size: 14px;
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                width: 100%;
+                height: 50px;
+                margin-top: 40px;
+                border-radius:2px;
+
+              }
+
+              .btn-default.btn-gray{
+                background: #aaa;
+                border: 1px solid #aaa;
+                color: #fff;
+                font-size: 14px;
+                margin: 24px 170px 0px;
+                width: 45%;
+                height: 50px;
+                border-radius:2px;
+
+
+              }
+            
+          }
+
+      }
+    }
+
+  .item__footer{
+    background-color:#f5f5f5;
+    text-align: center;
+    .item__footer__box{
+      padding: 40px 0;
+
+
+    .item__footer_box__list{
+      text-align: center;
+
+        .text__clearfix__item{
+          
+          display: inline-block;
+
+          .head_up{
+            @include precautions;
+            color: #333333;
+            font-size: 12px;
+          }
+        }
+    }
+    
+    .single-footer-logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      }
+
+
+      .item__footer__logo{
+        font-size: 10px;
+      }
+  }
+  }
+
+}
