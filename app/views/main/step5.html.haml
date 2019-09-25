@@ -1,12 +1,38 @@
-= render partial: 'header'
+%body
+  .user__header
+    %header.user__header__aaaaaa
+      %h1
+        %a{:href => "#"}
+          %img{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3296506464"}/
+      %nav.progress
+        %ul.progress-bar
+          %li.progress_li_gray
+            会員情報
+            .progress_status_red
+            .progress-status_bar_1_red
+          %li.progress_li_gray
+            電話番号認証
+            .progress_status_red
+            .progress-status_bar_2_red
+          %li.progress_li_gray
+            お届け先住所入力
+            .progress_status_red
+            .progress-status_bar_3_red
+          %li.progress_li_gray
+            支払い方法
+            .progress_status_red
+            .progress-status_bar_4_red
+          %li.progress_li_red
+            完了
+            .progress_status_red
 
-.user__main
-  .user__main__container
-    %h2.user__main__registration 会員登録完了
-    .user__main__form
-      .user__main__form__container__step5
-        %h3.user__step5 ありがとうございます。
-        %h3.user__step5 会員登録が完了しました。
-        %submit.user__step5__submit__button メルカリをはじめる
+  .user__main
+    .user__main__container
+      %h2.user__main__registration 会員登録完了
+      .user__main__form
+        .user__main__form__container__step5
+          %h3.user__step5 ありがとうございます。
+          %h3.user__step5 会員登録が完了しました。
+          %submit.user__step5__submit__button メルカリをはじめる
 
 = render partial: 'footter'

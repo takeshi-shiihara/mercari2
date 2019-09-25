@@ -40,6 +40,7 @@
 .user__header img{
   width: 185px;
   height: 49px;
+  margin-top:40px;
 }
 .fix{
   margin-left:100px;
@@ -163,6 +164,10 @@ background-color: #ea352d;
   font-size: 5px;
 }
 
+/*---step0----*/
+
+
+
 /*--step2--*/
 .user__confirmation{
   margin-top:10px;
@@ -255,6 +260,7 @@ margin-top:50px;
 
 .user__header__aaaaaa{
   height: 128px;
+  width:750px;
   margin:0 auto;
   display: flex;
 }
@@ -262,12 +268,12 @@ margin-top:50px;
 .progress {
   border: 0;
   display: inline-block;
-  vertical-align: top;
   font-size: 0;
   text-align: center;
+  margin:35px 0 30px 40px;
 }
 
-.progress li{
+@mixin progress_li{
       margin: 0 35px 0 0;
       padding: 0;
       position: relative;
@@ -275,28 +281,82 @@ margin-top:50px;
       display: inline-block;
       min-width: 60px;
       font-size: 12px;
-      color: gray;
 }
-.progress-status{
+.progress_li_gray{
+  @include progress_li();
+  color: gray;
+}
+.progress_li_red{
+  @include progress_li();
+  color: red;
+}
+
+@mixin progress_status{
   position: absolute;
   left: 40%;
   width: 12px;
   height: 12px;
   margin: 8px auto 0;
-  background: gray;
   border-radius: 50%;
   z-index: 30;
   }
+.progress_status_gray{
+  @include progress_status();
+  background: gray;
+}
+.progress_status_red{
+  @include progress_status();
+  background: red;
+}
 
 // デフォルトのプログレスバー
-.progress-status_bar {
+@mixin progress-status_bar {
 position: absolute;
 left: 50%;
 top: 30px;
 bottom: 5px;
 display: block;
-width: 110px;
 height: 2px;
-background: gray;
 z-index: 10;
+}
+
+.progress-status_bar_1_gray{
+  @include progress-status_bar();
+  width: 100px;
+  background: gray;
+}
+.progress-status_bar_2_gray{
+  @include progress-status_bar();
+  width: 120px;
+  background: gray;
+}
+.progress-status_bar_3_gray{
+  @include progress-status_bar();
+  width: 110px;
+  background: gray;
+}
+.progress-status_bar_4_gray{
+  @include progress-status_bar();
+  width: 90px;
+  background: gray;
+}
+.progress-status_bar_1_red{
+  @include progress-status_bar();
+  width: 100px;
+  background: red;
+}
+.progress-status_bar_2_red{
+  @include progress-status_bar();
+  width: 120px;
+  background: red;
+}
+.progress-status_bar_3_red{
+  @include progress-status_bar();
+  width: 110px;
+  background: red;
+}
+.progress-status_bar_4_red{
+  @include progress-status_bar();
+  width: 90px;
+  background: red;
 }
