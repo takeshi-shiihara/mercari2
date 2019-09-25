@@ -1,0 +1,61 @@
+= render partial: 'header'
+.user__main
+  .user__main__container
+    %h2.user__main__registration 支払い方法
+    .user__main__form
+      .user__main__form__container
+        .user__field
+          %label.user__field__label カード番号
+          %span.user__field__span 必須
+          %br/
+          %input.user__text__field__step3{placeholder: "半角数字のみ"}
+        .user__field
+          %label.user__field__label 有効期限
+          %span.user__field__span 必須
+          %br/
+          %select.user__text__field__step4{name: "day"}>
+            %option{value: ""} -
+            %option{value: "1"} 1
+            %option{value: "2"} 2
+            %option{value: "3"} 3
+            %option{value: "4"} 4
+            %option{value: "5"} 5
+            %option{value: "6"} 6
+            %option{value: "7"} 7
+            %option{value: "8"} 8
+            %option{value: "9"} 9
+            %option{value: "10"} 10
+            %option{value: "11"} 11
+            %option{value: "12"} 12
+          %h4.user__field__step4__h4 月
+
+        .user__field__step4
+          %select.user__text__field__step4{name: "year"}>
+            %option{value: ""} -
+            %option{value: "19"} 19
+            %option{value: "20"} 20
+            %option{value: "21"} 21
+            %option{value: "22"} 22
+            %option{value: "23"} 23
+            %option{value: "24"} 24
+            %option{value: "25"} 25
+            %option{value: "26"} 26
+            %option{value: "27"} 27
+            %option{value: "28"} 28
+            %option{value: "29"} 29
+            %option{value: "30"} 30
+          %h4.user__field__step4__h4 年
+
+        .user__field__security__cord
+          %label.user__field__label セキュリティコード
+          %span.user__field__span 必須
+          %br/
+          %input.user__text__field__aaa{placeholder: "カード背面4桁もしくは3桁の番号"}
+
+        %p.user__confirmation__cardnumber
+          = link_to "？カード裏面の番号とは？>", "https://www.mercari.com/jp/privacy/"
+
+
+        %submit.user__step4__submit__button 次へ進む
+
+= render partial: 'footter'
