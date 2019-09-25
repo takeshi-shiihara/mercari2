@@ -14,8 +14,8 @@
     border-radius:2px;
     vertical-align: top;
 
-
   }
+
   .item__select__list{
     width: 400px;
     padding: 0 16px;
@@ -43,8 +43,6 @@
     width: 400px;
     
   }
-
-
   
   .fas.fa-chevron-down{
     position: absolute;
@@ -70,7 +68,6 @@
     float: left;
     margin-top: 15px;
   }
-
 
 
   .item__header{
@@ -192,9 +189,6 @@
               width: 400px;
               list-style: none;
 
-              
-                
-
 
               .item__selecter{
                 position: absolute;
@@ -274,11 +268,11 @@
   .item__footer{
     background-color:#f5f5f5;
     text-align: center;
-    .item__footer__box{
+    &__box{
       padding: 40px 0;
 
 
-    .item__footer_box__list{
+    &__list{
       text-align: center;
 
         .text__clearfix__item{
