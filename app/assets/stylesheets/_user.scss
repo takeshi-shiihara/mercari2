@@ -1,0 +1,140 @@
+/*--全体--*/
+.user__container{
+  background-color: rgb(245, 245, 245);
+}
+
+/*--ヘッダー--*/
+.user__container__header{
+  height: 128px;
+  text-align: center;
+  line-height: 177px;
+}
+.user__container__header img{
+  width: 185px;
+  height: 49px;
+}
+
+/*--会員情報入力--*/
+.user__container__main{
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.user__main__container__registration{
+  text-align:center;
+  font-size: 22px;
+  padding: 32px;
+  border-bottom:1px solid rgb(245, 245, 245);
+}
+
+.user__main__container__form{
+  margin: 0 auto;
+  padding-bottom:50px;
+}
+
+.user__main__container__form__container{
+  width:334px;
+  margin: 0 auto;
+}
+
+.user__field{
+  margin-top: 20px;
+}
+
+.user__field__label{
+  font-weight: 600;
+  text-align:left;
+  font-size:14px;
+  float:left;
+}
+
+.user__field__span{
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  background-color: #ea352d;
+  float:left;
+}
+.user__text__field{
+  margin: 3px 0 0;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width:300px;
+}
+.user__field__container{
+  width:334px;
+  display:flex;
+}
+
+.user__name__field{
+  width: calc(50% - 25px);
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right:5px;
+}
+
+.user__field__confirmation h3{
+  margin-top:15px;
+  font-weight: 600;
+  font-size:16px;
+}
+
+.user__field__confirmation p{
+  margin-top:8px;
+  font-size:14px;
+  color: rgb(51, 51, 51);
+}
+
+.user__field__xplanation{
+  margin-top:8px;
+  font-size:14px;
+  color: #888;
+}
+
+.user__field__next{
+  margin-top:10px;
+  text-align:center;
+  font-size:14px;
+}
+.user__name__aa{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  margin-top:20px;
+}
+
+.single-footer{
+  padding-top:30px;
+  width: 100%;
+  height: 200px;
+  background: rgb(245, 245, 245);
+  text-align: center;
+  color: #000;
+}
+
+.login-footer-list {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0 0;
+  a{
+    margin: 0 15px 0 15px;
+    font-size: 12px;
+    color: #333333;
+  }
+}
+.root__link__fooder{
+  margin-top:30px;
+  width:85px;
+}
+.login-footer-list-text{
+  font-size: 5px;
+}

@@ -1,0 +1,14 @@
+%footter.footter
+  .single-footer
+    %ul.login-footer-list
+      %li
+        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li
+        = link_to "メルカリ規約", "https://www.mercari.com/jp/privacy/"
+      %li
+        = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/privacy/" 
+    = link_to (root_path) do 
+      = image_tag  'https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464', class: 'root__link__fooder'    
+      
+    %p.login-footer-list-text
+      ©︎2019 Mercari
