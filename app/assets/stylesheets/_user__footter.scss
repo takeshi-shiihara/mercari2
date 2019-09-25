@@ -1,0 +1,26 @@
+.single-footer{
+  padding-top:30px;
+  width: 100%;
+  height: 200px;
+  background: rgb(245, 245, 245);
+  text-align: center;
+  color: #000;
+}
+
+.login-footer-list {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0 0;
+  a{
+    margin: 0 15px 0 15px;
+    font-size: 12px;
+    color: #333333;
+  }
+}
+.root__link__fooder{
+  margin-top:30px;
+  width:85px;
+}
+.login-footer-list-text{
+  font-size: 5px;
+}
