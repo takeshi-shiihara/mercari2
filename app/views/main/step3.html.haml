@@ -1,0 +1,41 @@
+= render partial: 'header'
+.user__main
+  .user__main__container
+    %h2.user__main__registration 住所入力
+    .user__main__form
+      .user__main__form__container
+        .user__field
+          %label.user__field__label 郵便番号
+          %span.user__field__span 必須
+          %br/
+          %input.user__text__field__step3{placeholder: "例）123-4567"}
+
+          %label.user__field__label 都道府県
+          %span.user__field__span 必須
+          %br/
+          %input.user__text__field__step3{placeholder: "北海道"}
+
+          %label.user__field__label 市区町村
+          %span.user__field__span 必須
+          %br/
+          %input.user__text__field__step3{placeholder: "例）横浜市緑区"}
+
+          %label.user__field__label 番地
+          %span.user__field__span 必須
+          %br/
+          %input.user__text__field__step3{placeholder: "例）青山1-1-1"}
+
+          %label.user__field__label 建物名
+          %span.user__field__span__step3 任意
+          %br/
+          %input.user__text__field__step3{placeholder: "例）柳ビル103"}
+
+          %label.user__field__label 電話
+          %span.user__field__span__step3 任意
+          %br/
+          %input.user__text__field__step3{placeholder: "例）09012345678"}
+
+          %submit.user__step2__submit__button 次へ進む
+
+
+= render partial: 'footter'
