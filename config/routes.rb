@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'step4' => 'main#step4'
   get 'step5' => 'main#step5'
   get 'logout' => 'main#logout'
+  get 'userinfomation' => 'main#userinfomation'
   get 'hop1' => 'item#hop1'
-  
+
 end

@@ -1,0 +1,114 @@
+%body.mypage1__logout
+  = render partial: 'mypagerender'
+
+  .info__right
+    .info__right__container
+      %h2.info__right__container__registration 本人情報の登録
+      .info__main
+        %p お客さまの本人情報をご登録ください。
+        %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        =link_to "#", class: :"info__main__toplink" do
+          本人確認書類のアップロードについて
+          %i.fas.fa-chevron-right
+        %h3.info__main__h3 お名前
+        %h4.info__main__h4 ムスカ 大佐
+        %h3.info__main__h3 お名前カナ
+        %h4.info__main__h4 ムスカ タイサ
+        %h3.info__main__h3 生年月日
+        %h4.info__main__h4 1992/08/08
+
+        .info__main__container
+          %label.info__main__container__h3 郵便番号
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        .info__main__container
+          %label.info__main__container__h3 都道府県
+          %span.info__main__container__span 任意
+          %br/
+          %div.info__main__container__btn
+            %i.fas.fa-chevron-left
+            %select.info__main__container__celect{name: "day"}>
+              %option{value: "奈良県"} 奈良県
+              %option{value: "大阪府"} 大阪府
+              %option{value: "京都府"} 京都府
+          -# %input.info__main__container__field{placeholder: "仮置き"}
+          -#   %i.fas.fa-chevron-down
+
+        .info__main__container
+          %label.info__main__container__h3 市区町村
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        .info__main__container
+          %label.info__main__container__h3 番地
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        .info__main__container
+          %label.info__main__container__h3 建物名
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        %submit.info__main__button 登録する
+
+        =link_to "#", class: :"info__main__bottomlink" do
+          本人情報の登録について
+          %i.fas.fa-chevron-right
+
+  .main__exhibit-btn
+    %p
+    = link_to '出品', '/' ,class: "e-btn"
+    %br
+    %i.fas.fa-camera.fa-3x
+
+.footer
+  .footer__upbox
+    = image_tag "footer.jpg", class: "footer-image"
+  .footer__downbox
+    .footer__downbox__menu
+      .group
+        %h3 メルカリについて
+        %ul
+          %li 会社概要（運営会社）
+          %li 採用情報
+          %li プレスリリース
+          %li 公式ブログ
+          %li メルカリロゴ利用ガイドライン
+      .group
+        %h3 ヘルプ＆ガイド
+        %ul
+          %li メルカリガイド
+          %li らくらくメルカリ便
+          %li ゆうゆうメルカリ便
+          %li 大型メルカリ便
+          %li 車体取引ガイド
+          %li メルカリあんしん・あんぜん宣言！
+          %li 偽ブランド品撲滅への取り組み
+          %li メルカリボックス
+      .group
+        %h3 プライバシーと利用規約
+        .group__list2
+          %ul.leftlist
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li あんしんスマホサポート制度に関する利用規約
+            %li コンプライアンスポリシー
+          %ul.rightlist
+            %li 個人データの安全管理に係る基本方針
+            %li 特定商取引に関わる表記
+            %li 資金決済法に基づく表示
+            %li 法令順守と犯罪抑止のために
+      .group
+        %h3 国
+        %ul
+          %li 日本
+          %li United States
+
+    .footer__downbox__logobar
+      = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "logo"), root_path
+      %p.name ©️2019 Mercari
