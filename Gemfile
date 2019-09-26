@@ -76,3 +76,10 @@ gem 'capistrano-rbenv'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano3-unicorn'
+
+gem 'pry-rails'
+gem "jquery-rails"
+gem 'kaminari'
+gem 'active_hash'
+gem 'ancestry'
+gem 'payjp'
