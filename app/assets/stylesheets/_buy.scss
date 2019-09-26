@@ -43,11 +43,11 @@
           margin-top: 8px;
           width: 100%;
 
-          .buy-main__content__item__price{
+          &__price{
             font-weight: bold;
             font-size: 16px;
 
-            .buy-main__content__item__commission{
+            &__commission{
               font-weight: 600;
               font-size: 12px;
               margin-left: 10px;
@@ -139,7 +139,7 @@
 
        }
         
-        .buy-main__content__user__text{
+        &__text{
           width: calc(100% - 80px);
           margin: 0 0 0 16px;
           text-align: left;
@@ -215,7 +215,7 @@
 
         }
       }
-  }
-  }
+    }
+   }
   }
 }
