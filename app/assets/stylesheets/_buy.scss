@@ -2,7 +2,6 @@
   width: 100vw;
   height: 100%;
   
-
   &__content{
     width: 700px;
     background-color: white;
@@ -44,29 +43,29 @@
           margin-top: 8px;
           width: 100%;
 
-
           .buy-main__content__item__price{
+            font-weight: bold;
+            font-size: 16px;
 
             .buy-main__content__item__commission{
-
+              font-weight: 600;
+              font-size: 12px;
+              margin-left: 10px;
             }
 
           }
           .buy-main__content__item__point{
             margin: 16px 0 0;
 
-            .buy-main__content__item__num{
-
               .buy-main__content__item__num__form{
                 background-color:rgb(204, 204, 204);
                 padding: 16px;
               }
-
-            }
           }
           .buy-main__content__item__pay{
 
-            .buy-main__content__item__pay__num{
+            &__num{
+              font-size: 18px;
               width: 100%;
               display: flex;
               margin: 8px 0 0 ;
@@ -74,6 +73,7 @@
               
 
               .buy-main__content__item__you__pay{
+                font-weight: bold;
                 width: 60%;
                 display: table-cell;
                 padding: 16px 0;
@@ -82,14 +82,11 @@
               }
 
               .buy-main__content__item__buy__num{
+                font-weight: bold;
                 width: 40%;
                 display: table-cell;
                 padding: 16px 0;
                 text-align: right;
-
-                .item-num{
-
-                }
 
               }
 
@@ -109,19 +106,13 @@
           }
 
         }
-
-
-        
-
        
-
       }
-
 
     }
 
     .buy-main__content__user__info{
-      padding: 24px 87.5px;
+      padding: 24px 87.5px 60px;
       max-width: 100%;
       margin: 0 auto;
       border-bottom: solid thin ;
@@ -134,7 +125,6 @@
         flex-wrap: wrap;
         width: 100%;;
         
-
         .buy-delibery-address{
           color: black;
           font-weight: bold;
@@ -142,9 +132,11 @@
 
         }
         .buy-delibery-address__users{
+          font-weight: thin;
             margin: 8px 0 0;
-            font-size: 14px;
+            font-size: 12px;
             line-height: 0.7;
+
        }
         
         .buy-main__content__user__text{
@@ -157,31 +149,25 @@
         }
 
         .buy-user-info-fix{
+          display: inline-block;
           position: relative;
           font-size: 14px;
-          color: aqua;
-          display: block;
-          text-align: right;
+          color: #0099E8;
+          float: right;
+          left: 16px;
+          text-decoration: none;
 
           .fas.fa-chevron-right{
-            position: absolute;
-            right: -20px;
-            top: 3px;
+            margin-left: 8px;
 
           }
 
         }
 
-
-
-
-
-
-
     }
   }
   .buy-main__content__pay__info{
-      padding: 24px 87.5px;
+      padding: 24px 87.5px 60px;
       max-width: 100%;
       margin: 0 auto;
       .buy-main__content__user__inner{
@@ -189,9 +175,6 @@
         max-width: 320px;
         flex-wrap: wrap;
         width: 100%;;
-
-      
-      
 
       .buy-how-to-pay{
         color: black;
@@ -203,7 +186,7 @@
         font-size: 14px;
         line-height: 0.7;
 
-        .buy-main__content__user__card__num{
+        &__num{
           margin-bottom: 4px;
           font-size: 12px;
         }
@@ -219,30 +202,20 @@
       }
 
       .buy-user-info-fix{
+        display: inline-block;
         position: relative;
         font-size: 14px;
-        color: aqua;
-        display: block;
-        text-align: right;
+        color: #0099E8;
+        float: right;
+        left: 16px;
+        text-decoration: none;
 
         .fas.fa-chevron-right{
-          position: absolute;
-          right: -20px;
-          top: 3px;
+          margin-left: 8px;
 
         }
       }
-
-
   }
-
   }
-  
-
   }
-
-
-
-
-
 }
