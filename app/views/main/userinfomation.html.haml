@@ -1,0 +1,54 @@
+%body.mypage1__logout
+  = render partial: 'mypagerender'
+
+  .info__right
+    .info__right__container
+      %h2.info__right__container__registration 本人情報の登録
+      .info__main
+        %p お客さまの本人情報をご登録ください。
+        %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        =link_to "#", class: :"info__main__link" do
+          本人確認書類のアップロードについて
+          %i.fas.fa-chevron-right
+        %h3.info__main__h3 お名前
+        %h4.info__main__h4 ムスカ 大佐
+        %h3.info__main__h3 お名前カナ
+        %h4.info__main__h4 ムスカ タイサ
+        %h3.info__main__h3 生年月日
+        %h4.info__main__h4 1992/08/08
+
+        .info__main__container
+          %label.info__main__container__h3 郵便番号
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        .info__main__container
+          %label.info__main__container__h3 都道府県
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        .info__main__container
+          %label.info__main__container__h3 市区町村
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        .info__main__container
+          %label.info__main__container__h3 番地
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        .info__main__container
+          %label.info__main__container__h3 建物名
+          %span.info__main__container__span 任意
+          %br/
+          %input.info__main__container__field{placeholder: "仮置き"}
+
+        %submit.info__main__button 登録する
+
+        =link_to "#", class: :"info__main__link" do
+          本人情報の登録について
+          %i.fas.fa-chevron-right
