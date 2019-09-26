@@ -1,22 +1,3 @@
-.mypage1__logout{
-  height:1400px;
-  background-color:rgb(245, 245, 245);
-}
-
-.mypage1_left{
-width:280px;
-margin: 50px 0 0 180px;
-float:left;
-}
-
-.mypage1__left__main{
-  width:280px;
-  background-color:gray;
-  display: flex;
-  flex-direction: column;
-}
-
-
 @mixin mypage1__box{
   height: 48px;
   padding: 16px;
@@ -40,57 +21,71 @@ float:left;
 }
 }  
 
-.mypage1__main__container{
-  @include mypage1__box();
-  border-bottom:1px solid rgb(213, 211, 211);
-}
-
-.mypage1__main__container__end{
-  @include mypage1__box();
-}
-
-.mypage1__main__container:hover,
-.mypage1__main__container__end:hover{
+.mypage1__logout{
+  height:1400px;
   background-color:rgb(245, 245, 245);
-  & i{
-    color:black;
-    -webkit-transform: translateX(5px);
-    -ms-transform: translateX(5px);
-    transform: translateX(5px);
-  }
 }
 
-.mypage1__h3{
-  color:black;
-  margin-top:30px;
+.mypage1__left{
+  width:280px;
+  margin: 50px 0 0 180px;
+  float:left;
+
+    &__main{
+      width:280px;
+      background-color:gray;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__h3{
+      color:black;
+      margin-top:30px;
+    }
+
+    .mypage1__main__container{
+      @include mypage1__box();
+      border-bottom:1px solid rgb(213, 211, 211);
+    }
+
+    .mypage1__main__container__end{
+      @include mypage1__box();
+    }
+
+    .mypage1__main__container:hover,
+    .mypage1__main__container__end:hover{
+      background-color:rgb(245, 245, 245);
+      & i{
+        color:black;
+        -webkit-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        transform: translateX(5px);
+      }
+    }
+
 }
 
 .mypage1_right{
   float:left;
   margin:50px 0 0 100px;
-}
 
-.mypage1__right__logout{
-  height:179px;
-  min-width:700px;
-  background-color: white;
-  position: relative;
-}
+  .mypage1__right__logout{
+    height:179px;
+    min-width:700px;
+    background-color: white;
+    position: relative;
 
-.mypage1__right__logout__button{
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
-  display: block;
-  width: 320px;
-  height:50px;
-  line-height: 48px;
-  font-size: 14px;
-  text-align:center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+    &__button{
+      @include submit__button();
+      width: 320px;
+      height:50px;
+      text-align:center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+  }
 }

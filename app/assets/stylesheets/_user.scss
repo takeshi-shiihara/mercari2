@@ -24,6 +24,7 @@
   float:left;
 }
 
+
 /*--全体--*/
 .user__header{
   background-color: rgb(245, 245, 245);
@@ -49,7 +50,6 @@
 }
 .user__header__ul li{
   display:inline-block;
-  font-size:14px;
   margin:0 10px 0;
   height: 128px;
 }
@@ -63,56 +63,55 @@
   margin: 0 auto;
   background-color: #fff;
   padding-bottom:150px;
+
+    .user__main__registration{
+      text-align:center;
+      font-size: 22px;
+      padding: 32px;
+      border-bottom:1px solid rgb(245, 245, 245);
+      font-weight: 600;
+    }
+    .user__main__form__container{
+      width:334px;
+      margin: 0 auto;
+    }
 }
 
-.user__main__registration{
-  text-align:center;
-  font-size: 22px;
-  padding: 32px;
-  border-bottom:1px solid rgb(245, 245, 245);
-  font-weight: 600;
-}
-
-.user__main__form__container{
-  width:334px;
-  margin: 0 auto;
-}
 
 .user__field{
   margin-top: 20px;
+
+    &__label{
+      font-weight: 600;
+      text-align:left;
+      font-size:14px;
+      float:left;
+    }
+    &__span{
+    @include user__field__span();
+    background-color: #ea352d;
+    }
+    &__container{
+      width:334px;
+      display:flex;
+    }
+    .user__text__field{
+      @include user__text__field();
+      margin: 3px 0 0;
+      width:300px;
+    }
 }
 
-.user__field__label{
-  font-weight: 600;
-  text-align:left;
-  font-size:14px;
-  float:left;
-}
-
-.user__field__span{
-@include user__field__span();
-background-color: #ea352d;
-}
-
-.user__field__container{
-  width:334px;
-  display:flex;
-}
-
-.user__text__field{
-  @include user__text__field();
-  margin: 3px 0 0;
-  width:300px;
-}
 .user__name__field{
   @include user__text__field();
   width: calc(50% - 25px);
   margin-right:5px;
-}
-.user__field__confirmation h3{
-  margin-top:15px;
-  font-weight: 600;
-  font-size:16px;
+
+    .user__field__confirmation h3{
+      margin-top:15px;
+      font-weight: 600;
+      font-size:16px;
+    }
 }
 
 .user__field__confirmation p{
@@ -288,12 +287,22 @@ background-color: #ea352d;
 
 .user__field__security__cord{
   margin-top: 50px;
-}
 
-.user__text__field__aaa{
-  @include user__text__field();
-  width:300px;
-  margin:5px 0 0 0;
+  .user__field__label{
+    font-weight: 600;
+    text-align:left;
+    font-size:14px;
+    float:left;
+  }
+  .user__field__span{
+  @include user__field__span();
+  background-color: #ea352d;
+  }
+  .user__text__field__aaa{
+    @include user__text__field();
+    width:300px;
+    margin:5px 0 0 0;
+  }
 }
 
 .user__confirmation__cardnumber{
