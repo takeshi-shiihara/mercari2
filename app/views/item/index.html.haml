@@ -1,5 +1,8 @@
 %head
   %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
+  :css
+    a:hover   { text-decoration: underline; }
+
 
 
 %body
@@ -20,23 +23,86 @@
             .item-box__main__photo__dots__dot__inner
               %image.item-box__main__photo__dots__dot__inner__image{alt: "ムスカ", src: "https://blog-001.west.edge.storage-yahoo.jp/res/blog-35-ac/ryutarou184/folder/432793/55/2276055/img_0"}
               /全商品を表示
-    %table.item-box__main__table
-      %tbody
-        %tr
-          %th 出品者
-          %td 
-            ムスカ大佐
-            /= link_to 出品してるユーザーへ
-            %div
-              .item-user-rating
-                %i.fas.fa-laugh-squint
-                %span 100
-                /評価を実装できたらここに持ってくる
-              .item-user-rating
-                %i.fas.fa-meh
-                %span 0
-              .item-user-rating
-                %i.fas.fa-tired
-                %span 0
-        %tr
-          %th カテゴリー
+      %table.item-box__main__table
+        %tbody
+          %tr
+            %th 出品者
+            %td 
+              %a ムスカ大佐
+              /'出品してるユーザーへ
+              %div
+                .item-user-rating
+                  %i.fas.fa-laugh-squint
+                  %span 0
+                  /評価を実装できたらここに持ってくる
+                .item-user-rating
+                  %i.fas.fa-meh
+                  %span 0
+                .item-user-rating
+                  %i.fas.fa-tired
+                  %span 10000
+          %tr
+            %th カテゴリー
+            %td
+              %a
+                /カテゴリ(親)
+                %div ラピュタ
+                /カテゴリ名が表示される
+              %a
+                /カテゴリ(子)
+                %div
+                  %i.fas.fa-angle-right
+                  見ろ
+              %a
+                /カテゴリ(孫)
+                %div
+                  %i.fas.fa-angle-right
+                  人がゴミのようだ
+          %tr
+            %th ブランド
+            %td
+              %a
+                /ブランドへのリンク
+                ジブリ
+                /ブランド名
+          %tr
+            %th 商品の状態
+            %td 人として汚れあり
+          %tr
+            %th 配送料の負担
+            %td 送料別
+          %tr
+            %th 配送の方法
+            %td 飛行石
+          %tr
+            %th 配送元地域
+            %td
+              %a 天空の城
+              /出品者の都道府県
+          %tr
+            %th 発送日の目安
+            %td 3分間待ってやる
+    .item-box__price
+      %span.item-box__price__bold $1,000,000
+      %span.tax (税込)
+      %span.shipping 送料別
+      /送料を表示
+    %a.buy-bottun 購入画面に進む
+    /商品購入画面へのリンク
+    .description
+      %p 常に吠える。エサをやり忘れると噛み付きますがご使用上の問題は特にありません。激カワ超オススメ！
+      /商品の説明を表示
+    .container
+      .container__left
+        %button.button-like
+          %i.fas.fa-thumbs-up
+          %span 不错!
+          %span.fade-in-down -10000
+          /ここにイイね数
+        %a.report
+          %i.fas.fa-wifi
+          %span 不適切な商品の報告
+      .container__right
+        %a 
+          %i.fas.fa-briefcase
+          %span あんしん・あんぜんへの取り組み

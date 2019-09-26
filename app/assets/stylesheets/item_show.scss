@@ -1,0 +1,265 @@
+// Place all the styles related to the item controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+i {
+  display: inline-block;
+  font-family: 'icon-font';
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+  height: 1000px;
+  background-color: rgb(245, 245, 245);
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  .item-box {
+    height: 1000px;
+    background: #fff;
+    margin: 40px 370px 0;
+    padding: 24px 40px 40px;
+    &__name {
+      width: 620px;
+      height: 66px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__main {
+      margin: 16px 0 0;
+      box-sizing: inherit;
+      height: 420px;
+      &__photo {
+        float: left;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 375px;
+        &__upper {
+          position: relative;
+          overflow: hidden;
+          &__stage {
+            position: relative;
+            width: 100%;
+            &__active {
+              min-height: 1px;
+              width: 300px;
+              float: left;
+              &__inner {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding: 0 0 100%;
+                &__image {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        &__dots {
+          line-height: 0;
+          background-color: rgb(245, 245, 245);
+          &__dot {
+            width: 60px;
+            height: 60px;
+            max-height: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            opacity: .4;
+            cursor: pointer;
+            span {
+              display: none;
+            }
+            &__inner {
+              position: static;
+              width: auto;
+              height: auto;
+              padding: 0;
+              overflow: hidden;
+              &__image {
+                width: 100%;
+                vertical-align: bottom;
+              }
+            }
+          }
+        }
+      }
+      &__table {
+        float: right;
+        max-width: 300px;
+        height: 420px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border: 1px solid #f5f5f5;
+        tbody {
+          tr {
+            display: table-row;
+            border-color: inherit;
+            th {
+              width: 39%;
+              text-align: left;
+              font-weight: 400;
+              background: #fafafa;
+              padding: 8px;
+              border: 1px solid #f5f5f5;
+            }
+            td {
+              width: 61%;
+              background: #fff;
+              display: table-cell;
+              padding: 8px;
+              border: 1px solid #f5f5f5;
+              a {
+                color: #0099e8;
+                touch-action: manipulation;
+              }
+              .item-user-rating:first-child {
+                margin: 0;
+              }
+              .item-user-rating {
+                display: inline-block;
+                margin: 8px 0 0 16px;
+                i {
+                  font-size: 16px;
+                  vertical-align: middle;
+                }
+                .fas.fa-laugh-squint{
+                  color: #ef5185;
+                }
+                span {
+                  vertical-align: middle;
+                  color: #333;
+                  font-size: 14px;
+                }
+                .fas.fa-meh {
+                  color: #fba933;
+                }
+                .fas.fa-tired {
+                  color: #6ab5d8;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__price {
+      margin: 24px 0 0 ;
+      text-align: center;
+      &__bold {
+        margin: 0 16px 0 0;
+        font-size: 50px;
+        font-weight: 600;
+      }
+      .tax {
+        font-size: 10px;
+      }
+      .shipping {
+        font-size: 16px;
+      }
+    }
+    .buy-bottun {
+      font-size: 24px;
+      line-height: 60px;
+      display: block;
+      margin-top: 16px;
+      background: #ea352d;
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all ease-out .3s;
+    }
+    .description {
+      padding-top: 32px;
+      p {
+        white-space: pre-wrap;
+      }
+    }
+    .container {
+      margin: 16px 0 0;
+      font-size: 0;
+      &__left {
+        float: left;
+        .button-like {
+          color: #333;
+          border: 1px solid #f5f5f5;
+          background: #f5f5f5;
+          padding: 8px 16px;
+          border-radius: 40px;
+          transition: all ease-out .3s;
+          min-height: 1.5em;
+          cursor: pointer;
+          .fas {
+            font-size: 14px;
+            vertical-align: middle;
+            color: #ccc;
+          }
+          span {
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+          }
+          .fade-in-down {
+            animation: fade-in-down ease-out .4s forwards;
+          }
+        }
+        .report {
+          color: #333;
+          display: inline-block;
+          background: #f5f5f5;
+          margin: 0 0 0 16px;
+          padding: 8px 16px;
+          border-radius: 40px;
+          transition: all ease-out .3s;
+          text-decoration: none;
+          touch-action: manipulation;
+          cursor: pointer;
+          .fas.fa-wifi {
+            font-size: 14px;
+            vertical-align: middle;
+            color: #ccc;
+          }
+          span {
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+      &__right{
+        margin: 8px 0 0 ;
+        float: right;
+        a {
+          display: inline-block;
+          color: #0099e8;
+          text-decoration: none;
+          .fas.fa-briefcase {
+            font-size: 14px;
+            vertical-align: middle;
+          }
+          span {
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
