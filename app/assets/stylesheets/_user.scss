@@ -166,6 +166,79 @@ background-color: #ea352d;
 
 /*---step0----*/
 
+.user__header__sns{
+  height: 128px;
+  line-height: 177px;
+  text-align: center;
+}
+.user__field__mail{
+  background-color:#eee;
+  height:50px;
+  margin-top:30px;
+  position: relative;
+  & i{
+    font-size:20px;
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    color:#ccc;
+  }
+  & p{
+    font-size:14px;
+    line-height: 50px;
+    text-align:center;
+  }
+}
+.user__field__fb{
+  background-color:#385185;
+  height:50px;
+  margin-top:30px;
+  position: relative;
+  & i{
+    font-size:20px;
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    color:white;
+  }
+  & p{
+    font-size:14px;
+    line-height: 50px;
+    text-align:center;
+    color:white;
+  }
+}
+
+.user__field__google{
+  background-color:white;
+  height:50px;
+  margin-top:30px;
+  position: relative;
+  border:1px solid black;
+  & i{
+    font-size:20px;
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    color:rainbow;
+  }
+  & p{
+    font-size:14px;
+    line-height: 50px;
+    text-align:center;
+  }
+}
+.underbar__mail{
+  text-decoration: none;
+  color:black;
+}
+.underbar__fb{
+  text-decoration: none;
+}
+.underbar__google{
+  text-decoration: none;
+  color:black;
+}
 
 
 /*--step2--*/
@@ -178,7 +251,7 @@ background-color: #ea352d;
 
 .user__step2__submit__button{
   @include submit__button();
-margin-top:50px;
+  margin-top:50px;
   text-align:center;
 }
 
@@ -258,7 +331,7 @@ margin-top:50px;
 
 //ヘッダーの編集画面
 
-.user__header__aaaaaa{
+.user__header__nav{
   height: 128px;
   width:750px;
   margin:0 auto;
@@ -274,13 +347,13 @@ margin-top:50px;
 }
 
 @mixin progress_li{
-      margin: 0 35px 0 0;
-      padding: 0;
-      position: relative;
-      z-index: 40;
-      display: inline-block;
-      min-width: 60px;
-      font-size: 12px;
+  margin: 0 35px 0 0;
+  padding: 0;
+  position: relative;
+  z-index: 40;
+  display: inline-block;
+  min-width: 60px;
+  font-size: 12px;
 }
 .progress_li_gray{
   @include progress_li();
@@ -359,4 +432,104 @@ z-index: 10;
   @include progress-status_bar();
   width: 90px;
   background: red;
+}
+
+
+
+
+body{
+  height:1400px;
+  background-color:rgb(245, 245, 245);
+}
+
+.mypage1_left{
+width:280px;
+margin: 50px 0 0 180px;
+float:left;
+}
+
+.mypage1__left__main{
+  width:280px;
+  background-color:gray;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@mixin mypage1__box{
+  height: 48px;
+  padding: 16px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+  display: block;
+  text-decoration:none;
+
+  & i{
+  position:absolute;
+  top:20px;
+  right:20px;
+  color:rgb(213, 211, 211);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+}  
+
+.mypage1__main__container{
+  @include mypage1__box();
+  border-bottom:1px solid rgb(213, 211, 211);
+}
+
+.mypage1__main__container__end{
+  @include mypage1__box();
+}
+
+.mypage1__main__container:hover,
+.mypage1__main__container__end:hover{
+  background-color:rgb(245, 245, 245);
+  & i{
+    color:black;
+    -webkit-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+}
+
+.mypage1__h3{
+  color:black;
+  margin-top:30px;
+}
+
+.mypage1_right{
+  float:left;
+  margin:50px 0 0 100px;
+}
+
+.mypage1__right__logout{
+  height:179px;
+  min-width:700px;
+  background-color: white;
+  position: relative;
+}
+
+.mypage1__right__logout__button{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 320px;
+  height:50px;
+  line-height: 48px;
+  font-size: 14px;
+  text-align:center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'step3' => 'main#step3'
   get 'step4' => 'main#step4'
   get 'step5' => 'main#step5'
-
+  get 'logout' => 'main#logout'
 
 end

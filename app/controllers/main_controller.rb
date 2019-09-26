@@ -20,6 +20,9 @@ class MainController < ApplicationController
   def step5
   end
 
+  def logout
+  end
+
   private
 #  def move_to_index  #ログインしていない時は出品できない仕様#
 #    redirect_to action: :index unless user_signed_in?
