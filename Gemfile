@@ -84,3 +84,4 @@ gem 'active_hash'
 gem 'ancestry'
 gem 'payjp'
 gem 'gretel'
+gem "dropzonejs-rails"
