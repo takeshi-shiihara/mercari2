@@ -6,6 +6,9 @@ class ItemController < ApplicationController
   def show
   end
 
+  def hop1
+  end
+
   def new
   end
 
