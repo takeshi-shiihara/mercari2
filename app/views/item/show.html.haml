@@ -1,0 +1,204 @@
+%head
+  %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
+  :css
+    a:hover   { text-decoration: underline; }
+
+
+
+%body
+  %section.item-box
+    %h1.item-box__name わたしを購入したまえ
+    /商品の名前
+    .item-box__main
+      .item-box__main__photo
+        .item-box__main__photo__upper
+          .item-box__main__photo__upper__stage
+            .item-box__main__photo__upper__stage__active
+              .item-box__main__photo__upper__stage__active__inner
+                %image.item-box__main__photo__upper__stage__active__inner__image{alt: "ムスカ", src: "https://pbs.twimg.com/media/CpFvBf7VMAAcnkA.jpg"}
+                /商品の画像
+        .item-box__main__photo__dots
+          .item-box__main__photo__dots__dot
+            %span
+            .item-box__main__photo__dots__dot__inner
+              %image.item-box__main__photo__dots__dot__inner__image{alt: "ムスカ", src: "https://pbs.twimg.com/media/CpFvBf7VMAAcnkA.jpg"}
+              /全商品を表示
+      %table.item-box__main__table
+        %tbody
+          %tr
+            %th 出品者
+            %td 
+              %a ムスカ大佐
+              /'出品してるユーザーへ
+              %div
+                .item-user-rating
+                  %i.fas.fa-laugh-squint
+                  %span 0
+                  /評価を実装できたらここに持ってくる
+                .item-user-rating
+                  %i.fas.fa-meh
+                  %span 0
+                .item-user-rating
+                  %i.fas.fa-tired
+                  %span 10000
+          %tr
+            %th カテゴリー
+            %td
+              %a
+                /カテゴリ(親)
+                %div ラピュタ
+                /カテゴリ名が表示される
+              %a
+                /カテゴリ(子)
+                %div
+                  %i.fas.fa-angle-right
+                  見ろ
+              %a
+                /カテゴリ(孫)
+                %div
+                  %i.fas.fa-angle-right
+                  人がゴミのようだ
+          %tr
+            %th ブランド
+            %td
+              %a
+                /ブランドへのリンク
+                ジブリ
+                /ブランド名
+          %tr
+            %th 商品の状態
+            %td 人として汚れあり
+          %tr
+            %th 配送料の負担
+            %td 送料別
+          %tr
+            %th 配送の方法
+            %td 飛行石
+          %tr
+            %th 配送元地域
+            %td
+              %a 天空の城
+              /出品者の都道府県
+          %tr
+            %th 発送日の目安
+            %td 3分間待ってやる
+    .item-box__price
+      %span.item-box__price__bold $1,000,000
+      %span.tax (税込)
+      %span.shipping 送料別
+      /送料を表示
+    %a.buy-bottun 購入画面に進む
+    /商品購入画面へのリンク
+    .description
+      %p 常に吠える。エサをやり忘れると噛み付きますがご使用上の問題は特にありません。人語理解！激カワ超オススメ!!
+      /商品の説明を表示
+    .container
+      .container__left
+        %button.button-like
+          %i.fas.fa-thumbs-up
+          %span 不错!
+          %span.fade-in-down -100
+          /ここにイイね数
+        %a.report
+          %i.fas.fa-wifi
+          %span 不適切な商品の報告
+      .container__right
+        %a 
+          %i.fas.fa-briefcase
+          %span あんしん・あんぜんへの取り組み
+  .item-message
+    .item-message__main
+      .item-message__main__content
+        = form_with 
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.text_field
+        %button.message-button
+          %span コメントする
+  %ul.prev-next-link
+    %li.prev-link
+      %a
+        %i.fas.fa-angle-left
+        魔女の脱臼瓶
+        /前のリンク
+    %li.next-link
+      %a
+        風呂の水がヘルシア
+        /次のリンク
+        %i.fas.fa-angle-right
+  .item-socialmedia
+    %ul.item-socialmedia__box
+      %li
+        %a{ href: 'https://www.facebook.com'}
+          %i.fab.fa-facebook-square
+      %li
+        %a{ href: 'https://twitter.com/' }
+          %i.fab.fa-twitter
+      %li
+        %a{ href: 'https://www.pinterest.jp/'}
+          %i.fab.fa-pinterest
+      %li
+        %a.insta_btn{ href: 'https://www.instagram.com/'}
+          %span.insta
+            %i.fab.fa-instagram
+      %li
+        %a.line-btn{ href: 'https://line.me/ja/'}
+          %i.fab.fa-line
+  .item-user-profiele
+    %section
+      %h2 
+        = link_to 'ムスカ大佐のその他の出品' 
+        /出品者のマイページへ
+      
+      .main__contents__itemlist__items
+        .onebox
+          .upbox
+            %span.price ¥800
+            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg/540px-David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg", class: "image")
+          .downbox
+            ナポレオン・ボナパルト
+.footer
+  .footer__upbox
+    = image_tag "footer.jpg", class: "footer-image"
+  .footer__downbox
+    .footer__downbox__menu
+      .group
+        %h3 メルカリについて
+        %ul
+          %li 会社概要（運営会社）
+          %li 採用情報
+          %li プレスリリース
+          %li 公式ブログ
+          %li メルカリロゴ利用ガイドライン
+      .group
+        %h3 ヘルプ＆ガイド
+        %ul
+          %li メルカリガイド
+          %li らくらくメルカリ便
+          %li ゆうゆうメルカリ便
+          %li 大型メルカリ便
+          %li 車体取引ガイド
+          %li メルカリあんしん・あんぜん宣言！
+          %li 偽ブランド品撲滅への取り組み
+          %li メルカリボックス
+      .group
+        %h3 プライバシーと利用規約
+        .group__list2
+          %ul.leftlist
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li あんしんスマホサポート制度に関する利用規約
+            %li コンプライアンスポリシー
+          %ul.rightlist
+            %li 個人データの安全管理に係る基本方針
+            %li 特定商取引に関わる表記
+            %li 資金決済法に基づく表示
+            %li 法令順守と犯罪抑止のために
+      .group
+        %h3 国
+        %ul
+          %li 日本
+          %li United States
+
+    .footer__downbox__logobar
+      = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "logo"), root_path
+      %p.name ©️2019 Mercari

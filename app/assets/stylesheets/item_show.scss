@@ -6,7 +6,6 @@
 i {
   display: inline-block;
   font-family: 'icon-font';
-  speak: none;
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
@@ -15,16 +14,16 @@ i {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  cursor: pointer;
-}
+
 
 body {
-  height: 1000px;
   background-color: rgb(245, 245, 245);
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  a {
+    cursor: pointer;
+    color: #0099e8;
+  }
   .item-box {
-    height: 1000px;
     background: #fff;
     margin: 40px 370px 0;
     padding: 24px 40px 40px;
@@ -191,6 +190,8 @@ body {
     .container {
       margin: 16px 0 0;
       font-size: 0;
+      height: 33px;
+      clear: both;
       &__left {
         float: left;
         .button-like {
@@ -262,4 +263,169 @@ body {
       }
     }
   }
+  .item-message {
+    width: 700px;
+    margin: 8px auto;
+    &__main {
+      &__content {
+        padding: 24px;
+        background: #fff;
+        form {
+          p {
+            padding: 8px;
+            font-size: 14px;
+            background: #fff6de;
+          }
+          .text_field {
+            margin: 8px 0 0;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 104px;
+            padding: 10px;
+            border: 1px solid #ccc;
+          }
+          .message-button {
+            width: 100%;
+            margin: 8px 0 0;
+            text-align: center;
+            background: #aaa;
+            color: #fff;
+            border: 1px solid #aaa;
+            line-height: 48px;
+            cursor: pointer;
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .prev-next-link {
+    margin: 24px auto 0;
+    width: 700px;
+    height: 24px;
+    .prev-link {
+      width: 45%;
+      float: left;
+      padding: 0 0 0 14px;
+      position: relative;
+      word-wrap: break-word;
+      a {
+        color: #0099e8;
+        .fa-angle-left {
+          left: 0;
+          position:absolute;top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+    .next-link {
+      width: 45%;
+      float: right;
+      padding: 0 14px 0 0;
+      position: relative;
+      word-wrap: break-word;
+      text-align: right;
+      a {
+        color: #0099e8;
+        .fa-angle-right {
+          right: 0;
+          position: absolute;top: 50%;
+          transform: translate(0, -50%)
+        }
+      }
+    }
+  }
+  .item-socialmedia {
+    margin: 24px auto;
+    padding: 32px 0  24px;
+    width: 700px;
+    background: #fff;
+    .item-socialmedia__box {
+      margin: 30px 0 0 ;
+      text-align: center;
+      li {
+        display: inline-block;
+        margin: 0 8px 8px 0;
+        vertical-align: middle;
+        .line-btn {
+            cursor: default;
+        }
+        a {
+          display: block;
+          i {
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 4px;
+          }
+          .fa-facebook-square {
+            color: #fff;
+            background: #385185;
+            font-size: 26px;
+          }
+          .fa-twitter {
+            font-size: 24px;
+            color: #fff;
+            background: #5d9dc9;
+          }
+          .fa-pinterest {
+            color: #fff;
+            background: #aa262a;
+            font-size: 18px;
+          }
+          .fa-line {
+            color: #fff;
+            font-size: 30px;
+          }
+        }
+        .insta_btn {
+          display: block;
+          height: 44px;
+        }
+        .insta_btn .insta{
+          position: relative;
+          display: inline-block;
+          background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+          background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+          overflow: hidden;
+          border-radius: 4px;
+        }
+        .insta_btn .insta:before{
+          content: '';
+          position: absolute;
+          top: 23px;
+          left: -18px;
+          width: 60px;
+          height: 60px;
+          background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+          background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+        }
+        .insta_btn .fa-instagram {
+          color: #FFF;
+          position: relative;
+          z-index: 2;
+          font-size: 35px;
+        }
+      }
+    }
+  }
+  .item-user-profiele {
+    width: 700px;
+    margin: 0 auto;
+    section {
+      h2 {
+        font-size: 22px;
+        margin: 24px 0 8px;
+      }
+    }
+  }
 }
+
+
+
+
+
+
