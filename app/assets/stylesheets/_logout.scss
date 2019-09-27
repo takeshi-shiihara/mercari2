@@ -22,13 +22,21 @@
 }  
 
 .mypage1__logout{
-  height:1400px;
   background-color:rgb(245, 245, 245);
+}
+
+.mymy{
+  width:100%;
+}
+.mypage1{
+  max-width:1020px;
+  height:1200px;
+  margin:24px auto;
 }
 
 .mypage1__left{
   width:280px;
-  margin: 50px 0 0 180px;
+  margin:0 40px 0 0;
   float:left;
 
     &__main{
@@ -65,15 +73,14 @@
 
 }
 
-.mypage1_right{
-  float:left;
-  margin:50px 0 0 100px;
+
 
   .mypage1__right__logout{
     height:179px;
-    min-width:700px;
+    width:700px;
     background-color: white;
     position: relative;
+    float:left;
 
     &__button{
       @include submit__button();
@@ -88,17 +95,14 @@
       margin: auto;
     }
   }
-}
 
 .info__right{
-  float:left;
-  margin:50px 0 0 100px;
-
     &__container{
+    float:left;
     width: 700px;
-    margin: 0 auto;
     background-color: #fff;
-    padding-bottom:150px;
+    margin-bottom:150px;
+    padding-bottom: 50px;
 
       &__registration{
         text-align:center;
