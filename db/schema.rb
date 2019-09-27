@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_095503) do
+ActiveRecord::Schema.define(version: 2019_09_27_111702) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "post_number", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "address", null: false
+    t.string "building", null: false
+    t.integer "phone_number", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -63,6 +75,13 @@ ActiveRecord::Schema.define(version: 2019_09_27_095503) do
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
+  create_table "phone_numbers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "phone_number", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "shoes_size"
     t.string "clothes"
@@ -76,7 +95,6 @@ ActiveRecord::Schema.define(version: 2019_09_27_095503) do
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
     t.string "email", null: false
-    t.string "phone_number", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
