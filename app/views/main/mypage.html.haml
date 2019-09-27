@@ -1,0 +1,59 @@
+
+%body
+.mypage-main
+  .mypage-main__sidebar
+  .mypage-main__mainbox
+    .mypage-main__mainbox__upbox
+    .mypage-main__mainbox__downbox
+      %ul.mypage-tabs
+        %li.tab.info
+          %a お知らせ
+        %li.tab.todo
+          %a やることリスト
+      
+      .mypage-main__mainbox__downbox__tab-content
+        -# お知らせリスト**************
+        %ul.info-list
+          %li.h
+            .info-list-box
+              .image_info
+                = image_tag "mercari_profile_icon.png", width: "48", height: "48", class: "mercari-profile-icon"
+              .text_info
+                %a 事務局からのお知らせ
+          %li.h
+            .info-list-box
+              .image_info
+                = image_tag "mercari_profile_icon.png", width: "48", height: "48", class: "mercari-profile-icon"
+              .text_info
+                %a 《10月3日までの特別企画》
+          %li.h
+            .info-list-box
+              .image_info
+                = image_tag "mercari_profile_icon.png", width: "48", height: "48", class: "mercari-profile-icon"
+              .text_info
+                %a 【重要】2019/9/28(土) AM03:00 ~ AM04:00 システムメンテナンスのお知らせ
+          %li.h
+            .info-list-box
+              .image_info
+                = image_tag "mercari_profile_icon.png", width: "48", height: "48", class: "mercari-profile-icon"
+              .text_info
+                %a 《メルペイを始めると必ずP1,000もらえる》
+          %li.h
+            .info-list-box
+              .image_info
+                = image_tag "mercari_profile_icon.png", width: "48", height: "48", class: "mercari-profile-icon"
+              .text_info
+                %a 【終了】《出品するだけ》総額1億円相当還元！メルカリ秋フェスが開催中♪
+
+          -# 一覧を見るボタン***
+          %li
+            .info-list-box
+              = link_to "一覧をみる", root_path, class: 'show-infolist-btn'
+
+        -# やることリスト**************
+        %ul.todo-list
+          %li
+            %a お知らせ
+          %li
+            %a やることリスト
+
