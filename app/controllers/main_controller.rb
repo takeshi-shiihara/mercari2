@@ -20,6 +20,9 @@ class MainController < ApplicationController
   def step5
   end
 
+  def mypage
+  end
+
   def logout
   end
 

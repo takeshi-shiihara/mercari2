@@ -1,0 +1,102 @@
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mypage-main{
+  height: 1000px;
+  background-color: rgb(245, 245, 245);
+  &__mainbox {
+    // float: right;
+    margin: 40px auto;
+    width: 700px;
+    height: 1000px;
+    &__upbox {
+      height: 200px;
+      padding: 20px;
+      background-image: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?33381563")
+    }
+  
+    &__downbox {
+      min-height: 100%;
+      max-width: 700px;
+      
+      ul.mypage-tabs{
+        display: block;
+        text-align: center;
+        background: #eee;
+        li.tab{
+          width: 49%;
+          display: inline-block;
+          color: #333;
+          font-size: 16px;
+          font-weight:bold;
+          line-height: 72px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          }
+        }         //ul.mypage-tabs
+
+      &__tab-content {
+        display: block;
+
+        li{
+          border-bottom: 1px solid #eee;
+          background-color: white;
+          .info-list-box{
+            display: block;
+            min-height: 80px;
+            padding: 16px;
+            color: #333;
+            .image_info{
+              position: relative;
+              .mercari-profile-icon{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+              }
+            }
+            .text_info{
+              margin: 0 40px 0 68px;
+              font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+              font-size: 14px;
+              line-height: 1;
+            }
+            .show-infolist-btn{
+              display: block;
+              height: 56px;
+              margin: 0 auto;
+              background: #eee;
+              color: #333;
+              line-height: 56px;
+              text-align: center;
+              text-decoration: none; 
+              font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+              font-size: 14px;
+            }
+            .show-infolist-btn:hover {
+              background-color: #fafafa;
+            }
+
+          }       //info-list-box
+        }         //li
+
+        li.h:hover {
+          background-color: #fafafa;
+        }
+      }           //tab-content
+
+    }             //downbox
+  
+  
+  
+  
+  
+  }               //mainbox
+}
+
+
