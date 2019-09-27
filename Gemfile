@@ -80,7 +80,7 @@ gem 'capistrano3-unicorn'
 gem 'pry-rails'
 gem "jquery-rails"
 gem 'kaminari'
-gem 'active_hash'
+gem 'active_hash', '~> 1.5.3'
 gem 'ancestry'
 gem 'payjp'
 gem 'gretel'
