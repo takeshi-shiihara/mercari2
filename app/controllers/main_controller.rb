@@ -5,6 +5,9 @@ class MainController < ApplicationController
   def index
   end
 
+  def step0
+  end
+
   def step2
   end
 
@@ -18,6 +21,12 @@ class MainController < ApplicationController
   end
 
   def mypage
+  end
+
+  def logout
+  end
+
+  def userinfomation
   end
 
   private
