@@ -24,6 +24,7 @@ has_many:comments
 has_many:buys
 has_one:address
 has_one:payment
+has_one:prefecture
 
 
 
@@ -44,7 +45,6 @@ has_one:payment
 
 
 #Association
-belongs_to:buy
 belongs_to:user
 belongs_to:size
 belongs_to:brand
@@ -53,6 +53,8 @@ has_many:images
 has_many:comments
 has_one:delibery
 has_one:status
+has_one:buy
+has_one:prefecture
 
 
 
@@ -181,6 +183,14 @@ belongs_to:item
 #Association
 belongs_to:item
 
+##prefecuturesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|item_id|referencs|null:false,foreign_key:ture|
+
+belongs_to:item
+belongs_to:user
 
 
 
