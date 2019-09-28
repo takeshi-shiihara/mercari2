@@ -8,9 +8,6 @@ class MainController < ApplicationController
   def step0
   end
 
-  def step2
-  end
-
   def step3
   end
 
