@@ -7,7 +7,7 @@ class PhoneNumberController < ApplicationController
   def create
     @phone_number = PhoneNumber.create(phone_number_params)
     if @phone_number.save
-      redirect_to controller: :main, action: :step3
+      redirect_to controller: :address, action: :new
     else
     redirect_to controller: :main, action: :index
     end

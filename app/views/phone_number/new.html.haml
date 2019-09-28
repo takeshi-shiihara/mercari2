@@ -33,19 +33,16 @@
         .user__main__form__container
           .user__field
             = form_for(@phone_number, url: phone_number_index_path) do |f|
+              %label.user__field__label 電話番号の番号
               = f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder: "電話番号を入力してください", class: 'user__text__field'
               .user__field__actions
-                = f.submit "次へ進む", class: '.user__step2__submit__button'
 
--#             %label.user__field__label 電話番号の番号
--#             %br/
--#             %input.user__text__field{placeholder: "携帯電話の番号を入力"}
--#             %p.user__confirmation 本人確認のため、携帯電話のSMS（ショートメッセージサービス）を利用して認証を行います。
--#             .user__field__actions
--#             %submit.user__step2__submit__button SMSを送信する
--#             %p.user__confirmation ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+              %p.user__confirmation 本人確認のため、携帯電話のSMS（ショートメッセージサービス）を利用して認証を行います。
+              %p.user__confirmation ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
 
--#             %p.user__confirmation__telephone
--#               = link_to "電話番号の確認が必要な理由>", "https://www.mercari.com/jp/privacy/"
+              = f.submit "次へ進む", class: 'user__step2__submit__button'
 
--# = render partial: 'main/footter'
+              %p.user__confirmation__telephone
+                = link_to "電話番号の確認が必要な理由>", "https://www.mercari.com/jp/privacy/"
+
+= render partial: 'main/footter'
