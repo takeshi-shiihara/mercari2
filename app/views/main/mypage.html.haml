@@ -1,19 +1,24 @@
 
 %body
-.mypage-main
+.mypage-main.clearfix
   .mypage-main__sidebar
+    = render partial: 'mypagerender'
   .mypage-main__mainbox
     .mypage-main__mainbox__upbox
+      .profiles
+        = link_to image_tag("github.png",class: "profile-logo"), root_path
+        %p github
+        %p 評価　２　出品１
     .mypage-main__mainbox__downbox
-      %ul.mypage-tabs
-        %li.tab.info
+      %ul.mypage-tabs.clearfix
+        %li.tab.action-btn{href: "#item2"} 
           %a お知らせ
-        %li.tab.todo
+        %li.tab{href: "#item1"} 
           %a やることリスト
       
       .mypage-main__mainbox__downbox__tab-content
         -# お知らせリスト**************
-        %ul.info-list
+        %ul.content#item1
           %li.h
             .info-list-box
               .image_info
@@ -51,9 +56,84 @@
               = link_to "一覧をみる", root_path, class: 'show-infolist-btn'
 
         -# やることリスト**************
-        %ul.todo-list
-          %li
-            %a お知らせ
-          %li
-            %a やることリスト
+        %ul.content.non-list#item2
+          %li.not-found-list
+            %a 現在、やることリストはありません
+
+
+  -# 購入した商品******************************
+    
+  .mypage-main__mainbox.buy
+    .mypage-main__mainbox__upbox-buy
+      %p.buy-title 購入した商品
+    .mypage-main__mainbox__downbox
+      %ul.mypage-tabs.clearfix
+        %li.tab-buy.action-btn{href: "#buy-item2"} 
+          %a 取引中
+        %li.tab-buy{href: "#buy-item1"} 
+          %a 過去の取引
+      
+      .mypage-main__mainbox__downbox__tab-content
+        -# 取引中**************
+        %ul.content-buy#buy-item1
+          %li.not-found-list
+            %a 取引中の商品がありません
+
+        -# 過去の表示**************
+        %ul.content-buy.non-list#buy-item2
+          %li.not-found-list
+            %a 過去の取引の商品がありません
+        
+
+             
+
+            
+-# フッター********************************
+.footer
+  .footer__upbox
+    = image_tag "footer.jpg", class: "footer-image"
+  .footer__downbox
+    .footer__downbox__menu
+      .group
+        %h3 メルカリについて
+        %ul
+          %li 会社概要（運営会社）
+          %li 採用情報
+          %li プレスリリース
+          %li 公式ブログ
+          %li メルカリロゴ利用ガイドライン
+      .group
+        %h3 ヘルプ＆ガイド
+        %ul
+          %li メルカリガイド
+          %li らくらくメルカリ便
+          %li ゆうゆうメルカリ便
+          %li 大型メルカリ便
+          %li 車体取引ガイド
+          %li メルカリあんしん・あんぜん宣言！
+          %li 偽ブランド品撲滅への取り組み
+          %li メルカリボックス
+      .group
+        %h3 プライバシーと利用規約
+        .group__list2
+          %ul.leftlist
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li あんしんスマホサポート制度に関する利用規約
+            %li コンプライアンスポリシー
+          %ul.rightlist
+            %li 個人データの安全管理に係る基本方針
+            %li 特定商取引に関わる表記
+            %li 資金決済法に基づく表示
+            %li 法令順守と犯罪抑止のために
+      .group
+        %h3 国
+        %ul
+          %li 日本
+          %li United States
+
+    .footer__downbox__logobar
+      = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "logo"), root_path
+      %p.name ©️2019 Mercari
+
 

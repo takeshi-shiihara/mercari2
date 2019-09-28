@@ -7,18 +7,44 @@
           box-sizing: border-box;
 }
 
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .mypage-main{
-  height: 1000px;
+  max-width: 1020px;
   background-color: rgb(245, 245, 245);
+  margin: 40px auto;
   &__mainbox {
-    // float: right;
-    margin: 40px auto;
+    float: left;
     width: 700px;
-    height: 1000px;
+    
     &__upbox {
       height: 200px;
       padding: 20px;
-      background-image: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?33381563")
+      background-image: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?33381563");
+      text-align: center;
+      position: relative;
+      .profiles{
+          position: absolute;
+          top: 25%;
+          left: 0;
+          right: 0;
+        .profile-logo{
+          height: 60px;
+          width: 60px;
+          background-color: white;
+          border-radius: 50%;
+        }
+        p{
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 8px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        }
+      }
     }
   
     &__downbox {
@@ -30,15 +56,15 @@
         text-align: center;
         background: #eee;
         li.tab{
-          width: 49%;
-          display: inline-block;
+          width: 50%;
+          float: left;
           color: #333;
           font-size: 16px;
           font-weight:bold;
           line-height: 72px;
           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
           }
-        }         //ul.mypage-tabs
+      }         //ul.mypage-tabs
 
       &__tab-content {
         display: block;
@@ -88,15 +114,59 @@
         li.h:hover {
           background-color: #fafafa;
         }
+
       }           //tab-content
 
     }             //downbox
-  
-  
-  
-  
-  
   }               //mainbox
 }
 
 
+.action-btn{
+  background: white;
+  border-top: 2px solid #ea352d;
+}
+
+.non-list{
+  display: none;
+}
+
+.not-found-list{
+  padding: 170px 0 60px;
+  background: url(https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464);
+  background-size: 120px 120px;
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+  font-weight: bold;
+
+}
+
+////////////購入した商品//////////////
+.buy{
+  margin-top: 40px ;
+}
+
+li.tab-buy{
+  width: 50%;
+  float: left;
+  color: #333;
+  font-size: 16px;
+  font-weight:bold;
+  line-height: 72px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  }
+
+
+  .buy-title{
+  display: block;
+  padding: 0 16px;
+  background: #fafafa;
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 72px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  }
