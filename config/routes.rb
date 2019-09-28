@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :phone_number, only: [:new, :create]
   resources :address, only: [:new, :create]
 
-  get 'step0' => 'main#step0'
+  get 'login' => 'main#login'
   get 'step3' => 'main#step3'
   get 'step4' => 'main#step4'
   get 'step5' => 'main#step5'

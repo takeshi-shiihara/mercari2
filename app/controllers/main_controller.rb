@@ -5,7 +5,7 @@ class MainController < ApplicationController
   def index
   end
 
-  def step0
+  def login
   end
 
   def step3
