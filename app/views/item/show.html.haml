@@ -71,7 +71,7 @@
           %tr
             %th 配送元地域
             %td
-              = link_to "天空の城", "/", class: 'a'
+              = link_to "天空の城", "", class: 'a'
               /出品者の都道府県
           %tr
             %th 発送日の目安
@@ -111,12 +111,12 @@
           %span コメントする
   %ul.prev-next-link
     %li.prev-link
-      %a
+      = link_to "", class: 'a' do
         %i.fas.fa-angle-left
         魔女の脱臼瓶
         /前のリンク
     %li.next-link
-      %a
+      = link_to "", class: 'a' do
         風呂の水がヘルシア
         /次のリンク
         %i.fas.fa-angle-right
