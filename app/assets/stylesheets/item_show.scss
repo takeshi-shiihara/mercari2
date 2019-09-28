@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.a:hover { text-decoration: underline; }
 
 i {
   display: inline-block;
@@ -21,12 +22,14 @@ body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
   a {
     cursor: pointer;
-    color: #0099e8;
   }
   .item-box {
     background: #fff;
     margin: 40px 370px 0;
     padding: 24px 40px 40px;
+    a {
+    color: #0099e8;
+    }
     &__name {
       width: 620px;
       height: 66px;
@@ -121,8 +124,8 @@ body {
               padding: 8px;
               border: 1px solid #f5f5f5;
               a {
-                color: #0099e8;
                 touch-action: manipulation;
+                text-decoration: none;
               }
               .item-user-rating:first-child {
                 margin: 0;
@@ -419,13 +422,11 @@ body {
       h2 {
         font-size: 22px;
         margin: 24px 0 8px;
+        a {
+          color: #0099e8;
+          text-decoration: none;
+        }
       }
     }
   }
 }
-
-
-
-
-
-

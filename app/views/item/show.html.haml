@@ -1,9 +1,3 @@
-%head
-  %link{:href => "https://use.fontawesome.com/releases/v5.6.3/css/all.css", :rel => "stylesheet"}/
-  :css
-    a:hover   { text-decoration: underline; }
-
-
 
 %body
   %section.item-box
@@ -23,13 +17,17 @@
             .item-box__main__photo__dots__dot__inner
               %image.item-box__main__photo__dots__dot__inner__image{alt: "ムスカ", src: "https://pbs.twimg.com/media/CpFvBf7VMAAcnkA.jpg"}
               /全商品を表示
+          .item-box__main__photo__dots__dot
+            %span
+            .item-box__main__photo__dots__dot__inner
+              %image.item-box__main__photo__dots__dot__inner__image{alt: "ゴリ", src: "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20131228%2F25%2F2226915%2F68%2F400x276x498b416677fead5aaab4a5fb.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r"}
       %table.item-box__main__table
         %tbody
           %tr
             %th 出品者
             %td 
-              %a ムスカ大佐
-              /'出品してるユーザーへ
+              = link_to "ムスカ大佐", "", class: 'a'
+              /出品者の名前を表示 {item.user.nickname}
               %div
                 .item-user-rating
                   %i.fas.fa-laugh-squint
@@ -44,27 +42,23 @@
           %tr
             %th カテゴリー
             %td
-              %a
-                /カテゴリ(親)
-                %div ラピュタ
-                /カテゴリ名が表示される
-              %a
+              = link_to "もののけ", "", class: 'a' 
+              /カテゴリ(親)
+              = link_to "",class: 'a' do
                 /カテゴリ(子)
                 %div
                   %i.fas.fa-angle-right
-                  見ろ
-              %a
+                  腹の上が
+              = link_to "",class: 'a' do
                 /カテゴリ(孫)
                 %div
                   %i.fas.fa-angle-right
-                  人がゴミのようだ
+                  ポニョ
           %tr
             %th ブランド
             %td
-              %a
-                /ブランドへのリンク
-                ジブリ
-                /ブランド名
+              = link_to "ジブリ", "", class: 'a' 
+              /ブランドへのリンク
           %tr
             %th 商品の状態
             %td 人として汚れあり
@@ -77,21 +71,22 @@
           %tr
             %th 配送元地域
             %td
-              %a 天空の城
+              = link_to "天空の城", "/", class: 'a'
               /出品者の都道府県
           %tr
             %th 発送日の目安
             %td 3分間待ってやる
     .item-box__price
       %span.item-box__price__bold $1,000,000
+      / = item.prise
       %span.tax (税込)
       %span.shipping 送料別
       /送料を表示
-    %a.buy-bottun 購入画面に進む
+    = link_to '購入画面に進む', hop1_path, class: 'buy-bottun' 
     /商品購入画面へのリンク
     .description
-      %p 常に吠える。エサをやり忘れると噛み付きますがご使用上の問題は特にありません。人語理解！激カワ超オススメ!!
-      /商品の説明を表示
+      %p  常に吠える。エサをやり忘れると噛み付きますがご使用上の問題は特にありません。人語理解！激カワ超オススメ!!
+      /商品の説明を表示 = item.description
     .container
       .container__left
         %button.button-like
@@ -99,11 +94,11 @@
           %span 不错!
           %span.fade-in-down -100
           /ここにイイね数
-        %a.report
+        = link_to "", class: 'report' do
           %i.fas.fa-wifi
           %span 不適切な商品の報告
       .container__right
-        %a 
+        = link_to "" do
           %i.fas.fa-briefcase
           %span あんしん・あんぜんへの取り組み
   .item-message
@@ -128,25 +123,25 @@
   .item-socialmedia
     %ul.item-socialmedia__box
       %li
-        %a{ href: 'https://www.facebook.com'}
+        = link_to "https://www.facebook.com" do
           %i.fab.fa-facebook-square
       %li
-        %a{ href: 'https://twitter.com/' }
+        = link_to 'https://twitter.com/' do
           %i.fab.fa-twitter
       %li
-        %a{ href: 'https://www.pinterest.jp/'}
+        = link_to 'https://www.pinterest.jp/' do
           %i.fab.fa-pinterest
       %li
-        %a.insta_btn{ href: 'https://www.instagram.com/'}
+        = link_to 'https://www.instagram.com/', class: 'insta_btn' do
           %span.insta
             %i.fab.fa-instagram
       %li
-        %a.line-btn{ href: 'https://line.me/ja/'}
+        = link_to 'https://line.me/ja/', class: 'line-btn' do
           %i.fab.fa-line
   .item-user-profiele
     %section
       %h2 
-        = link_to 'ムスカ大佐のその他の出品' 
+        = link_to 'ムスカ大佐のその他の出品', "", class: 'a'
         /出品者のマイページへ
       
       .main__contents__itemlist__items
@@ -198,7 +193,6 @@
         %ul
           %li 日本
           %li United States
-
     .footer__downbox__logobar
       = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "logo"), root_path
       %p.name ©️2019 Mercari
