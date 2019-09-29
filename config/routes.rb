@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'main#index'
   resources :item
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-#  get 'phone_number' => 'main#phone_number'
 
   resources :phone_number, only: [:new, :create]
   resources :address, only: [:new, :create]

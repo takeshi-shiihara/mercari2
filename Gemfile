@@ -86,3 +86,7 @@ gem 'ancestry'
 gem 'payjp'
 gem 'gretel'
 gem "dropzonejs-rails"
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
