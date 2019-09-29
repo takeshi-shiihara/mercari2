@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get 'userinfomation' => 'main#userinfomation'
   get 'hop1' => 'item#hop1'
   get 'mypage' => 'main#mypage'
+  get 'mypage/profile' => 'main#profile'
 
 end
