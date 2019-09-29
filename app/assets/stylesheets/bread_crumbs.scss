@@ -1,0 +1,16 @@
+.breadcrumbs-list {
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  a:first-child {
+    margin-left: 210px;
+  }
+  a {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #333;
+    padding: 16px 0;
+  }
+}

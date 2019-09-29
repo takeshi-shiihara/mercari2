@@ -20,6 +20,12 @@ class MainController < ApplicationController
   def mypage
   end
 
+  def profile
+  end
+
+  def card
+  end
+
   def logout
   end
 

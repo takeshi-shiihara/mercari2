@@ -6,6 +6,7 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{:crossorigin => "anonymous", :integrity => "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", :src => "https://code.jquery.com/jquery-3.3.1.js"}
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{ href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
     :css
@@ -46,4 +47,7 @@
               .right-btn
                 = link_to "ログイン", new_user_session_path, class: 'login-btn'
 
-    = yield
+
+
+
+  = yield
