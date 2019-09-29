@@ -11,12 +11,18 @@
               .item-box__main__photo__upper__stage__active__inner
                 %image.item-box__main__photo__upper__stage__active__inner__image{alt: "ムスカ", src: "https://pbs.twimg.com/media/CpFvBf7VMAAcnkA.jpg"}
                 /商品の画像
+            .item-box__main__photo__upper__stage__active
+              .item-box__main__photo__upper__stage__active__inner
+                %image.item-box__main__photo__upper__stage__active__inner__image{alt: "ゴリ", src: "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20131228%2F25%2F2226915%2F68%2F400x276x498b416677fead5aaab4a5fb.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r"}
         .item-box__main__photo__dots
-          .item-box__main__photo__dots__dot
-            %span
-            .item-box__main__photo__dots__dot__inner
-              %image.item-box__main__photo__dots__dot__inner__image{alt: "ムスカ", src: "https://pbs.twimg.com/media/CpFvBf7VMAAcnkA.jpg"}
-              /全商品を表示
+          - @item.images.each do |image|
+            .item-box__main__photo__dots__dot
+              -if image.main_image?
+                = image_tag image.main_image
+              -# %span
+              -# .item-box__main__photo__dots__dot__inner
+              -#   %image.item-box__main__photo__dots__dot__inner__image{ src: "#{item.image.main_image}"}
+                /全商品を表示
           .item-box__main__photo__dots__dot
             %span
             .item-box__main__photo__dots__dot__inner
@@ -71,7 +77,7 @@
           %tr
             %th 配送元地域
             %td
-              = link_to "天空の城", "", class: 'a'
+              = link_to "#{@item.user.address.prefecture}", "", class: 'a'
               /出品者の都道府県
           %tr
             %th 発送日の目安
