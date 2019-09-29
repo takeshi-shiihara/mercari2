@@ -4,7 +4,7 @@ class ItemController < ApplicationController
   end
 
   def show
-    # @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def hop1
