@@ -23,6 +23,9 @@ class MainController < ApplicationController
   def profile
   end
 
+  def card
+  end
+
   def logout
   end
 

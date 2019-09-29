@@ -1,0 +1,75 @@
+
+%body
+.mypage-main.clearfix
+  .mypage-main__sidebar
+    = render partial: 'mypagerender'
+  .mypage-main__mainbox
+    .mypage-main__mainbox__upbox-card
+      %p.card-title 支払い方法
+    .mypage-main__mainbox__downbox-card
+      .card-info-box
+        %p.card-title-min クレジットカード一覧
+        %ul.payment-list
+          %li
+            %form.card-form{action: "https://www.mercari.com/jp/mypage/card/delete/", method: "POST"}
+            %img{alt: "visa", height: "15", src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2687693852", width: "49"}/
+            %input{name: "__csrf_value", type: "hidden", value: "2ab48051e86d97e323ed0b19f89a628fbb6386319ffaaa46d5a38c24e1dfc24b3347758ca69d80479611a7f28b3287ecaa4a9978c06cc4894a16c65ee527f754b"}/
+            %input{name: "card_sequence_no", type: "hidden", value: "5JvtfT8x8QtHRPUbhfcLZfcc"}/
+            .settings-payment-num ************3455
+            .settings-payment-num 11 / 20
+            %input{name: "method", type: "hidden", value: "card"}/
+            %button.remove-btn{type: "submit"}削除する
+      .card-info-lisk
+        = link_to "支払い方法について 〉", new_user_registration_path, class: 'payment-link'
+
+
+
+
+-# フッター********************************
+.footer
+  .footer__upbox
+    = image_tag "footer.jpg", class: "footer-image"
+  .footer__downbox
+    .footer__downbox__menu
+      .group
+        %h3 メルカリについて
+        %ul
+          %li 会社概要（運営会社）
+          %li 採用情報
+          %li プレスリリース
+          %li 公式ブログ
+          %li メルカリロゴ利用ガイドライン
+      .group
+        %h3 ヘルプ＆ガイド
+        %ul
+          %li メルカリガイド
+          %li らくらくメルカリ便
+          %li ゆうゆうメルカリ便
+          %li 大型メルカリ便
+          %li 車体取引ガイド
+          %li メルカリあんしん・あんぜん宣言！
+          %li 偽ブランド品撲滅への取り組み
+          %li メルカリボックス
+      .group
+        %h3 プライバシーと利用規約
+        .group__list2
+          %ul.leftlist
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li あんしんスマホサポート制度に関する利用規約
+            %li コンプライアンスポリシー
+          %ul.rightlist
+            %li 個人データの安全管理に係る基本方針
+            %li 特定商取引に関わる表記
+            %li 資金決済法に基づく表示
+            %li 法令順守と犯罪抑止のために
+      .group
+        %h3 国
+        %ul
+          %li 日本
+          %li United States
+
+    .footer__downbox__logobar
+      = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "logo"), root_path
+      %p.name ©️2019 Mercari
+

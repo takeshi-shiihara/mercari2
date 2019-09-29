@@ -239,3 +239,59 @@ li.tab-buy{
       font-size: 14px;
     }
   }
+
+  /////支払い方法ページ/////
+
+   .card-title{
+    font-size: 24px;
+    padding: 8px 24px;
+    background: white;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    color: #333333;
+    font-weight:bold;
+   }
+
+   .mypage-main__mainbox__downbox-card{
+    padding: 64px;padding: 64px;
+    background: white;
+    .card-info-box{
+      margin: 0 auto;
+      width: 350px;
+    }
+  
+    .card-title-min{
+      color: #333333;
+      font-weight:bold;
+      font-size: 16px;
+    }
+
+    .payment-list{
+      padding: 24px 0;
+      position: relative;
+    }
+
+    .remove-btn{
+      position: absolute;
+      top: 24px;
+      right: 20px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #ea352d;
+      color: #ea352d;
+      font-size: 14px;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    }
+
+    .card-info-lisk{
+      border-top: 1px solid #eee;
+      .payment-link{
+        display: block;
+        margin: 40px 0 0;
+        text-align: right;
+        color: #0099e8;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+   }

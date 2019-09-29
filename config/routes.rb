@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get 'hop1' => 'item#hop1'
   get 'mypage' => 'main#mypage'
   get 'mypage/profile' => 'main#profile'
+  get 'mypage/card' => 'main#card'
 
 end
