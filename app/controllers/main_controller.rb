@@ -3,6 +3,9 @@ class MainController < ApplicationController
 #  before_action :move_to_index, except: :index #ログインしていない時は出品できない仕様#
 
   def index
+    @images = Image.all
+    @items = Item.all
+
   end
 
   def step0

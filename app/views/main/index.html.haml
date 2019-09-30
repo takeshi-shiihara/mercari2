@@ -18,78 +18,19 @@
       .main__contents__itemlist__titlebar
         %h2 レディース新着アイテム
         = link_to 'もっと見る ＞', 'https://www.mercari.com/jp/signup/' ,class: "morelink"
-      
+
       .main__contents__itemlist__items
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg/540px-David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg", class: "image")
-          .downbox
-            ナポレオン・ボナパルト
-
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg/400px-Vig%C3%A9e-Lebrun_Marie_Antoinette_1783.jpg", class: "image")
-          .downbox
-            マリー・アントワネット
-
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://iroiro.co/media/images/culture/2017/liberty-guiding-the-people.jpg", class: "image")
-          .downbox
-            フランス革命
-
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/VanGogh_1887_Selbstbildnis.jpg/500px-VanGogh_1887_Selbstbildnis.jpg", class: "image")
-          .downbox
-            ゴッホ
-
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://cdn-ak.f.st-hatena.com/images/fotolife/n/naichilab/20190114/20190114010820.png", class: "image")
-          .downbox
-            ギットハブ
-
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/460px-Pablo_picasso_1.jpg", class: "image")
-          .downbox
-            パブロ・ピカソ
-
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("http://blog-imgs-49.fc2.com/k/u/w/kuw0703/20141112202331759.jpg", class: "image")
-          .downbox
-            泣く女
-
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg", class: "image")
-          .downbox
-            ギットハブ
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://i.pinimg.com/originals/52/ea/be/52eabecf424b217807d0e557b9a0c38e.jpg", class: "image")
-          .downbox
-            ギットハブ
-        .onebox
-          .upbox
-            %span.price ¥10,000
-            = image_tag("https://bacchi.me/wp-content/uploads/2014/06/github_img4.jpg", class: "image")
-          .downbox
-            ギットハブ
-
-
-  
+        - @items.each do |item_list|
+          .onebox
+            = link_to '', 'https://www.mercari.com/jp/signup/' ,class: "show-item-link"
+            .upbox
+              %span.price
+                ¥#{item_list.price}
+              - item_list.images.first(1).each do |item|
+                = image_tag("#{item.main_image}", class: "image")
+            .downbox
+              = item_list.name
+             
 
   .main__exhibit-btn
     %p
