@@ -20,7 +20,7 @@
         = link_to 'もっと見る ＞', 'https://www.mercari.com/jp/signup/' ,class: "morelink"
 
       .main__contents__itemlist__items
-        - @item.each do |item_list|
+        - @items.each do |item_list|
           .onebox
             = link_to '', 'https://www.mercari.com/jp/signup/' ,class: "show-item-link"
             .upbox
@@ -31,7 +31,7 @@
             .downbox
               = item_list.name
              
-             
+
   .main__exhibit-btn
     %p
     = link_to '出品', '/' ,class: "e-btn"
