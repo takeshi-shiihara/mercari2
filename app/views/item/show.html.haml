@@ -1,33 +1,28 @@
 
 %body
   %section.item-box
-    %h1.item-box__name わたしを購入したまえ
-    /商品の名前
+    %h1.item-box__name 
+      = @item.name
     .item-box__main
       .item-box__main__photo
         .item-box__main__photo__upper
           .item-box__main__photo__upper__stage
-            .item-box__main__photo__upper__stage__active
-              .item-box__main__photo__upper__stage__active__inner
-                %image.item-box__main__photo__upper__stage__active__inner__image{alt: "ムスカ", src: "https://pbs.twimg.com/media/CpFvBf7VMAAcnkA.jpg"}
-                /商品の画像
-        .item-box__main__photo__dots
-          .item-box__main__photo__dots__dot
-            %span
-            .item-box__main__photo__dots__dot__inner
-              %image.item-box__main__photo__dots__dot__inner__image{alt: "ムスカ", src: "https://pbs.twimg.com/media/CpFvBf7VMAAcnkA.jpg"}
-              /全商品を表示
-          .item-box__main__photo__dots__dot
-            %span
-            .item-box__main__photo__dots__dot__inner
-              %image.item-box__main__photo__dots__dot__inner__image{alt: "ゴリ", src: "https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20131228%2F25%2F2226915%2F68%2F400x276x498b416677fead5aaab4a5fb.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r"}
+            - @item.images.each do |image|
+              .item-box__main__photo__upper__stage__active
+                .item-box__main__photo__upper__stage__active__inner
+                  = image_tag image.main_image, size: 300
+        .item-box__main__photo__dots.clearfix
+          - @item.images.each do |image|
+            .item-box__main__photo__dots__dot
+              %span
+              .item-box__main__photo__dots__dot__inner
+                = image_tag image.main_image, size: 60
       %table.item-box__main__table
         %tbody
           %tr
             %th 出品者
             %td 
-              = link_to "ムスカ大佐", "", class: 'a'
-              /出品者の名前を表示 {item.user.nickname}
+              = link_to "#{@item.user.nickname}", "", class: 'a'
               %div
                 .item-user-rating
                   %i.fas.fa-laugh-squint
@@ -42,18 +37,15 @@
           %tr
             %th カテゴリー
             %td
-              = link_to "もののけ", "", class: 'a' 
-              /カテゴリ(親)
+              = link_to "#{@item.category.root.name}", "", class: 'a' 
               = link_to "",class: 'a' do
-                /カテゴリ(子)
                 %div
                   %i.fas.fa-angle-right
-                  腹の上が
+                  = @item.category.parent.name
               = link_to "",class: 'a' do
-                /カテゴリ(孫)
                 %div
                   %i.fas.fa-angle-right
-                  ポニョ
+                  = @item.category.name
           %tr
             %th ブランド
             %td
@@ -61,7 +53,8 @@
               /ブランドへのリンク
           %tr
             %th 商品の状態
-            %td 人として汚れあり
+            %td
+              = @item.condition
           %tr
             %th 配送料の負担
             %td 送料別
@@ -71,22 +64,19 @@
           %tr
             %th 配送元地域
             %td
-              = link_to "天空の城", "", class: 'a'
-              /出品者の都道府県
+              = link_to "#{@item.user.address.prefecture}", "", class: 'a'
           %tr
             %th 発送日の目安
             %td 3分間待ってやる
     .item-box__price
-      %span.item-box__price__bold $1,000,000
-      / = item.prise
+      %span.item-box__price__bold 
+        $#{@item.price.to_s(:delimited)}
       %span.tax (税込)
       %span.shipping 送料別
       /送料を表示
     = link_to '購入画面に進む', hop1_path, class: 'buy-bottun' 
-    /商品購入画面へのリンク
     .description
-      %p  常に吠える。エサをやり忘れると噛み付きますがご使用上の問題は特にありません。人語理解！激カワ超オススメ!!
-      /商品の説明を表示 = item.description
+      %p= @item.description
     .container
       .container__left
         %button.button-like
