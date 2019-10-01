@@ -334,3 +334,276 @@ others_8 = others.children.create(name: "事務/店舗用品")
 others_8.children.create([{name: "オフィス用品一般"},{name: "オフィス家具"},{name: "店舗用品"},{name: "OA機器"},{name: "ラッピング/包装"},{name: "その他"}])
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
+
+# Size.create(ladys_shoes_size: "20cm以下")
+# Size.create(ladys_shoes_size: "20.5cm")
+# Size.create(ladys_shoes_size: "21cm")
+# Size.create(ladys_shoes_size: "21.5cm")
+# Size.create(ladys_shoes_size: "22cm")
+# Size.create(ladys_shoes_size: "22.5cm")
+# Size.create(ladys_shoes_size: "23cm")
+# Size.create(ladys_shoes_size: "24cm")
+# Size.create(ladys_shoes_size: "24.5cm")
+# Size.create(ladys_shoes_size: "25cm")
+# Size.create(ladys_shoes_size: "25.5cm")
+# Size.create(ladys_shoes_size: "26cm")
+# Size.create(ladys_shoes_size: "26.5cm")
+# Size.create(ladys_shoes_size: "27cm")
+# Size.create(ladys_shoes_size: "27.5cm以上")
+
+
+# Size.create(mens_shoes_size: "23.5cm以下")
+# Size.create(mens_shoes_size: "24cm")
+# Size.create(mens_shoes_size: "24.5cm")
+# Size.create(mens_shoes_size: "25cm")
+# Size.create(mens_shoes_size: "25.5cm")
+# Size.create(mens_shoes_size: "26cm")
+# Size.create(mens_shoes_size: "26.5cm")
+# Size.create(mens_shoes_size: "27cm")
+# Size.create(mens_shoes_size: "27.5cm")
+# Size.create(mens_shoes_size: "28cm")
+# Size.create(mens_shoes_size: "28.5cm")
+# Size.create(mens_shoes_size: "29cm")
+# Size.create(mens_shoes_size: "29.5cm")
+# Size.create(mens_shoes_size: "30cm")
+# Size.create(mens_shoes_size: "30.5cm")
+# Size.create(mens_shoes_size: "31cm以上")
+
+
+Size.create(clothes: "XXS以下")
+Size.create(clothes: "XS(SS)")
+Size.create(clothes: "S")
+Size.create(clothes: "M")
+Size.create(clothes: "L")
+Size.create(clothes: "XL(LL)")
+Size.create(clothes: "2XL(3L)")
+Size.create(clothes: "3XL(4L)")
+Size.create(clothes: "4XL(5L)以上")
+Size.create(clothes: "FREE SIZE")
+
+
+# Size.create(ladys_skirt: "60cm以下")
+# Size.create(ladys_skirt: "~70cm")
+# Size.create(ladys_skirt: "~80cm")
+# Size.create(ladys_skirt: "~90cm")
+# Size.create(ladys_skirt: "90cm以上")
+
+
+# Size.create(kids_clothes: "100cm")
+# Size.create(kids_clothes: "110cm")
+# Size.create(kids_clothes: "120cm")
+# Size.create(kids_clothes: "130cm")
+# Size.create(kids_clothes: "140cm")
+# Size.create(kids_clothes: "150cm")
+# Size.create(kids_clothes: "160cm")
+
+
+# Size.create(kids_shoes_size: "10.5cm以下")
+# Size.create(kids_shoes_size: "11cm・11.5cm")
+# Size.create(kids_shoes_size: "12cm・12.5cm")
+# Size.create(kids_shoes_size: "13cm・13.5cm")
+# Size.create(kids_shoes_size: "14cm・14.5cm")
+# Size.create(kids_shoes_size: "15cm・15.5cm")
+# Size.create(kids_shoes_size: "16cm・16.5cm")
+# Size.create(kids_shoes_size: "17cm以上")
+
+
+# Size.create(baby_clothes: "60cm")
+# Size.create(baby_clothes: "70cm")
+# Size.create(baby_clothes: "80cm")
+# Size.create(baby_clothes: "90cm")
+# Size.create(baby_clothes: "95cm")
+
+
+# Size.create(camera: "ニコンFマウント")
+# Size.create(camera: "キヤノンEFマウント")
+# Size.create(camera: "ペンタックスKマウント")
+# Size.create(camera: "ペンタックスQマウント")
+# Size.create(camera: "フォーサーズマウント")
+# Size.create(camera: "マイクロフォーサーズマウント")
+# Size.create(camera: "α Aマウント")
+# Size.create(camera: "α Eマウント")
+# Size.create(camera: "ニコン1マウント")
+# Size.create(camera: "キヤノンEF-Mマウント")
+# Size.create(camera: "Xマウント")
+# Size.create(camera: "シグマSAマウント")
+
+
+# Size.create(bike: "50cc以下")
+# Size.create(bike: "51cc-125cc")
+# Size.create(bike: "126cc-250cc")
+# Size.create(bike: "251cc-400cc")
+# Size.create(bike: "401cc-750cc")
+# Size.create(bike: "751cc以上")
+
+
+# Size.create(helmet: "XSサイズ以下")
+# Size.create(helmet: "Sサイズ")
+# Size.create(helmet: "Mサイズ")
+# Size.create(helmet: "Lサイズ")
+# Size.create(helmet: "XLサイズ")
+# Size.create(helmet: "XXLサイズ以上")
+# Size.create(helmet: "フリーサイズ")
+# Size.create(helmet: "子ども用")
+
+# Size.create(tire: "12インチ")
+# Size.create(tire: "13インチ")
+# Size.create(tire: "14インチ")
+# Size.create(tire: "15インチ")
+# Size.create(tire: "16インチ")
+# Size.create(tire: "17インチ")
+# Size.create(tire: "18インチ")
+# Size.create(tire: "19インチ")
+# Size.create(tire: "20インチ")
+# Size.create(tire: "21インチ")
+# Size.create(tire: "22インチ")
+# Size.create(tire: "23インチ")
+# Size.create(tire: "24インチ")
+
+
+# Size.create(ski: "140cm～")
+# Size.create(ski: "150cm～")
+# Size.create(ski: "160cm～")
+# Size.create(ski: "170cm～")
+# Size.create(ski: "スキーボード")
+# Size.create(ski: "子ども用")
+# Size.create(ski: "その他")
+
+# Size.create(snow_board: "135cm-140cm未満")
+# Size.create(snow_board: "140cm-145cm未満")
+# Size.create(snow_board: "145cm-150cm未満")
+# Size.create(snow_board: "150cm-155cm未満")
+# Size.create(snow_board: "155cm-160cm未満")
+# Size.create(snow_board: "160cm-165cm未満")
+# Size.create(snow_board: "165cm-170cm未満")
+
+Brand.create(name:"シャネル")
+Brand.create(name:"ナイキ")
+Brand.create(name:"ルイ ヴィトン")
+Brand.create(name:"シュプリーム")
+Brand.create(name:"アディダス")
+
+
+ 
+
+
+
+ 
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+ 
+
+
+ 
+
+
+ 
+
+ 
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
