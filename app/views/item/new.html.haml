@@ -141,15 +141,17 @@
                   %div.select__btn
                     .item__selecter
                     =f.label :¥ ,class:'japanese_yen'
-                    =f.text_field :price, maxlength: "7", placeholder: "例)300", class: "item__select__price"
+                    =f.text_field :price, maxlength: "7", placeholder: "例)300", class: "item__select__price", id: 'calculation'
                 %li.comission
                   .comission__left
                     販売手数料 (10%)
                   .comission__right
+                    ー
                 %li.profit
                   .profit__left
                     販売利益
                   .profit__right
+                    ー
 
             .sell__content__item__submit
               .sell__content__item__submit__form
