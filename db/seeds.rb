@@ -335,6 +335,9 @@ others_8.children.create([{name: "オフィス用品一般"},{name: "オフィ�
 others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
 
+#以下サイズに関しては服のサイズのみ実装する。
+#各サイズに関しては同じテーブルにしてしまうとnullの部分が増えてしまうが、各サイズごとにテーブルを作るとテーブルの量が増えるため実装方法に関しては検討する。
+
 # Size.create(ladys_shoes_size: "20cm以下")
 # Size.create(ladys_shoes_size: "20.5cm")
 # Size.create(ladys_shoes_size: "21cm")
@@ -368,18 +371,6 @@ others_9.children.create([{name: "すべて"}])
 # Size.create(mens_shoes_size: "30cm")
 # Size.create(mens_shoes_size: "30.5cm")
 # Size.create(mens_shoes_size: "31cm以上")
-
-
-Size.create(clothes: "XXS以下")
-Size.create(clothes: "XS(SS)")
-Size.create(clothes: "S")
-Size.create(clothes: "M")
-Size.create(clothes: "L")
-Size.create(clothes: "XL(LL)")
-Size.create(clothes: "2XL(3L)")
-Size.create(clothes: "3XL(4L)")
-Size.create(clothes: "4XL(5L)以上")
-Size.create(clothes: "FREE SIZE")
 
 
 # Size.create(ladys_skirt: "60cm以下")
@@ -476,6 +467,18 @@ Size.create(clothes: "FREE SIZE")
 # Size.create(snow_board: "155cm-160cm未満")
 # Size.create(snow_board: "160cm-165cm未満")
 # Size.create(snow_board: "165cm-170cm未満")
+
+Size.create(clothes: "XXS以下")
+Size.create(clothes: "XS(SS)")
+Size.create(clothes: "S")
+Size.create(clothes: "M")
+Size.create(clothes: "L")
+Size.create(clothes: "XL(LL)")
+Size.create(clothes: "2XL(3L)")
+Size.create(clothes: "3XL(4L)")
+Size.create(clothes: "4XL(5L)以上")
+Size.create(clothes: "FREE SIZE")
+
 
 Brand.create(name:"シャネル")
 Brand.create(name:"ナイキ")
