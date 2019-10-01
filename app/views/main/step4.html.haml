@@ -82,7 +82,7 @@
           %p.user__confirmation__cardnumber
             = link_to "？カード裏面の番号とは？>", "https://www.mercari.com/jp/privacy/"
 
-
-          %submit.user__step4__submit__button 次へ進む
+          =link_to"step5" do
+            %submit.user__step4__submit__button 次へ進む
 
 = render partial: 'footter'

@@ -6,13 +6,15 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :last_name , :first_name_kana, :last_name_kana])
-  #謝って一般の人がアクセスしないようにします
   end
 
 #  def after_sign_in_path_for(resource)
-#    step2_path(resource)
+#  '/phone_number/new'
 #  end
 
+  def after_sign_in_path_for(resource)
+    '/phone_number/new'
+  end
 
   private
 
@@ -25,5 +27,4 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
-
 end

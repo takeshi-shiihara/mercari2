@@ -1,43 +1,31 @@
+
 %body
+.mypage-main.clearfix
+  .mypage-main__sidebar
+    = render partial: 'mypagerender'
+  .mypage-main__mainbox
+    .mypage-main__mainbox__upbox-card
+      %p.card-title 支払い方法
+    .mypage-main__mainbox__downbox-card
+      .card-info-box
+        %p.card-title-min クレジットカード一覧
+        %ul.payment-list
+          %li
+            %form.card-form{action: "https://www.mercari.com/jp/mypage/card/delete/", method: "POST"}
+            = image_tag("https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2687693852", width: "49", alt: "visa", height: "15")
+            %input{name: "__csrf_value", type: "hidden", value: "2ab48051e86d97e323ed0b19f89a628fbb6386319ffaaa46d5a38c24e1dfc24b3347758ca69d80479611a7f28b3287ecaa4a9978c06cc4894a16c65ee527f754b"}/
+            %input{name: "card_sequence_no", type: "hidden", value: "5JvtfT8x8QtHRPUbhfcLZfcc"}/
+            .settings-payment-num ************3455
+            .settings-payment-num 11 / 20
+            %input{name: "method", type: "hidden", value: "card"}/
+            %button.remove-btn{type: "submit"}削除する
+      .card-info-lisk
+        = link_to "支払い方法について 〉", new_user_registration_path, class: 'payment-link'
 
-.main
-  .main__header-images
-    %a= image_tag 'topimage2.jpg' ,class: "image2"
 
-  .main__popular-category
-    .main__popular-category__upbox
-      %h2 人気のカテゴリー
-    .main__popular-category__downbox
-      %ul
-        %li レディース
-        %li メンズ
-        %li 家電・スマホ・カメラ
-        %li おもちゃ・ホビー・グッズ
-  .main__contents
-    .main__contents__itemlist
-      .main__contents__itemlist__titlebar
-        %h2 レディース新着アイテム
-        = link_to 'もっと見る ＞', 'https://www.mercari.com/jp/signup/' ,class: "morelink"
 
-      .main__contents__itemlist__items
-        - @items.each do |item_list|
-          .onebox
-            = link_to '', 'https://www.mercari.com/jp/signup/' ,class: "show-item-link"
-            .upbox
-              %span.price
-                ¥#{item_list.price}
-              - item_list.images.first(1).each do |item|
-                = image_tag("#{item.main_image}", class: "image")
-            .downbox
-              = item_list.name
-             
 
-  .main__exhibit-btn
-    %p
-    = link_to '出品', '/item/new' ,class: "e-btn"
-    %br
-    %i.fas.fa-camera.fa-3x
-
+-# フッター********************************
 .footer
   .footer__upbox
     = image_tag "footer.jpg", class: "footer-image"

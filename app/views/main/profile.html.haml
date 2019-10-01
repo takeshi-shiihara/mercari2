@@ -1,43 +1,24 @@
+- breadcrumb :profile
+= breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
 %body
+.mypage-main.clearfix
+  .mypage-main__sidebar
+    = render partial: 'mypagerender'
+  .mypage-main__mainbox
+    .mypage-main__mainbox__upbox
+      %p.plofile-title プロフィール
+      .profiles-edit_page
+        = link_to image_tag("github.png",class: "profile-logo"), root_path
+        %input{name: "nickname", placeholder: "(例)github", type: "text", class: "input-myname" }
+    .mypage-main__mainbox__downbox-profile
+      %textarea{name: "introduction", placeholder: "例）ご覧いただきありがとうございます！服のサイズは主に9号です。商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "self-introduction" }
+      -#DB作成後記述する <input type="hidden" value="aaaaa" name="after_save_callback">
+      %button.btn-red{type: "submit"} 変更する
 
-.main
-  .main__header-images
-    %a= image_tag 'topimage2.jpg' ,class: "image2"
 
-  .main__popular-category
-    .main__popular-category__upbox
-      %h2 人気のカテゴリー
-    .main__popular-category__downbox
-      %ul
-        %li レディース
-        %li メンズ
-        %li 家電・スマホ・カメラ
-        %li おもちゃ・ホビー・グッズ
-  .main__contents
-    .main__contents__itemlist
-      .main__contents__itemlist__titlebar
-        %h2 レディース新着アイテム
-        = link_to 'もっと見る ＞', 'https://www.mercari.com/jp/signup/' ,class: "morelink"
 
-      .main__contents__itemlist__items
-        - @items.each do |item_list|
-          .onebox
-            = link_to '', 'https://www.mercari.com/jp/signup/' ,class: "show-item-link"
-            .upbox
-              %span.price
-                ¥#{item_list.price}
-              - item_list.images.first(1).each do |item|
-                = image_tag("#{item.main_image}", class: "image")
-            .downbox
-              = item_list.name
-             
 
-  .main__exhibit-btn
-    %p
-    = link_to '出品', '/item/new' ,class: "e-btn"
-    %br
-    %i.fas.fa-camera.fa-3x
-
+-# フッター********************************
 .footer
   .footer__upbox
     = image_tag "footer.jpg", class: "footer-image"

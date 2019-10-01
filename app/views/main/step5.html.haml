@@ -33,6 +33,7 @@
         .user__main__form__container__step5
           %h3.user__step5 ありがとうございます。
           %h3.user__step5 会員登録が完了しました。
-          %submit.user__step5__submit__button メルカリをはじめる
+          =link_to"/" do
+            %submit.user__step5__submit__button メルカリをはじめる
 
 = render partial: 'footter'
