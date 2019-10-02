@@ -5,8 +5,9 @@ class ItemController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @prefecture = @item.delibery.prefecture
   end
-
+ 
   def hop1
   end
 

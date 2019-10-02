@@ -30,7 +30,7 @@ class MainController < ApplicationController
   end
 
   def listing
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   private
