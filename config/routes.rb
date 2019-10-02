@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'card/show'
   devise_for :users
   root 'main#index'
-  resources :item ,only: [:new, :create, :edit, :update]
+  resources :item ,only: [:new, :create, :edit, :update, :show, :destroy]
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 #  get 'phone_number' => 'main#phone_number'
@@ -39,6 +40,8 @@ Rails.application.routes.draw do
   get 'mypage' => 'main#mypage'
   get 'mypage/profile' => 'main#profile'
   get 'mypage/card' => 'main#card'
+  get 'mypage/listing' => 'main#listing'
   post '/pay' => 'item#pay'
+
 
 end

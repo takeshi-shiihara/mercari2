@@ -29,6 +29,10 @@ class MainController < ApplicationController
   def userinfomation
   end
 
+  def listing
+    @user = User.find(params[:id])
+  end
+
   private
 #  def move_to_index  #ログインしていない時は出品できない仕様#
 #    redirect_to action: :index unless user_signed_in?
