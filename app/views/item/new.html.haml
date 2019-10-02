@@ -12,7 +12,7 @@
       .item__main__content__box
         .item__main__content__box__inner
         %h2.head__message 商品の情報を入力
-        = form_with model: @item do |f|
+        = form_for(@item, url:item_index_path) do |f|
           .item__sell__form
             .sell__image__box
               %h3.sell__image__box__upper
@@ -22,7 +22,7 @@
               %p.item__upload__comments
                 最大10枚までアップロードできます
               .sell__image__box__image__area
-                %textarea.item__upload__box{placeholder: '画像投稿機能', rows: "5"}
+                = f.file_field :image, class: ".item__upload__box", placeholder: ""
 
             .sell__content__item__name
               .item__group
@@ -38,7 +38,7 @@
                   %span.item__form__require
                     必須
                 %div
-                =f.text_area :info, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+                =f.text_area :description, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
 
 
             .sell__content__items__detail
@@ -52,8 +52,31 @@
                       必須
                   %div.select__btn
                     %i.fas.fa-chevron-down
-                    %select.item__select__list
-                      .item__selecter
+                    = f.collection_select :category_id, @category, :id, :name, {prompt: "---"},class: 'item__select__list'
+                  -# カテゴリの詳細機能を追加する際に使用
+                  -# %div.select__btn
+                  -#   %i.fas.fa-chevron-down
+                  -#   = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: 'item__select__list'
+                  -# %div.select__btn
+                  -#   %i.fas.fa-chevron-down
+                  -#   = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "---"},class: 'item__select__list'
+
+                .item__group__margin
+                  %label.item__upper__message
+                    サイズ
+                    %span.item__form__require
+                      必須
+                  %div.select__btn
+                    %i.fas.fa-chevron-down
+                    = f.collection_select :size_id , Size.all,:id,:clothes ,{ prompt: "---"} ,class: "item__select__list"                    
+                .item__group__margin
+                  %label.item__upper__message
+                    ブランド
+                    %span
+                      任意
+                  %div
+                    = f.fields_for :brand do |i|
+                      = i.text_field :name , class: "item__select__list", placeholder: "例)シャネル"
                 .item__group__margin
                   %label.item__upper__message
                     商品の状態
@@ -61,43 +84,48 @@
                       必須
                   %div.select__btn
                     %i.fas.fa-chevron-down
-                    %select.item__select__list
-                      .item__selecter
-                
+                    = f.collection_select :condition, Condition.all, :id, :name, {prompt: "---"},class: 'item__select__list'
+
 
             .sell__content__items__delibery
-              %h3.item__form__message
-                配送について
-              %a.fas.fa-question-circle
-              = link_to ""
-              .sell__content__item__form
-                .item__group
-                  %label.item__upper__message
-                    配送料の負担
-                    %span.item__form__require
-                      必須
-                  %div.select__btn
-                    %i.fas.fa-chevron-down
-                    %select.item__select__list
-                      .item__selecter
-                .item__group__margin
-                  %label.item__upper__message
-                    発送元の地域
-                    %span.item__form__require
-                      必須
-                  %div.select__btn
-                    %i.fas.fa-chevron-down
-                    %select.item__select__list
-                      .item__selecter
-                .item__group__margin
-                  %label.item__upper__message
-                    発送までの日数
-                    %span.item__form__require
-                      必須
-                  %div.select__btn
-                    %i.fas.fa-chevron-down
-                    %select.item__select__list
-                      .item__selecter
+              = f.fields_for :delibery do |i|
+                %h3.item__form__message
+                  配送について
+                %a.fas.fa-question-circle
+                = link_to ""
+                .sell__content__item__form
+                  .item__group
+                    %label.item__upper__message
+                      配送料の負担
+                      %span.item__form__require
+                        必須
+                    %div.select__btn
+                      %i.fas.fa-chevron-down
+                      = i.select :delibery_burden, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], {prompt: "---"},class: "item__select__list"
+                  .item__group__margin
+                    %label.item__upper__message
+                      配送の方法
+                      %span.item__form__require
+                        必須
+                    %div.select__btn
+                      %i.fas.fa-chevron-down
+                      = i.select :delibery_way, [["未定", "未定"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["ゆうメール", "ゆうメール"]], {prompt: "---"},class: "item__select__list"
+                  .item__group__margin
+                    %label.item__upper__message
+                      発送元の地域
+                      %span.item__form__require
+                        必須
+                    %div.select__btn
+                      %i.fas.fa-chevron-down
+                      = i.collection_select :prefecture , Prefecture.all, :id, :name, {prompt: "---"},class: "item__select__list"
+                  .item__group__margin
+                    %label.item__upper__message
+                      発送までの日数
+                      %span.item__form__require
+                        必須
+                    %div.select__btn
+                      %i.fas.fa-chevron-down
+                      = i.select :delibery_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], {prompt: "---"},class: "item__select__list"
                     
             .sell__content__item__price
               %h3.item__form__message
@@ -105,23 +133,25 @@
                 %a.fas.fa-question-circle
                 = link_to ""
               .sell__content__item__price__form
-                %li.item__group
+                %li.item__group#pay_yen
                   %label.item__upper__message#price__label
                     価格
                     %span.item__form__require
                       必須
                   %div.select__btn
                     .item__selecter
-                      $
-                    =f.text_field :price, maxlength: "9", placeholder: "例)300", class: "item__select__price"
+                    =f.label :¥ ,class:'japanese_yen'
+                    =f.text_field :price, maxlength: "7", placeholder: "例)300", class: "item__select__price", id: 'calculation'
                 %li.comission
                   .comission__left
                     販売手数料 (10%)
                   .comission__right
+                    ー
                 %li.profit
                   .profit__left
                     販売利益
                   .profit__right
+                    ー
 
             .sell__content__item__submit
               .sell__content__item__submit__form
