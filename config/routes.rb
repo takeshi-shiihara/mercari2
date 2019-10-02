@@ -8,9 +8,7 @@ Rails.application.routes.draw do
   get 'purchase/done'
   get 'card/new'
   get 'card/show'
-  devise_for :users
   root 'main#index'
-  resources :item ,only: [:new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :phone_number, only: [:new, :create]
