@@ -45,7 +45,7 @@
   .modal-inner {
     max-width: none;
     width: 600px;
-    margin: 20px auto;
+    margin: 40px auto;
     position: relative;
     overflow: hidden;
     background: #fff;
@@ -68,6 +68,12 @@
     }
     .modal-btn-cansel {
       float: left;
+    }
+    .modal-btn-submit {
+      float: right;
+      border-left: 1px solid #ccc;
+      color: #0099e8;
+      text-decoration: none;
     }
   }
 }
