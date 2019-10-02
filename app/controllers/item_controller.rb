@@ -18,6 +18,18 @@ class ItemController < ApplicationController
   end
 
 
+
+  def edit
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy if item.user.id == current_user.id
+    redirect_to root_path
+  end
+
+
+
   # def pay
   #   Payjp.api_key = 'sk_test_85b3d866e4d1e7a1e0358767'
   #   charge = Payjp::Charge.create(
@@ -28,6 +40,7 @@ class ItemController < ApplicationController
   #   redirect_to "/"
   # end
   
+
 
   def create
     @item = Item.new(item_params)

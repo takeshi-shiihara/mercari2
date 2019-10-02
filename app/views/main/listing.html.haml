@@ -1,0 +1,39 @@
+
+
+%body
+.mypage-main.clearfix
+  .mypage-main__sidebar
+    = render partial: 'mypagerender'
+  .right-content
+    %section.mypage-tab-container
+      %h2.mypage-tab-head 出品した商品
+      %ul.listing-tabs.clearfix
+        %li.active{ href: "#exhibiting" }
+          %h3
+            = link_to "出品中", ""
+        %li
+          %h3
+            = link_to "取引中", ""
+        %li
+          %h3
+            = link_to "売却済み", ""
+      .tab-content
+        %ul.mypage-item-list.active#exhibiting
+          - @user.items.each do |item|
+            %li
+              =link_to "/item/#{item.id}", class: 'mypage-item-link' do
+                %figure
+                  - item.images.first(1).each do |image|
+                    = image_tag image.main_image, size: 48
+                .mypage-item-body
+                  .mypage-item-text
+                    = item.name
+                  %div
+                    %span.listing-item-count
+                      %i.fas.fa-thumbs-up
+                      %span 0
+                    %span.listing-item-count
+                      %i.fas.fa-comment-dots
+                      %span 1000
+                    .mypage-item-stutus 出品中
+
