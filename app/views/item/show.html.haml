@@ -67,7 +67,8 @@
               = link_to "#{@prefecture}", "", class: 'a'
           %tr
             %th 発送日の目安
-            %td 3分間待ってやる
+            %td
+              = @item.delibery.delibery_date
     - if user_signed_in? && @item.user_id == current_user.id
       .listing-item-change-box
         = link_to "商品の編集","#", class: 'btn'
