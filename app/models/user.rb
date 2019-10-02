@@ -7,6 +7,7 @@ devise :database_authenticatable, :registerable,
       has_one :phone_number
       has_one :address
       has_many :sns_credentials, dependent: :destroy
+      has_many :items
 
       def self.find_oauth(auth)
             uid = auth.uid

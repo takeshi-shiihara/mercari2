@@ -1,14 +1,19 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Mercari2
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %script{:crossorigin => "anonymous", :integrity => "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", :src => "https://code.jquery.com/jquery-3.3.1.js"}
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}
-  
+    %link{ href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
+    :css
+      a:hover   { text-decoration: underline; }
+    %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"}
+    
   %body
   %header
     .top
@@ -33,14 +38,25 @@
 
           .top__contents__downbox__rightbox
             - if user_signed_in?
-              .reft-btn
+              .reft-btn2
+                %i.fas.fa-search
+                = link_to "いいね一覧"
+              .reft-btn2
+                %i.fas.fa-search
+                = link_to "お知らせ"
+              .reft-btn2
+                %i.fas.fa-search
                 = link_to "ログアウト", destroy_user_session_path, method: :delete
               .right-btn
-                %a.post{:href => "/tweets/new"} 投稿する
+                %i.fas.fa-search
+                %a.post{ href: "/mypage"} マイページ
             - else
               .reft-btn
                 = link_to "新規会員登録", login_path, class: 'signup-btn'
               .right-btn
                 = link_to "ログイン", new_user_session_path, class: 'login-btn'
 
-    = yield
+
+
+
+  = yield

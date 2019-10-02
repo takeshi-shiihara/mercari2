@@ -7,7 +7,7 @@ class AddressController < ApplicationController
   def create
     @address = Address.create(address_params)
     if @address.save
-      redirect_to controller: :main, action: :step4
+      redirect_to controller: :card, action: :new
     else
     redirect_to controller: :main, action: :index
     end
