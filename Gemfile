@@ -86,3 +86,4 @@ gem 'ancestry'
 gem 'payjp'
 gem 'gretel'
 gem "dropzonejs-rails"
+gem "dotenv-rails"
