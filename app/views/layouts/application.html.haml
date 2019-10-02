@@ -3,6 +3,7 @@
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Mercari2
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -37,10 +38,18 @@
 
           .top__contents__downbox__rightbox
             - if user_signed_in?
-              .reft-btn
+              .reft-btn2
+                %i.fas.fa-search
+                = link_to "いいね一覧"
+              .reft-btn2
+                %i.fas.fa-search
+                = link_to "お知らせ"
+              .reft-btn2
+                %i.fas.fa-search
                 = link_to "ログアウト", destroy_user_session_path, method: :delete
               .right-btn
-                %a.post{ href: "/tweets/new"} 投稿する
+                %i.fas.fa-search
+                %a.post{ href: "/mypage"} マイページ
             - else
               .reft-btn
                 = link_to "新規会員登録", new_user_registration_path, class: 'signup-btn'

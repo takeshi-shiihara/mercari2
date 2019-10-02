@@ -11,12 +11,6 @@ class MainController < ApplicationController
   def step0
   end
 
-  def step3
-  end
-
-  def step4
-  end
-
   def step5
   end
 
