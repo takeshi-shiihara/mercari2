@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   get 'mypage' => 'main#mypage'
   get 'mypage/profile' => 'main#profile'
   get 'mypage/card' => 'main#card'
-
+  get 'mypage/listing' => 'main#listing'
 end
