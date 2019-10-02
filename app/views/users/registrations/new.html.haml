@@ -30,7 +30,7 @@
       %h2.user__main__registration 会員情報入力
       .user__main__form
         .user__main__form__container
-          = form_for(resource, as: resource_name, url: registration_path(resource_name), method: :post) do |f|
+          = form_for(@user, as: resource_name, url: registration_path(resource_name), method: :post) do |f|
             = render "devise/shared/error_messages", resource: resource
             .user__field
               = f.label :ニックネーム, class:'user__field__label'
@@ -84,8 +84,8 @@
             .user__field__actions
               = f.submit "次へ進む", class: 'user__submit__button'
 
-          %p.user__confirmation__information
-            = link_to "本人情報の登録について>", "https://www.mercari.com/jp/privacy/"
+        %p.user__confirmation__information
+          = link_to "本人情報の登録について>", "https://www.mercari.com/jp/privacy/"
 
 %footter.footter
   .single-footer
