@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'main#index'
-  resources :item ,only: [:new, :create]
+  resources :item ,only: [:show, :new, :create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 #  get 'phone_number' => 'main#phone_number'

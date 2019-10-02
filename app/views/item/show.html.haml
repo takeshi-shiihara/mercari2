@@ -157,7 +157,7 @@
         本当に削除しますか？
         .clearfix
           .modal-btn.modal-btn-cansel キャンセル
-          = link_to "削除", "/item/#{@item.id}", method: :destroy, class: 'modal-btn', 'modal-btn-submit'
+          = link_to "削除", "/item/#{@item.id}", method: :delete, class: 'modal-btn modal-btn-submit'
 
 .footer
   .footer__upbox
