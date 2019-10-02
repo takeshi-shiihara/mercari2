@@ -22,7 +22,7 @@
       .main__contents__itemlist__items
         - @items.each do |item_list|
           .onebox
-            = link_to '', 'https://www.mercari.com/jp/signup/' ,class: "show-item-link"
+            = link_to '', "/item/#{item_list.id}/edit",class: "show-item-link"
             .upbox
               %span.price
                 ¥#{item_list.price}
