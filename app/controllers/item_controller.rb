@@ -1,10 +1,10 @@
 class ItemController < ApplicationController
+  before_action :set_item, only:[:show, :edit, :update]
 
   def index
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def hop1
@@ -51,10 +51,25 @@ class ItemController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @item.user_id == current_user.id
+      @item.update(item_params)
+      redirect_to controller: :main, action: :index
+    end
+  end
+
+
   private
 
   def item_params
     params.require(:item).permit(:name, :description, :condition, :price, :image, :category_id, :size_id, :brand, delibery_attributes:[:id, :delibery_burden, :prefecture, :delibery_way, :delibery_date], brand_attributes:[:id, :name ]).merge(user_id: current_user.id )
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
  
 

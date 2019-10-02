@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'card/show'
   devise_for :users
   root 'main#index'
-  resources :item ,only: [:show, :new, :create, :destroy]
+  resources :item ,only: [:new, :create, :edit, :update, :show, :destroy]
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 #  get 'phone_number' => 'main#phone_number'
