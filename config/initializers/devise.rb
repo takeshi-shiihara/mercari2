@@ -300,4 +300,6 @@ end
 
 Devise.setup do |config|
   config.omniauth :facebook, '505496210181220', 'e132b2bac3dd45f0b5b4b7a350bbf05f'
+  config.omniauth :google_oauth2, '891886480355-srbkt31upb058iiu3c1bnjol3l0h2rn1.apps.googleusercontent.com', 'jYpwJqYyF8epQjNg3SelCtgm'
 end
+
