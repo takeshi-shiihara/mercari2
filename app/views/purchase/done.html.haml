@@ -1,0 +1,39 @@
+%link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}
+.item__content
+  %header.item__header
+    %h1.item__header__name
+    = link_to '#' do
+      .item__main__image
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3296506464", alt: 'mercari',class: 'item__mercari'
+  .item__main
+
+
+  .buy-main
+    .buy-main__content
+      %h2.buy-main__content__header
+        購入が完了しました！
+      .buy-main__content__item
+        .buy-main__content__item__inner
+          %p.buy-main__content__item__name
+            %p Apple MacBook Pro 13インチ
+            %p ¥135,000(送料込み)
+          .buy-main__content__item__form
+            %button.buy-btn
+              = link_to "トップページへ戻る", root_path, class: 'done-top-link'
+
+
+
+  %footer.item__footer
+    .item__footer__box
+      %nav.item__footer__box__list
+        %ul.text__clearfix
+          %li.text__clearfix__item
+            = link_to 'プライバシーポリシー',"https://www.mercari.com/jp/privacy/", class:"head_up"
+          %li.text__clearfix__item
+            = link_to 'メルカリ利用規約',"https://www.mercari.com/jp/tos/", class:"head_up"
+          %li.text__clearfix__item
+            = link_to '特定商取引に関する表記',"https://www.mercari.com/jp/tokutei/", class:"head_up"
+        = link_to 'https://www.mercari.com/jp/' do
+          = image_tag '//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464', alt: 'mercari', height: '65', width: '80', class: 'single-footer-logo'
+      %p
+        %small.item__footer__logo © 2019 Mercari

@@ -1,3 +1,4 @@
+
 %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}
 .item__content
   %header.item__header
@@ -26,7 +27,7 @@
             %ul.buy-main__content__item__point
               %li.buy-main__content__item__num
                 %div.buy-main__content__item__num__form
-                  none point
+                  ポイントはありません
             %ul.buy-main__content__item__pay
               %li.buy-main__content__item__pay__num
                 .buy-main__content__item__you__pay
@@ -34,11 +35,10 @@
                 .buy-main__content__item__buy__num
                   ¥1990
                   %span.item-num
-            %button.buy-btn
-              購入する
-            
             = form_tag(action: :pay, method: :post) do
-              %script.payjp-button{"data-key" => "pk_test_0383a1b8f91e8a6e3ea0e2a9", "data-on-created" => "onCreated", "data-partial" => "true", "data-submit-text" => "支払う", "data-text" => "購入する", :src => "https://checkout.pay.jp/", :type => "text/javascript"}:cdata
+              %button.buy-btn
+                購入する
+          
 
 
 
@@ -59,11 +59,20 @@
         .buy-main__content__user__inner
           %h3.buy-how-to-pay
             支払方法
+          %br
           %p.buy-main__content__user__text
           .buy-main__content__user__card
             %p.buy-main__content__user__card__num
-              %br 123456789123
-              %br 01/24
+            //クレジットカード情報//
+          - if @default_card_information.blank?
+            %br /
+          - else
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            %br
             = image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png', alt: '', height: '22px', width: '22px', class: 'payment-card-image'
           = link_to  "#", class: 'buy-user-info-fix' do
             変更する

@@ -1,0 +1,122 @@
+%body
+.mypage-main.clearfix
+  .mypage-main__sidebar
+    = render partial: 'main/mypagerender'
+  .mypage-main__mainbox
+    .user__main
+      .user__main__container
+        %h2.user__main__registration 支払い方法
+        .user__main__form
+          .user__main__form__container
+            = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              .user__field
+                %label.user__field__label カード番号
+                %span.user__field__span 必須
+                %br/
+                = text_field_tag "number", "", class: "user__text__field__step3", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+                -# %input.user__text__field__step3{placeholder: "半角数字のみ"}
+              .user__field
+                %label.user__field__label 有効期限
+                %span.user__field__span 必須
+                %br/
+                -# %select.user__text__field__step4{name: "day"}>
+                %select.user__text__field__step4#exp_month{name: "exp_month", type: "text"}
+                  %option{value: ""} --
+                  %option{value: "1"}01
+                  %option{value: "2"}02
+                  %option{value: "3"}03
+                  %option{value: "4"}04
+                  %option{value: "5"}05
+                  %option{value: "6"}06
+                  %option{value: "7"}07
+                  %option{value: "8"}08
+                  %option{value: "9"}09
+                  %option{value: "10"}10
+                  %option{value: "11"}11
+                  %option{value: "12"}12
+                %h4.user__field__step4__h4 月
+
+              .user__field__step4
+                -# %select.user__text__field__step4{name: "year"}>
+                %select.user__text__field__step4#exp_year{name: "exp_year", type: "text"}
+                  %option{value: ""} --
+                  %option{value: "2019"}19
+                  %option{value: "2020"}20
+                  %option{value: "2021"}21
+                  %option{value: "2022"}22
+                  %option{value: "2023"}23
+                  %option{value: "2024"}24
+                  %option{value: "2025"}25
+                  %option{value: "2026"}26
+                  %option{value: "2027"}27
+                  %option{value: "2028"}28
+                  %option{value: "2029"}29
+                %h4.user__field__step4__h4 年
+
+              .user__field__security__cord
+                %label.user__field__label セキュリティコード
+                %span.user__field__span 必須
+                %br/
+                -# %input.user__text__field__aaa{placeholder: "カード背面4桁もしくは3桁の番号"}
+                = text_field_tag "cvc", "", class: "user__text__field__aaa", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+                #card_token
+                = submit_tag "追加する", id: "token_submit" , class:"user__step4__submit__button"
+
+
+
+
+
+
+
+
+
+
+
+-# フッター********************************
+.footer
+  .footer__upbox
+    = image_tag "footer.jpg", class: "footer-image"
+  .footer__downbox
+    .footer__downbox__menu
+      .group
+        %h3 メルカリについて
+        %ul
+          %li 会社概要（運営会社）
+          %li 採用情報
+          %li プレスリリース
+          %li 公式ブログ
+          %li メルカリロゴ利用ガイドライン
+      .group
+        %h3 ヘルプ＆ガイド
+        %ul
+          %li メルカリガイド
+          %li らくらくメルカリ便
+          %li ゆうゆうメルカリ便
+          %li 大型メルカリ便
+          %li 車体取引ガイド
+          %li メルカリあんしん・あんぜん宣言！
+          %li 偽ブランド品撲滅への取り組み
+          %li メルカリボックス
+      .group
+        %h3 プライバシーと利用規約
+        .group__list2
+          %ul.leftlist
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li あんしんスマホサポート制度に関する利用規約
+            %li コンプライアンスポリシー
+          %ul.rightlist
+            %li 個人データの安全管理に係る基本方針
+            %li 特定商取引に関わる表記
+            %li 資金決済法に基づく表示
+            %li 法令順守と犯罪抑止のために
+      .group
+        %h3 国
+        %ul
+          %li 日本
+          %li United States
+
+    .footer__downbox__logobar
+      = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "logo"), root_path
+      %p.name ©️2019 Mercari
+
