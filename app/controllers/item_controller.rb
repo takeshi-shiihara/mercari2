@@ -16,6 +16,7 @@ class ItemController < ApplicationController
     @item = Item.new
     @item.build_delibery
     @item.build_brand
+    @item.build_image
     @category = Category.roots
   end
 
@@ -53,7 +54,7 @@ class ItemController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :condition, :price, :image, :category_id, :size_id, :brand, delibery_attributes:[:id, :delibery_burden, :prefecture, :delibery_way, :delibery_date], brand_attributes:[:id, :name ]).merge(user_id: current_user.id )
+    params.require(:item).permit(:name, :description, :condition, :price, :category_id, :size_id, :brand, delibery_attributes:[:id, :delibery_burden, :prefecture, :delibery_way, :delibery_date], brand_attributes:[:id, :name ], image_attributes:[:id, :main_image, :sub_image ]).merge(user_id: current_user.id )
   end
 
   def set_item
