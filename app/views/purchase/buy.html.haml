@@ -41,6 +41,7 @@
                 購入する
             - else
               = form_tag(action: :pay, method: :post) do
+                %input{:name => "status", :placeholder => "status", :type => "hidden", :value => "1"}
                 %button.buy-btn
                   購入する
 
