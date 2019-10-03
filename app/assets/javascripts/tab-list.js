@@ -1,5 +1,5 @@
 
-$(document).on('turbolinks:load', function() {
+$(function() {
   $('li.tab').on('click', function() {
     $('li.tab').removeClass("action-btn");
     $(this).addClass('action-btn');
@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function() {
 });
 
 
-$(document).on('turbolinks:load', function() {
+$(function() {
   $('li.tab-buy').on('click', function() {
     $('li.tab-buy').removeClass("action-btn");
     $(this).addClass('action-btn');
