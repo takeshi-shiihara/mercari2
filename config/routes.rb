@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
   root 'main#index'
+
   resources :item ,only: [:new, :create, :edit, :update, :show, :destroy]
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -25,9 +26,9 @@ Rails.application.routes.draw do
 
   resources :purchase, only: [:index] do
     collection do
-      get 'buypage', to: 'purchase#buypage'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
+      post 'pay/:id', to: 'purchase#pay'
+      get 'done/:id', to: 'purchase#done'
+      get 'buy/:id', to: 'purchase#buy'
     end
   end
 
