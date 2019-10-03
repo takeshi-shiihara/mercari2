@@ -10,7 +10,12 @@
             - @item.images.each do |image|
               .item-box__main__photo__upper__stage__active
                 .item-box__main__photo__upper__stage__active__inner
-                  = image_tag image.main_image, size: 300
+                  - if @item.status == 1
+                    .sold-bar-show
+                    .sold-text-show SOLD
+                    = image_tag image.main_image, size: 300
+                  - else
+                    = image_tag image.main_image, size: 300
         .item-box__main__photo__dots.clearfix
           - @item.images.each do |image|
             .item-box__main__photo__dots__dot
@@ -83,7 +88,10 @@
         %span.tax (税込)
         %span.shipping
           = @item.delibery.delibery_burden
-        = link_to '購入画面に進む', hop1_path, class: 'buy-bottun' 
+      - if @item.status == 1
+        = link_to '売り切れました', "" , class: 'buy-bottun-show' 
+      - else
+        = link_to '購入画面に進む', "/purchase/buy/#{@item.id}" , class: 'buy-bottun' 
       .description
         %p= @item.description
       .container
