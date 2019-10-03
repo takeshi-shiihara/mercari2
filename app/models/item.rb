@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   #has_many:comments
   #has_one:buy
   #has_one:prefecture
+  mount_uploader :image, ImageUploader
 
   extend ActiveHash::Associations::ActiveRecordExtensions
 
