@@ -19,10 +19,14 @@
                 出品画像
                 %span.item__form__require
                   必須
-              %p.item__upload__comments
-                最大10枚までアップロードできます
-              .sell__image__box__image__area
-                = f.file_field :image, class: ".item__upload__box", placeholder: ""
+                %p.item__upload__comments
+                  最大10枚までアップロードできます
+                  .sell__image__box__image__area
+                  = f.fields_for :image do |img|
+                    .sell__image__box__image__area
+                    = img.file_field :main_image, class: ".item__upload__box"
+                    .sell__image__box__image__area
+                    = img.file_field :sub_image, class: ".item__upload__box"
 
             .sell__content__item__name
               .item__group
