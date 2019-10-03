@@ -9,7 +9,7 @@ class PhoneNumberController < ApplicationController
     if @phone_number.save
       redirect_to controller: :address, action: :new
     else
-    redirect_to controller: :main, action: :index
+      render :new
     end
   end
 
