@@ -1,0 +1,79 @@
+.listing-item-change-box{
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
+  a {
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+  }
+  p  {
+    text-align: center;
+    font-size: 16px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    text-align: center;
+    text-decoration: none;
+    margin: 16px 0 16px 0;
+    color: #fff;
+  }
+  button {
+    background: #aaa;
+    border: 1px solid #aaa;
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translate(0, -10px);
+  background: rgba(0,0,0,0.8);
+  .modal-banner {
+    text-align: center;
+  }
+  .modal-inner {
+    max-width: none;
+    width: 600px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    .modal-body {
+      padding: 64px;
+      line-height: 1.5;
+      .modal-head {
+        font-size: 16px;
+      }
+      .bold {
+        font-weight: 600;
+      }
+    }
+    .modal-btn {
+      line-height: 63px;
+      cursor: pointer;
+      border-top: 1px solid #ccc;
+      width: 50%;
+      text-align: center;
+    }
+    .modal-btn-cansel {
+      float: left;
+    }
+    .modal-btn-submit {
+      float: right;
+      border-left: 1px solid #ccc;
+      color: #0099e8;
+      text-decoration: none;
+    }
+  }
+}

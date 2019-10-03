@@ -8,7 +8,7 @@ class MainController < ApplicationController
 
   end
 
-  def step0
+  def login
   end
 
   def step5
@@ -27,6 +27,10 @@ class MainController < ApplicationController
   end
 
   def userinfomation
+  end
+
+  def listing
+    @user = User.find(current_user.id)
   end
 
   private

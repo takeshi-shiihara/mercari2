@@ -50,7 +50,7 @@
                 %a.post{ href: "/mypage"} マイページ
             - else
               .reft-btn
-                = link_to "新規会員登録", new_user_registration_path, class: 'signup-btn'
+                = link_to "新規会員登録", login_path, class: 'signup-btn'
               .right-btn
                 = link_to "ログイン", new_user_session_path, class: 'login-btn'
 

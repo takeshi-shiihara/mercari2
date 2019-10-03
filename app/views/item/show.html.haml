@@ -57,40 +57,49 @@
               = @item.condition
           %tr
             %th 配送料の負担
-            %td 送料別
+            %td
+              = @item.delibery.delibery_burden
           %tr
             %th 配送の方法
-            %td 飛行石
+            %td
+              = @item.delibery.delibery_way
           %tr
             %th 配送元地域
             %td
-              = link_to "#{@item.user.address.prefecture}", "", class: 'a'
+              = link_to "#{@prefecture}", "", class: 'a'
           %tr
             %th 発送日の目安
-            %td 3分間待ってやる
-    .item-box__price
-      %span.item-box__price__bold 
-        $#{@item.price.to_s(:delimited)}
-      %span.tax (税込)
-      %span.shipping 送料別
-      /送料を表示
-    = link_to '購入画面に進む', hop1_path, class: 'buy-bottun' 
-    .description
-      %p= @item.description
-    .container
-      .container__left
-        %button.button-like
-          %i.fas.fa-thumbs-up
-          %span 不错!
-          %span.fade-in-down -100
-          /ここにイイね数
-        = link_to "", class: 'report' do
-          %i.fas.fa-wifi
-          %span 不適切な商品の報告
-      .container__right
-        = link_to "" do
-          %i.fas.fa-briefcase
-          %span あんしん・あんぜんへの取り組み
+            %td
+              = @item.delibery.delibery_date
+    - if user_signed_in? && @item.user_id == current_user.id
+      .listing-item-change-box
+        = link_to "商品の編集", edit_item_path(params[:id]), class: 'btn'
+        %p or
+        %button.btn#delete-btn この商品を削除する
+    - else
+      .item-box__price
+        %span.item-box__price__bold 
+          $#{@item.price.to_s(:delimited)}
+        %span.tax (税込)
+        %span.shipping
+          = @item.delibery.delibery_burden
+        = link_to '購入画面に進む', hop1_path, class: 'buy-bottun' 
+      .description
+        %p= @item.description
+      .container
+        .container__left
+          %button.button-like
+            %i.fas.fa-thumbs-up
+            %span 不错!
+            %span.fade-in-down -100
+            /ここにイイね数
+          = link_to "", class: 'report' do
+            %i.fas.fa-wifi
+            %span 不適切な商品の報告
+        .container__right
+          = link_to "" do
+            %i.fas.fa-briefcase
+            %span あんしん・あんぜんへの取り組み
   .item-message
     .item-message__main
       .item-message__main__content
@@ -99,48 +108,64 @@
         %textarea.text_field
         %button.message-button
           %span コメントする
-  %ul.prev-next-link
-    %li.prev-link
-      = link_to "", class: 'a' do
-        %i.fas.fa-angle-left
-        魔女の脱臼瓶
-        /前のリンク
-    %li.next-link
-      = link_to "", class: 'a' do
-        風呂の水がヘルシア
-        /次のリンク
-        %i.fas.fa-angle-right
-  .item-socialmedia
-    %ul.item-socialmedia__box
-      %li
-        = link_to "https://www.facebook.com" do
-          %i.fab.fa-facebook-square
-      %li
-        = link_to 'https://twitter.com/' do
-          %i.fab.fa-twitter
-      %li
-        = link_to 'https://www.pinterest.jp/' do
-          %i.fab.fa-pinterest
-      %li
-        = link_to 'https://www.instagram.com/', class: 'insta_btn' do
-          %span.insta
-            %i.fab.fa-instagram
-      %li
-        = link_to 'https://line.me/ja/', class: 'line-btn' do
-          %i.fab.fa-line
-  .item-user-profiele
-    %section
-      %h2 
-        = link_to 'ムスカ大佐のその他の出品', "", class: 'a'
-        /出品者のマイページへ
-      
-      .main__contents__itemlist__items
-        .onebox
-          .upbox
-            %span.price ¥800
-            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg/540px-David_-_Napoleon_crossing_the_Alps_-_Malmaison1.jpg", class: "image")
-          .downbox
-            ナポレオン・ボナパルト
+  - unless user_signed_in? && a = @item.user_id == current_user.id
+    %ul.prev-next-link
+      %li.prev-link
+        = link_to "", class: 'a' do
+          %i.fas.fa-angle-left
+          魔女の脱臼瓶
+          /前のリンク
+      %li.next-link
+        = link_to "", class: 'a' do
+          風呂の水がヘルシア
+          /次のリンク
+          %i.fas.fa-angle-right
+    .item-socialmedia
+      %ul.item-socialmedia__box
+        %li
+          = link_to "https://www.facebook.com" do
+            %i.fab.fa-facebook-square
+        %li
+          = link_to 'https://twitter.com/' do
+            %i.fab.fa-twitter
+        %li
+          = link_to 'https://www.pinterest.jp/' do
+            %i.fab.fa-pinterest
+        %li
+          = link_to 'https://www.instagram.com/', class: 'insta_btn' do
+            %span.insta
+              %i.fab.fa-instagram
+        %li
+          = link_to 'https://line.me/ja/', class: 'line-btn' do
+            %i.fab.fa-line
+    .item-user-profiele
+      %section
+        %h2 
+          = link_to "#{@item.user.nickname}サンの他の出品", "", class: 'a'
+        
+        .main__contents__itemlist__items
+          - @item.user.items.each do |item|
+            .onebox
+              = link_to "", item_path(item)
+              .upbox
+                %span.price
+                  ¥#{item.price}
+                - item.images.first(1).each do |image|
+                  = image_tag("#{image.main_image}", class: "image")
+              .downbox
+                = item.name
+  %aside.modal
+    .modal-inner.modal-banner
+      .modal-body
+        .mordal-head.bold 確認
+        削除すると二度と復活できません
+        %br
+        %br
+        本当に削除しますか？
+      .clearfix
+        .modal-btn.modal-btn-cansel キャンセル
+        = link_to "削除", "/item/#{@item.id}", method: :delete, class: 'modal-btn modal-btn-submit'
+
 .footer
   .footer__upbox
     = image_tag "footer.jpg", class: "footer-image"

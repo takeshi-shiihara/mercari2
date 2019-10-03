@@ -22,19 +22,17 @@
       .main__contents__itemlist__items
         - @items.each do |item_list|
           .onebox
-            = link_to '', "/purchase/buy/#{item_list.id}" , method: :get ,class: "show-item-link"
+            = link_to '', item_path(item_list),class: "show-item-link"
             .upbox
               %span.price
                 ¥#{item_list.price}
               = image_tag("#{item_list.images[0].main_image}", class: "image")
             .downbox
               = item_list.name
-    
-
 
   .main__exhibit-btn
     %p
-    = link_to '出品', new_item_path ,class: "e-btn"
+    = link_to '出品',new_item_path ,class: "e-btn"
     %br
     %i.fas.fa-camera.fa-3x
 
