@@ -16,12 +16,12 @@
       .buy-main__content__item
         .buy-main__content__item__inner
           %h3.buy-main__content__item__image
-            = image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsN8HRK3mRNnpktFJcymF4pUWArw8CW2nGk0ytizFoyNBu5yB59w', alt: '', height: '85px', width: '64px', class: ''
+            = image_tag("#{@item.images[0].main_image}", class: "image", height: '80px', width: '64px')
           %p.buy-main__content__item__name
-            LGTMの値段
+            #{@item.name}
           .buy-main__content__item__form
             %p.buy-main__content__item__price
-              ¥13500
+              ¥#{@item.price}
               %span.buy-main__content__item__commission
                 送料込み
             %ul.buy-main__content__item__point
@@ -33,13 +33,16 @@
                 .buy-main__content__item__you__pay
                   支払金額
                 .buy-main__content__item__buy__num
-                  ¥1990
+                  ¥#{@item.price}
                   %span.item-num
-            = form_tag(action: :pay, method: :post) do
-              %button.buy-btn
+            - if @default_card_information.blank?
+              %p.buy-none 支払い方法の入力を完了してください。
+              %div.buy-btn-none
                 購入する
-          
-
+            - else
+              = form_tag(action: :pay, method: :post) do
+                %button.buy-btn
+                  購入する
 
 
       .buy-main__content__user__info
@@ -47,6 +50,8 @@
           %h3.buy-delibery-address
             配送先
           .buy-delibery-address__users
+            -# %br #{current_user.addresses.city}
+            -# %br #{@user.a}
             %br〒542-0076
             %br大阪府大阪市中央区難波５丁目１−６０
             %br User
@@ -74,7 +79,7 @@
             = exp_month + " / " + exp_year
             %br
             = image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png', alt: '', height: '22px', width: '22px', class: 'payment-card-image'
-          = link_to  "#", class: 'buy-user-info-fix' do
+          = link_to  "/card/new_mypage", class: 'buy-user-info-fix' do
             変更する
             %i.fas.fa-chevron-right
             

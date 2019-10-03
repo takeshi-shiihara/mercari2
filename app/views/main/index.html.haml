@@ -22,12 +22,11 @@
       .main__contents__itemlist__items
         - @items.each do |item_list|
           .onebox
-            = link_to '', 'https://www.mercari.com/jp/signup/' ,class: "show-item-link"
+            = link_to '', "/purchase/buy/#{item_list.id}" , method: :get ,class: "show-item-link"
             .upbox
               %span.price
                 ¥#{item_list.price}
-              - item_list.images.first(1).each do |item|
-                = image_tag("#{item.main_image}", class: "image")
+              = image_tag("#{item_list.images[0].main_image}", class: "image")
             .downbox
               = item_list.name
     

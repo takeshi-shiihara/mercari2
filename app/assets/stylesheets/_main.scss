@@ -394,6 +394,36 @@ background-color: rgb(255, 255, 255);
 }//footer//
 
 
+.header-icon{
+  padding: 5px 14px 0 14px  ;
+  color: rgb(204, 204, 204);
+  a{
+    color: #222;
+    font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight:bold;
+
+  }
+}
+.header-icon :hover {
+  color: rgb(0, 149, 238);
+  a{
+    color: rgb(0, 149, 238);
+    text-decoration: none;
+  }
+}
+
+
+
+.profile-logo{
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+
 
 
 

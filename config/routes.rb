@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'card/show'
   devise_for :users
   root 'main#index'
-  resources :item ,only: [:new, :create]
+  resources :item ,only: [:new, :create] do
+end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 #  get 'phone_number' => 'main#phone_number'
@@ -23,9 +24,9 @@ Rails.application.routes.draw do
 
   resources :purchase, only: [:index] do
     collection do
-      get 'buypage', to: 'purchase#buypage'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
+      post 'pay/:id', to: 'purchase#pay'
+      get 'done/:id', to: 'purchase#done'
+      get 'buy/:id', to: 'purchase#buy'
     end
   end
 
@@ -40,5 +41,6 @@ Rails.application.routes.draw do
   get 'mypage/profile' => 'main#profile'
   get 'mypage/card' => 'main#card'
   post '/pay' => 'item#pay'
+
 
 end

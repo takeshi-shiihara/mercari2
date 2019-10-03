@@ -38,17 +38,15 @@
 
           .top__contents__downbox__rightbox
             - if user_signed_in?
-              .reft-btn2
-                %i.fas.fa-search
-                = link_to "いいね一覧"
-              .reft-btn2
-                %i.fas.fa-search
-                = link_to "お知らせ"
-              .reft-btn2
-                %i.fas.fa-search
-                = link_to "ログアウト", destroy_user_session_path, method: :delete
-              .right-btn
-                %i.fas.fa-search
+              .header-icon.like
+                %i.far.fa-heart= link_to " いいね一覧"
+              .header-icon.info
+                %i.far.fa-bell= link_to "  お知らせ"
+              .header-icon.check
+                %i.fas.fa-check= link_to " ログアウト", destroy_user_session_path, method: :delete
+              .header-logo
+                = link_to image_tag("github.png",class: "profile-logo"), root_path
+              .header-icon.mypage
                 %a.post{ href: "/mypage"} マイページ
             - else
               .reft-btn
