@@ -1,17 +1,50 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%body
+  .user__main
+    .user__main__content
+      .user__main__sessionform
+        .user__main__form__session
+          %p.user__main__form__session__p アカウントをお持ちでない方はこちら
+          = link_to"/users/sign_up" , class: :user__main__form__session__link do
+            .underbar__mail
+              %p 新規会員登録
+
+      .user__main__form
+        .user__main__form__container
+          = link_to"/users/auth/facebook" , class: :underbar__fb do
+            .user__field__fb
+              %i.fab.fa-facebook-square
+              %p Facebookで登録
+
+      .user__main__form
+        .user__main__form__container
+          = link_to"/users/auth/google_oauth2", class: :underbar__google do
+            .user__field__google
+              %i.fab.fa-google
+              %p.aiu Googleで登録
+
+        .user__main__form__container
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .user__field
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: 'user__sessiontext__field'
+            .user__field
+              = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード', class: 'user__sessiontext__field'
+            .user__field__robott
+              = image_tag "https://www.724685.com/word/icons/wd160921-01.png", alt: 'mercari', height: '80', width: '330'
+            .user__field__actions
+              = f.submit "ログイン", class: 'user__submit__button'
+            = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: 'user__password'
+
+%footter.footter
+  .single-footer
+    %ul.login-footer-list
+      %li
+        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li
+        = link_to "メルカリ規約", "https://www.mercari.com/jp/privacy/"
+      %li
+        = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/privacy/" 
+    = link_to (root_path) do 
+      = image_tag  'https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464', class: 'root__link__fooder'    
+
+    %p.login-footer-list-text
+      ©︎2019 Mercari

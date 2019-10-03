@@ -31,6 +31,9 @@
       %h2.user__main__registration 電話番号の確認
       .user__main__form
         .user__main__form__container
+          -if @phone_number.errors.any?
+            %p.user__field__error ※電話番号を入力してください
+
           .user__field
             = form_for(@phone_number, url: phone_number_index_path) do |f|
               %label.user__field__label 電話番号の番号
