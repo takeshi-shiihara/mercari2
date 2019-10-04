@@ -480,10 +480,45 @@ background-color: rgb(255, 255, 255);
 }
 
 
+.card-serect-bottun{
+  text-align: center;
+  background: #ea352d;
+  color: #fff;
+  display: block;
+  width: 320px;
+  height: 50px;
+  line-height: 50px;
+  text-decoration: none;
+  position: relative;
 
 
+}
 
+.serect-card-box{
+  padding: 64px 0px;
+}
 
+.serect-card-downbox{
+  border-top: 1px solid whitesmoke;
+}
+.text-bold{
+  font-weight:bold;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  color: #333;
+}
+.blue-text{
+  color: rgb(0, 149, 238);
+  font-weight:bold;
+  float: right;
+  margin: 30px;
+}
+
+.card-icon{
+  position: absolute;
+  z-index: 10;
+  padding: 17px;
+  color: #FFFFFF;
+}
 
 
 

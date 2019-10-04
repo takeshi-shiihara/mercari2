@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get 'userinfomation' => 'main#userinfomation'
   get 'hop1' => 'item#hop1'
   get 'mypage' => 'main#mypage'
+  get 'mypage/serectcard' => 'main#serectcard'
   get 'mypage/profile' => 'main#profile'
   get 'mypage/card' => 'main#card'
   get 'mypage/listing' => 'main#listing'

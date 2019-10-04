@@ -13,11 +13,16 @@ class ItemController < ApplicationController
   end
 
   def new
+    if user_signed_in?
     @item = Item.new
     @item.build_delibery
     @item.build_brand
     @item.build_image
     @category = Category.roots
+    else
+      redirect_to controller: :main, action: :index
+    end
+
   end
 
 
@@ -41,6 +46,10 @@ class ItemController < ApplicationController
   end
 
   def edit
+
+    unless @item.user.id == current_user.id
+    redirect_to controller: :main, action: :index
+    end
   end
 
   def update
