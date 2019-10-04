@@ -42,16 +42,21 @@
               %span.user__field__span 必須
               %br/
               = f.email_field :email, autocomplete: "email", placeholder: 'PC・携帯どちらでも可', class: 'user__text__field'
-            .user__field
-              = f.label :パスワード, class:'user__field__label'
-              %span.user__field__span 必須
-              %br/
-              = f.password_field :password, autocomplete: "new-password" , placeholder: '6文字以上', class: 'user__text__field'
-            .user__field
-              = f.label :パスワード（確認）, class:'user__field__label'
-              %span.user__field__span 必須
-              %br/
-              = f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: '6文字以上', class: 'user__text__field'
+
+              - if session["devise.sns_id"].present?
+                = f.hidden_field :password, autocomplete: "new-password" , placeholder: '6文字以上', class: 'user__text__field'
+                = f.hidden_field :password_confirmation, autocomplete: "new-password" , placeholder: '6文字以上', class: 'user__text__field'
+              - else
+                .user__field
+                  = f.label :パスワード, class:'user__field__label'
+                  %span.user__field__span 必須
+                  %br/
+                  = f.password_field :password, autocomplete: "new-password" , placeholder: '6文字以上', class: 'user__text__field'
+                .user__field
+                  = f.label :パスワード（確認）, class:'user__field__label'
+                  %span.user__field__span 必須
+                  %br/
+                  = f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: '6文字以上', class: 'user__text__field'
 
             .user__field__confirmation
               %h3 本人確認

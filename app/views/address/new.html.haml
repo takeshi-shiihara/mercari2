@@ -56,7 +56,7 @@
 
               .user__field
               -if @address.errors.any?
-                %p.user__field__error ※番地を数字で入力してください
+                %p.user__field__error ※番地を入力してください
               %label.user__field__label 番地
               %span.user__field__span 必須
               = f.text_field :address, autocomplete: "address", placeholder: "例）青山1-1-1", class: 'user__text__field__step3'

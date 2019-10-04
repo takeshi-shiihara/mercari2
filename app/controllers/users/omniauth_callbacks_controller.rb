@@ -13,10 +13,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def callback_for(provider)
     info = User.find_oauth(request.env["omniauth.auth"])
     @user = info[:user]
+    sns_id = info[:sns_id]
+    #@sns = SnsCredential.find(:id)
+    #binding.pry
     if @user.persisted? #ユーザー情報が存在するならば(メルカリでFB登録済みのユーザーである場合)
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "Facebook".capitalize) if is_navigational_format?
     else#初めてFBで登録する
+      session["devise.sns_id"] = sns_id
       render template: "users/registrations/new" #redirect_to だと更新してしまうのでrenderで
     end
   end
