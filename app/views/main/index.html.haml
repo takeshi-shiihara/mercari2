@@ -25,8 +25,6 @@
             = link_to '', item_path(item_list),class: "show-item-link"
             .upbox
 
-          
-
               - if item_list.status == 1
                 .sold-bar
                 .sold-text SOLD
@@ -37,7 +35,6 @@
                 %span.price
                   ¥#{item_list.price}
                 = image_tag("#{item_list.image.main_image}", class: "image")
-
 
             .downbox
               = item_list.name
