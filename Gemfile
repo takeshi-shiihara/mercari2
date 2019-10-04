@@ -76,6 +76,7 @@ gem 'capistrano-rbenv'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano3-unicorn'
+gem 'capistrano-rails-console'
 
 gem 'pry-rails'
 gem "jquery-rails"
