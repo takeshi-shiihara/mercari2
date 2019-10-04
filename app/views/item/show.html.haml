@@ -7,21 +7,39 @@
       .item-box__main__photo
         .item-box__main__photo__upper
           .item-box__main__photo__upper__stage
-            - @item.image.main_image.each do |image|
-              .item-box__main__photo__upper__stage__active
-                .item-box__main__photo__upper__stage__active__inner
-                  - if @item.status == 1
-                    .sold-bar-show
-                    .sold-text-show SOLD
-                    = image_tag image.main_image, size: 300
-                  - else
-                    = image_tag image.main_image, size: 300
+            //- @item.images.each do |image|////
+            .item-box__main__photo__upper__stage__active
+              .item-box__main__photo__upper__stage__active__inner
+                - if @item.status == 1
+                  .sold-bar-show
+                  .sold-text-show SOLD
+                  = image_tag("#{@item.image.main_image}", size: 300)
+                - else
+                  = image_tag("#{@item.image.main_image}", size: 300)
+                  -# = image_tag @item.image.main_image, size: 300
+            .item-box__main__photo__upper__stage__active
+              .item-box__main__photo__upper__stage__active__inner
+                - if @item.status == 1
+                  .sold-bar-show
+                  .sold-text-show SOLD
+                  = image_tag("#{@item.image.sub_image}", size: 300)
+                - else
+                  = image_tag("#{@item.image.sub_image}", size: 300)
+                  -# = image_tag @item.image.main_image, size: 300
+
         .item-box__main__photo__dots.clearfix
-          - @item.image.each do |image|
-            .item-box__main__photo__dots__dot
-              %span
-              .item-box__main__photo__dots__dot__inner
-                = image_tag image.main_image, size: 60
+          -# - @item.images.each do |image|
+          .item-box__main__photo__dots__dot
+            %span
+            .item-box__main__photo__dots__dot__inner
+              = image_tag("#{@item.image.main_image}", size: 60)
+              -# = image_tag image.main_image, size: 60
+          .item-box__main__photo__dots__dot
+            %span
+            .item-box__main__photo__dots__dot__inner
+              = image_tag("#{@item.image.sub_image}", size: 60)
+              -# = image_tag image.main_image, size: 60
+
       %table.item-box__main__table
         %tbody
           %tr
@@ -46,7 +64,7 @@
               = link_to "",class: 'a' do
                 %div
                   %i.fas.fa-angle-right
-                  = @item.category.parent.name
+                  = @item.category.name
               = link_to "",class: 'a' do
                 %div
                   %i.fas.fa-angle-right
@@ -158,8 +176,8 @@
               .upbox
                 %span.price
                   ¥#{item.price}
-                - item.images.first(1).each do |image|
-                  = image_tag("#{image.main_image}", class: "image")
+                -# - item.images.first(1).each do |image|
+                = image_tag("#{item.image.main_image}", class: "image")
               .downbox
                 = item.name
   %aside.modal

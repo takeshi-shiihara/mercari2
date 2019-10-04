@@ -16,7 +16,8 @@
       .buy-main__content__item
         .buy-main__content__item__inner
           %h3.buy-main__content__item__image
-            = image_tag("#{@item.images[0].main_image}", class: "image", height: '80px', width: '64px')
+            -# = image_tag("#{@item.images[0].main_image}", class: "image", height: '80px', width: '64px')
+            = image_tag("#{@item.image.main_image}", class: "image", height: '80px', width: '64px')
           %p.buy-main__content__item__name
             #{@item.name}
           .buy-main__content__item__form

@@ -13,6 +13,7 @@ class ItemController < ApplicationController
   end
 
   def new
+    if user_signed_in?
     @item = Item.new
     @item.build_delibery
     @item.build_brand
@@ -23,6 +24,10 @@ class ItemController < ApplicationController
     #   Category.where(ancestry: nil).each do |parent|
     #      @category_parent_array << parent.name
     #   end
+    else
+      redirect_to controller: :main, action: :index
+    end
+
   end
 
 #   def get_category_children
@@ -57,6 +62,10 @@ class ItemController < ApplicationController
   end
 
   def edit
+
+    unless @item.user.id == current_user.id
+    redirect_to controller: :main, action: :index
+    end
   end
 
   def update
@@ -76,6 +85,6 @@ class ItemController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
- 
+
 
 end
