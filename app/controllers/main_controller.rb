@@ -17,6 +17,9 @@ class MainController < ApplicationController
   def mypage
   end
 
+  def serectcard
+  end
+
   def profile
   end
 

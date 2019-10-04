@@ -1,9 +1,4 @@
 # README
-
-
-PAYJP_PRIVATE_KEY = 'sk_test_85b3d866e4d1e7a1e0358767'
-PAYJP_KEY = 'pk_test_c285f9d5a94403ecc8ab4fb2'
-
 ##usersテーブル
 
 |Column|Type|Options|
