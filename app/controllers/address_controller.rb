@@ -9,7 +9,7 @@ class AddressController < ApplicationController
     if @address.save
       redirect_to controller: :card, action: :new
     else
-    redirect_to controller: :main, action: :index
+      render :new
     end
   end
 
