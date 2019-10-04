@@ -57,6 +57,7 @@
                   %div.select__btn#categorise
                     %i.fas.fa-chevron-down
                     = f.collection_select :category_id, @category, :id, :name, {prompt: "---"},class: 'item__select__list'
+                    -# = f.select :category_id, @category_parent_array, {},{class: 'item__select__list',id:'parent_category'}
                   -# カテゴリの詳細機能を追加する際に使用
                   -# %div.select__btn
                   -#   %i.fas.fa-chevron-down
