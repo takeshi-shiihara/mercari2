@@ -321,7 +321,9 @@
   @include user__text__field();
   margin: 3px 0 0;
   width:300px;
+  height:50px;
   margin:5px 0 30px 0;
+  background-color: white;
 }
 .user__field__span__step3{
   @include user__field__span();
