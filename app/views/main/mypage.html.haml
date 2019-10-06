@@ -8,8 +8,9 @@
     .mypage-main__mainbox__upbox
       .profiles
         = link_to image_tag("github.png",class: "profile-logo"), root_path
-        %p github
-        %p 評価　２　出品１
+        %p 
+        = current_user.nickname
+        %p 評価　0　出品　0
     .mypage-main__mainbox__downbox
       %ul.mypage-tabs.clearfix
         %li.tab.action-btn{href: "#item2"} 
