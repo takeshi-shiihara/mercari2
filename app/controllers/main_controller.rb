@@ -33,7 +33,15 @@ class MainController < ApplicationController
   end
 
   def profile
+    @user = User.find(current_user.id)
   end
+
+  def edit
+      @user = User.find(current_user.id)
+      @user.update(user_profile)
+      redirect_to controller: :main, action: :index
+    
+end
 
   def card
   end
@@ -57,4 +65,7 @@ class MainController < ApplicationController
 #    redirect_to action: :index unless user_signed_in?
 #  end
 
+def user_profile
+  params.require(:user).permit(:nickname, :profile).merge(id: current_user.id)
+end
 end

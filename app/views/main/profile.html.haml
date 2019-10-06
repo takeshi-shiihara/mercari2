@@ -5,15 +5,17 @@
   .mypage-main__sidebar
     = render partial: 'mypagerender'
   .mypage-main__mainbox
-    .mypage-main__mainbox__upbox
+    .mypage-main__mainbox__upbox#profile-box
       %p.plofile-title プロフィール
-      .profiles-edit_page
-        = link_to image_tag("github.png",class: "profile-logo"), root_path
-        %input{name: "nickname", placeholder: "(例)github", type: "text", class: "input-myname" }
-    .mypage-main__mainbox__downbox-profile
-      %textarea{name: "introduction", placeholder: "例）ご覧いただきありがとうございます！服のサイズは主に9号です。商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "self-introduction" }
-      -#DB作成後記述する <input type="hidden" value="aaaaa" name="after_save_callback">
-      %button.btn-red{type: "submit"} 変更する
+      = form_for(@user, url:'/mypage/profile',method: :patch) do |f|
+        .profiles-edit_page
+          = link_to image_tag("github.png",class: "profile-logo"), root_path
+          = f.text_field :nickname , class: "input-myname" 
+        .downbox-profile
+          =f.text_area :profile, placeholder: "例）ご覧いただきありがとうございます！服のサイズは主に9号です。商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "self-introduction"
+          -#DB作成後記述する <input type="hidden" value="aaaaa" name="after_save_callback">
+          -# %button.btn-red{type: "submit"} 変更する
+          =f.submit :更新する,class: "btn-red"
 
 
 

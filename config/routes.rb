@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get 'mypage' => 'main#mypage'
   get 'mypage/serectcard' => 'main#serectcard'
   get 'mypage/profile' => 'main#profile'
+  patch 'mypage/profile' => 'main#edit'
   get 'mypage/card' => 'main#card'
   get 'mypage/listing' => 'main#listing'
   post '/pay' => 'item#pay'
