@@ -19,10 +19,18 @@
                 出品画像
                 %span.item__form__require
                   必須
-              %p.item__upload__comments
-                最大10枚までアップロードできます
-              .sell__image__box__image__area
-                = f.file_field :image, class: ".item__upload__box", placeholder: ""
+                %p.item__upload__comments
+                  最大10枚までアップロードできます
+                  .sell__image__box__image__area
+                  
+                    .sell__image__box__image__area
+                    = f.fields_for :images do |i|
+                      = image_tag i.object.main_image.url, size:50
+                      = i.file_field :main_image, class: ".item__upload__box"
+                      = i.hidden_field :id, value: i.object.id
+                    -# = f.file_field :main_image, class: ".item__upload__box", multiple: true
+                    -# .sell__image__box__image__area
+                    -# = img.file_field :sub_image, class: ".item__upload__box"
 
             .sell__content__item__name
               .item__group
@@ -50,16 +58,17 @@
                     カテゴリー
                     %span.item__form__require
                       必須
-                  %div.select__btn
+                  %div.select__btn#categorise
                     %i.fas.fa-chevron-down
-                    = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: 'item__select__list'
+                    = f.collection_select :category_id, @category, :id, :name, {prompt: "---"},class: 'item__select__list'
+                    -# = f.select :category_id, @category_parent_array, {},{class: 'item__select__list',id:'parent_category'}
                   -# カテゴリの詳細機能を追加する際に使用
                   -# %div.select__btn
                   -#   %i.fas.fa-chevron-down
-                  -#   = f.collection_select :category_id, @category.parent.name, :id, :name, {prompt: "---"},class: 'item__select__list'
+                  -#   = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: 'item__select__list'
                   -# %div.select__btn
                   -#   %i.fas.fa-chevron-down
-                  -#   = f.collection_select :category_id, @category.name, :id, :name, {prompt: "---"},class: 'item__select__list'
+                  -#   = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "---"},class: 'item__select__list'
 
                 .item__group__margin
                   %label.item__upper__message
@@ -155,7 +164,8 @@
 
             .sell__content__item__submit
               .sell__content__item__submit__form
-                =f.submit :更新する,class: "btn-default btn-red"
+                %div
+                  =f.submit :更新する,class: "btn-default btn-red"
                 %button.btn-default.btn-gray もどる
             
 
