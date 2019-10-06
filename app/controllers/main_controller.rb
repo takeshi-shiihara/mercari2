@@ -45,7 +45,11 @@ class MainController < ApplicationController
   end
 
   def listing
-    @user = User.find(current_user.id)
+    if user_sined_in?
+      @user = User.find(current_user.id)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   private
