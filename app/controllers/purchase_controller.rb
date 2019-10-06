@@ -1,5 +1,7 @@
 class PurchaseController < ApplicationController
 
+  before_action :authenticate_user!
+
   require 'payjp'
 
   def buy
