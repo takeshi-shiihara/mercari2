@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'step5' => 'main#step5'
   get 'logout' => 'main#logout'
   get 'userinfomation' => 'main#userinfomation'
+  patch 'userinfomation' => 'main#info'
   get 'hop1' => 'item#hop1'
   get 'mypage' => 'main#mypage'
   get 'mypage/serectcard' => 'main#serectcard'
