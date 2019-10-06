@@ -17,16 +17,13 @@ class ItemController < ApplicationController
     @item = Item.new
     @item.build_delibery
     @item.build_brand
-    @item.build_image
+    10.times { @item.images.build }
     @category = Category.roots
     else
       redirect_to controller: :main, action: :index
     end
 
   end
-
-
-
 
   def destroy
     item = Item.find(params[:id])
@@ -38,15 +35,20 @@ class ItemController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      redirect_to controller: :main, action: :index
-    else
+    if @item.images == []
       redirect_to controller: :item, action: :new
+    else
+      if @item.save
+        redirect_to controller: :main, action: :index
+      else
+        redirect_to controller: :item, action: :new
+      end
     end
   end
 
   def edit
-
+    @category = Category.roots
+    # 10.times { @item.images.build }
     unless @item.user.id == current_user.id
     redirect_to controller: :main, action: :index
     end
@@ -63,7 +65,7 @@ class ItemController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :condition, :price, :category_id, :size_id, :brand, delibery_attributes:[:id, :delibery_burden, :prefecture, :delibery_way, :delibery_date], brand_attributes:[:id, :name ], image_attributes:[:id, :main_image, :sub_image ]).merge(user_id: current_user.id )
+    params.require(:item).permit(:name, :description, :condition, :price, :category_id, :size_id, :brand, delibery_attributes:[:id, :delibery_burden, :prefecture, :delibery_way, :delibery_date], brand_attributes:[:id, :name ], images_attributes:[:id, :main_image]).merge(user_id: current_user.id )
   end
 
   def set_item

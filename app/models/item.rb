@@ -2,8 +2,8 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :size
   belongs_to :category
-  has_one :image, dependent: :destroy
-  accepts_nested_attributes_for :image
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images
   has_one :brand, dependent: :destroy
   accepts_nested_attributes_for :brand
   has_one :delibery, dependent: :destroy
