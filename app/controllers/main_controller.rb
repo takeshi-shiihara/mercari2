@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
 #  before_action :move_to_index, except: :index #ログインしていない時は出品できない仕様#
+  require 'payjp'
 
   def index
     @images = Image.all
@@ -15,9 +16,20 @@ class MainController < ApplicationController
   end
 
   def mypage
+    if user_signed_in?
+
+      else
+        redirect_to new_user_session_path
+      end
   end
 
   def serectcard
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+
+    else
+      redirect_to card_show_path
+    end
   end
 
   def profile
