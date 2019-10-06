@@ -20,7 +20,7 @@ class ItemController < ApplicationController
     10.times { @item.images.build }
     @category = Category.roots
     else
-      redirect_to controller: :main, action: :index
+      redirect_to new_user_session_path
     end
 
   end
