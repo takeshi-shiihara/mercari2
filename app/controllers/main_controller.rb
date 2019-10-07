@@ -6,7 +6,7 @@ class MainController < ApplicationController
   def index
     @images = Image.all
     @items = Item.all
-
+    @item = Item.where('name Like(?)', "%%#{params[:keyword]}")
   end
 
   def login
@@ -50,6 +50,10 @@ class MainController < ApplicationController
     else
       redirect_to new_user_session_path
     end
+  end
+
+  def search
+    @items = Item.where('name Like(?)', "%%#{params[:keyword]}")
   end
 
   private

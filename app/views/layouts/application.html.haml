@@ -23,9 +23,8 @@
             = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",class: "m-logo"), root_path
           .top__contents__upbox__search
             %input{name: "keyword", placeholder: "何かお探しですか？", type: "search", class: "s-form" }
-            = link_to new_user_registration_path, method: :get do
+            = link_to search_path, method: :get do
               %i.fas.fa-search.icon-search
-
         .top__contents__downbox
           .top__contents__downbox__leftbox
             %li.category-btn
@@ -35,7 +34,6 @@
             %li.bland-btn
               %i.fas.fa-tag.redicon
               %a ブランドから探す
-
           .top__contents__downbox__rightbox
             - if user_signed_in?
               .header-icon.like
@@ -53,8 +51,4 @@
                 = link_to "新規会員登録", login_path, class: 'signup-btn'
               .right-btn
                 = link_to "ログイン", new_user_session_path, class: 'login-btn'
-
-
-
-
   = yield

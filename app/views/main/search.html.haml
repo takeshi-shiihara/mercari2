@@ -1,0 +1,16 @@
+%body
+  .search-container.l-container.clearfix
+    .l-content
+      %section.item-box-container.clearfix
+        %h2.search-result-head
+          = "#{params[:keyword]}"
+          %span.search-result-text
+            の検索結果
+        .search-result-number
+          0件の表示
+        .items-box-content.clearfix
+          - @items.each do |item|
+          %section.item-box
+            = link_to "/item/#{@item.id}" do
+              %figure.item-box-phot
+                = image_tag("item.main_image")
