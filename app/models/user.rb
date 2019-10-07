@@ -6,6 +6,7 @@ devise :database_authenticatable, :registerable,
       validates :nickname, :first_name, :last_name, :first_name_kana, :last_name_kana, presence: true
       has_one :phone_number
       has_one :address
+      accepts_nested_attributes_for :address, update_only: true
       has_many :sns_credentials, dependent: :destroy
       has_many :items
 
