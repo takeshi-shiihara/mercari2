@@ -1,4 +1,4 @@
-
+= render "layouts/header"
 
 %body
 .mypage-main.clearfix
@@ -23,8 +23,7 @@
             %li
               =link_to "/item/#{item.id}", class: 'mypage-item-link' do
                 %figure
-                  - item.images.first(1).each do |image|
-                    = image_tag image.main_image, size: 48
+                  = image_tag("#{item.images[0].main_image}", size: 48)
                 .mypage-item-body
                   .mypage-item-text
                     = item.name

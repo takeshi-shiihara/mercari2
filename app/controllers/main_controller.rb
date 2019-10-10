@@ -6,7 +6,7 @@ class MainController < ApplicationController
   def index
     @images = Image.all
     @items = Item.all
-    @item = Item.where('name Like(?)', "%%#{params[:keyword]}")
+    @q = Item.ransack(params[:q])
   end
 
   def login
@@ -16,6 +16,7 @@ class MainController < ApplicationController
   end
 
   def mypage
+    @q = Item.ransack(params[:q])
     if user_signed_in?
 
       else
@@ -33,6 +34,7 @@ class MainController < ApplicationController
   end
 
   def profile
+    @q = Item.ransack(params[:q])
     if user_signed_in?
       @user = User.find(current_user.id)
     else
@@ -54,6 +56,7 @@ end
   end
 
   def userinfomation
+    @q = Item.ransack(params[:q])
     if user_signed_in?
     @user = User.find(current_user.id)
     else
@@ -68,6 +71,7 @@ end
   end
   
   def listing
+    @q = Item.ransack(params[:q])
     if user_signed_in?
       @user = User.find(current_user.id)
     else
@@ -76,7 +80,8 @@ end
   end
 
   def search
-    @items = Item.where('name Like(?)', "%%#{params[:keyword]}")
+    @q = Item.search(search_params)
+    @items = @q.result(distinct: true)
   end
 
   private
@@ -87,5 +92,9 @@ end
 
 def user_profile
   params.require(:user).permit(:nickname, :profile).merge(id: current_user.id)
+end
+
+def search_params
+  params.require(:q).permit(:name_cont)
 end
 end

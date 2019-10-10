@@ -15,40 +15,4 @@
     %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"}
     
   %body
-  %header
-    .top
-      .top__contents
-        .top__contents__upbox
-          .top__contents__upbox__logo
-            = link_to image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",class: "m-logo"), root_path
-          .top__contents__upbox__search
-            %input{name: "keyword", placeholder: "何かお探しですか？", type: "search", class: "s-form" }
-            = link_to search_path, method: :get do
-              %i.fas.fa-search.icon-search
-        .top__contents__downbox
-          .top__contents__downbox__leftbox
-            %li.category-btn
-              %i.fas.fa-list.redicon
-              %a カテゴリーから探す
-              %ul
-            %li.bland-btn
-              %i.fas.fa-tag.redicon
-              %a ブランドから探す
-          .top__contents__downbox__rightbox
-            - if user_signed_in?
-              .header-icon.like
-                %i.far.fa-heart= link_to " いいね一覧"
-              .header-icon.info
-                %i.far.fa-bell= link_to "  お知らせ"
-              .header-icon.check
-                %i.fas.fa-check= link_to " ログアウト", destroy_user_session_path, method: :delete
-              .header-logo
-                = link_to image_tag("github.png",class: "profile-logo"), root_path
-              .header-icon.mypage
-                %a.post{ href: "/mypage"} マイページ
-            - else
-              .reft-btn
-                = link_to "新規会員登録", login_path, class: 'signup-btn'
-              .right-btn
-                = link_to "ログイン", new_user_session_path, class: 'login-btn'
   = yield
