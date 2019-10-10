@@ -8,6 +8,10 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :brand
   has_one :delibery, dependent: :destroy
   accepts_nested_attributes_for :delibery
+
+  validates :name, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
+  validates :description, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
+  validates :condition, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
   
   #has_many:comments
   #has_one:buy
