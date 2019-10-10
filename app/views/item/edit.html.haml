@@ -22,11 +22,12 @@
                 %p.item__upload__comments
                   最大10枚までアップロードできます
                   .sell__image__box__image__area
-                  
-                    .sell__image__box__image__area
                     = f.fields_for :images do |i|
-                      = image_tag i.object.main_image.url, size:50
+                      
+                      
+                    
                       = i.file_field :main_image, class: ".item__upload__box"
+                      = image_tag i.object.main_image.url, size:50
                       = i.hidden_field :id, value: i.object.id
                       = link_to "削除", "/item/#{@item.id}", method: :delete
                     -# = f.file_field :main_image, class: ".item__upload__box", multiple: true
