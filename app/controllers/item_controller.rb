@@ -5,6 +5,7 @@ class ItemController < ApplicationController
   end
 
   def show
+    @q = Item.ransack(params[:q])
     @item = Item.find(params[:id])
     @prefecture = @item.delibery.prefecture
   end
@@ -49,8 +50,12 @@ class ItemController < ApplicationController
   def edit
     @category = Category.roots
     # 10.times { @item.images.build }
-    unless @item.user.id == current_user.id
-    redirect_to controller: :main, action: :index
+    if user_signed_in?
+      unless @item.user.id == current_user.id 
+      redirect_to controller: :main, action: :index
+      end
+    else
+    redirect_to new_user_session_path
     end
   end
 
