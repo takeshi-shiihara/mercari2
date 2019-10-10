@@ -5,6 +5,7 @@ class ItemController < ApplicationController
   end
 
   def show
+    @q = Item.ransack(params[:q])
     @item = Item.find(params[:id])
     @prefecture = @item.delibery.prefecture
   end

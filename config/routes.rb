@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'step5' => 'main#step5'
   get 'logout' => 'main#logout'
   get 'userinfomation' => 'main#userinfomation'
+  get 'search' => 'main#search'
   patch 'userinfomation' => 'main#info'
   get 'hop1' => 'item#hop1'
   get 'mypage' => 'main#mypage'
