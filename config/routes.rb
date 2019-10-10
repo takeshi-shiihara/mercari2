@@ -52,5 +52,6 @@ Rails.application.routes.draw do
   get 'mypage/listing' => 'main#listing'
   post '/pay' => 'item#pay'
 
+  delete 'item/delete' => 'item#item_delete'
 
 end

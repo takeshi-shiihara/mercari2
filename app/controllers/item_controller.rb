@@ -56,7 +56,7 @@ class ItemController < ApplicationController
 
   def update
     if @item.user_id == current_user.id
-      @item.update(item_params)
+      @item.update(update_item)
       redirect_to controller: :main, action: :index
     end
   end
@@ -68,9 +68,11 @@ class ItemController < ApplicationController
     params.require(:item).permit(:name, :description, :condition, :price, :category_id, :size_id, :brand, delibery_attributes:[:id, :delibery_burden, :prefecture, :delibery_way, :delibery_date], brand_attributes:[:id, :name ], images_attributes:[:id, :main_image]).merge(user_id: current_user.id )
   end
 
+  def update_item
+    params.require(:item).permit(:name, :description, :condition, :price, :category_id, :size_id, :brand, delibery_attributes:[:id, :delibery_burden, :prefecture, :delibery_way, :delibery_date], brand_attributes:[:id, :name ], images_attributes:[:id, :main_image, :_destroy]).merge(user_id: current_user.id )
+  end
+
   def set_item
     @item = Item.find(params[:id])
   end
-
-
 end

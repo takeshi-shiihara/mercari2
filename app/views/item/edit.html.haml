@@ -28,6 +28,7 @@
                       = image_tag i.object.main_image.url, size:50
                       = i.file_field :main_image, class: ".item__upload__box"
                       = i.hidden_field :id, value: i.object.id
+                      = link_to "削除", "/item/#{@item.id}", method: :delete
                     -# = f.file_field :main_image, class: ".item__upload__box", multiple: true
                     -# .sell__image__box__image__area
                     -# = img.file_field :sub_image, class: ".item__upload__box"
