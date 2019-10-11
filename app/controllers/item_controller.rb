@@ -1,6 +1,8 @@
 class ItemController < ApplicationController
   before_action :set_item, only:[:show, :edit, :update]
 
+  PICTURE_COUNT = 10
+
   def index
   end
 
@@ -18,12 +20,11 @@ class ItemController < ApplicationController
     @item = Item.new
     @item.build_delibery
     @item.build_brand
-    10.times { @item.images.build }
+    PICTURE_COUNT.times { @item.images.build }
     @category = Category.roots
     else
       redirect_to new_user_session_path
     end
-
   end
 
   def destroy
@@ -49,6 +50,8 @@ class ItemController < ApplicationController
 
   def edit
     @category = Category.roots
+    # count = @item.images.count
+    # (PICTURE_COUNT - count).times { @item.images.build }
     # 10.times { @item.images.build }
     if user_signed_in?
       unless @item.user.id == current_user.id 
