@@ -9,15 +9,12 @@ class Item < ApplicationRecord
   has_one :delibery, dependent: :destroy
   accepts_nested_attributes_for :delibery
 
+  # 正規表現で空文字あるいは空白文字だけで構成された文字列を許可しないようにする。
+  # 加えて allow_nil オプションを有効にして NULL は許可する。
   validates :name, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
   validates :description, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
   validates :condition, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
   
-  #has_many:comments
-  #has_one:buy
-  #has_one:prefecture
-  # mount_uploader :image, ImageUploader
-
   extend ActiveHash::Associations::ActiveRecordExtensions
 
 end
