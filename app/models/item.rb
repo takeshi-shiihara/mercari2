@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   validates :name, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
   validates :description, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
   validates :condition, format: { without: /\A[[:space:]]*\z/,allow_nil: true }
-  # 以下でも同じ
+  # 以下でも同じ実装が可
   # validates :name, presence: true
   # validates :description, presence: true
   # validates :condition, presence: true

@@ -50,12 +50,9 @@ class ItemController < ApplicationController
 
   def edit
     @category = Category.roots
-    # count = @item.images.count
-    # (PICTURE_COUNT - count).times { @item.images.build }
-    # 10.times { @item.images.build }
     if user_signed_in?
       unless @item.user.id == current_user.id 
-      redirect_to controller: :main, action: :index
+      redirect_to controller: :mypage, action: :index
       end
     else
     redirect_to new_user_session_path

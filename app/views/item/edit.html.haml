@@ -23,7 +23,7 @@
                   最大10枚までアップロードできます
                   .sell__image__box__image__area-edit
                     = f.fields_for :images do |i|
-                      -# removeカラム使えば1枚消し可能のはず
+                      -# removeカラム使えば1枚消し可能か
                       = i.file_field :main_image, class: ".item__upload__box"
                       = image_tag i.object.main_image.url, size:50
                       = i.hidden_field :id, value: i.object.id
@@ -48,6 +48,7 @@
               %h3.item__form__message
                 商品の詳細
               .sell__content__item__form
+                -#  カテゴリー機能の実装をやることAjax
                 .item__group
                   %label.item__upper__message
                     カテゴリー
@@ -56,15 +57,6 @@
                   %div.select__btn#categorise
                     %i.fas.fa-chevron-down
                     = f.collection_select :category_id, @category, :id, :name, {prompt: "---"},class: 'item__select__list'
-                    -# = f.select :category_id, @category_parent_array, {},{class: 'item__select__list',id:'parent_category'}
-                  -# カテゴリの詳細機能を追加する際に使用
-                  -# %div.select__btn
-                  -#   %i.fas.fa-chevron-down
-                  -#   = f.collection_select :category_id, Category.all, :id, :name, {prompt: "---"},class: 'item__select__list'
-                  -# %div.select__btn
-                  -#   %i.fas.fa-chevron-down
-                  -#   = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "---"},class: 'item__select__list'
-
                 .item__group__margin
                   %label.item__upper__message
                     サイズ
